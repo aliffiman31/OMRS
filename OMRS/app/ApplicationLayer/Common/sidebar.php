@@ -9,7 +9,33 @@
 <style>
 
 
+body{
 
+background-image: url('../../Asset/background.jpg');
+
+}
+
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    border: 1px solid black;
+    height: 700px;
+    width: 830px;
+    background-color: azure;
+    margin-top: 310px;
+    margin-left: 290px;
+    overflow: auto;
+}
+
+.syarat-content{
+    margin-left: 30px;
+}
 
 .menu-box{
     position: absolute;
@@ -153,7 +179,7 @@ a {
 
 
 </head>
-<body>
+<body >
     <!-- Profile Box -->
 <div class="Profile">
         <img src="../../Asset/icon.png" alt="" class="profileicon">
@@ -180,8 +206,8 @@ a {
                 <li class="menu-item">
                     <li class="menu-module">Permohonan Kursus <br>Perkahwinan</li>
                     <ol class="sub-menu">
-                        <li class="menu-item" id="li"><a  id="a" href="#0" class="submenu-link" data-content="Maklumat-Pemohon">Maklumat Pemohon</a></li>
-                        <li class="menu-item" id="li"><a  id="a" href="#0" class="submenu-link" data-content="Status-Permohonan">Status Permohonan</a></li>
+                        <li class="menu-item" id="li"><a   href="#0" class="maklumatpemohon" id = "a" data-content="Maklumat-Pemohon" onClick='redirectToURL(this.className)'>Maklumat Pemohon</a></li>
+                        <li class="menu-item" id="li"><a  id="a" href="#0" class="status-pemohon" data-content="Status-Permohonan">Status Permohonan</a></li>
                     </ol>
                 </li>
                 <li class="menu-item">
@@ -202,15 +228,14 @@ a {
                 <li class="menu-item has-submenu">
                     <li  class="menu-module">Insentif</li>
                     <ol class="sub-menu">
-                        <li class="menu-item" id="li"><a  id="a" href="#0" class="submenu-link" data-content="syarat-kelayakan">Syarat Kelayakan</a></li>
-                        <li class="menu-item" id="li"><a  id="a" href="#0" class="submenu-link" data-content="mohon">Mohon</a></li>
-                        <li class="menu-item" id="li"><a  id="a" href="#0" class="submenu-link" data-content="result">Result</a></li>
+                        <li class="menu-item" id="li"><a  id="a" href="#0" class="syarat-kelayakan" data-content="syarat-kelayakan" onClick='redirectToURL(this.className)'>Syarat Kelayakan</a></li>
+                        <li class="menu-item" id="li"><a  id="a" href="#0" class="mohon" data-content="mohon" onClick='redirectToURL(this.className)'>Mohon</a></li>
+                        <li class="menu-item" id="li"><a  id="a" href="#0" class="result" data-content="result">Result</a></li>
                     </ol>
                 </li>
             </ol>
         </nav>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
   // Get the submenu links
@@ -278,6 +303,14 @@ a {
 });
 
 
+         function redirectToURL(className){
+         	if(className=="maklumatpemohon")
+         		window.location.replace("../../../ApplicationLayer/ApplicantView/module1/testing.php");
+         	else if(className=="syarat-kelayakan")
+         		window.location.replace("../../ApplicantView/module5/syaratpage.php");
+         	else if(className=="mohon")
+         		window.location.replace("../../ApplicantView/module5/mohon.php");
+         }
 
 
     </script>
