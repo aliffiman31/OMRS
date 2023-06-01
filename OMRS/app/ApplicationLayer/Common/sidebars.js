@@ -6,13 +6,3 @@
     new bootstrap.Tooltip(tooltipTriggerEl)
   })
 })()
-
-
-function redirectToURL(className){
-  if(className=="maklumatpemohon")
-    window.location.replace("../../../ApplicationLayer/ApplicantView/module1/testing.php");
-  else if(className=="syarat-kelayakan")
-    window.location.replace("../../ApplicantView/module5/syaratpage.php");
-  else if(className=="mohon")
-    window.location.replace("../../ApplicantView/module5/mohon.php");
-}

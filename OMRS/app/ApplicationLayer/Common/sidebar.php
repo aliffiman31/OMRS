@@ -83,11 +83,6 @@ main {
   overflow-y: auto;
 }
 
-#collapsible{
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 100px;
-}
 
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -161,16 +156,7 @@ main {
         z-index: 1500;
       }
 
-      .Profile{
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    width: 265px;
-    height: 70px;
-    margin-left: 190px;
-    margin-top: 160px;
-  }
+      
   
   .profileicon{
     padding-left: 10px;
@@ -210,6 +196,47 @@ main {
     box-sizing:border-box;
     padding: 10px;
     border-radius: 10px;
+}
+
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+  .content {
+    border: 1px solid black;
+    height: 700px;
+    width: 830px;
+    background-color: azure;
+    margin-top: 20%;
+    margin-left: 20%;
+    overflow: auto;
+}
+
+.Profile{
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    width: 265px;
+    height: 70px;
+    margin-left: 14%;
+    margin-top: 10.4%;
+  }
+
+  #collapsible{
+  position: absolute;
+  margin-left: 13%;
+    margin-top: 16%;
+}
 }
 
     </style>
@@ -396,8 +423,8 @@ main {
         </button>
         <div class="collapse" id="module5-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a id="syarat-kelayakan" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Syarat Kelayakan</a></li>
-            <li><a id="mohon" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Mohon</a></li>
+            <li><a id="syarat-kelayakan" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Syarat Kelayakan</a></li>
+            <li><a id="mohon" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick= "redirectToURL(this.id)" >Mohon</a></li>
             <li><a id="keputusan"  href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Keputusan</a></li>
           </ul>
         </div>
@@ -405,9 +432,19 @@ main {
     </ul>
   </div>
 
+  <script>
+    function redirectToURL(btnid){
+  if(btnid=="maklumatpemohon")
+    window.location.replace("../../../ApplicationLayer/ApplicantView/module1/testing.php");
+  else if(btnid=="syarat-kelayakan")
+    window.location.replace("../../ApplicantView/module5/syaratpage.php");
+  else if(btnid=="mohon")
+    window.location.replace("../../ApplicantView/module5/mohon.php");
+}
+  </script>
  
 </main>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="sidebars.js"></script></body>
-    <script src=""></script>
+    <script src="sidebars.js"></script>
+  </body>
 </html>

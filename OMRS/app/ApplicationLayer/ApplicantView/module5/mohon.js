@@ -62,3 +62,5 @@ var sections = document.querySelectorAll('.content section');
         }
 
         showCurrentSection();
+
+        
