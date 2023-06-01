@@ -1,13 +1,3 @@
-<?php
-
-require_once '../OMRS/OMRS/app/OMRS.dataaccess/Db_Connection_Manager.php';
-
-
-$query="select * from staffreligiousinfo"; // Fetch all the data from the table customers
-
-$result=mysqli_query($conn,$query);
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,15 +58,6 @@ $result=mysqli_query($conn,$query);
                                 <td class="table-data">Kapasiti Peserta</td>
                                 <td class="table-data">Kekosongan</td>
                                 <td class="table-data">Daftar Penyertaan</td>
-                            </tr>
-                            <tr>
-                                <td class="table-data"></td>
-                                <td class="table-data"><?php echo $row['office'];?></td>
-                                <td class="table-data"></td>
-                                <td class="table-data"></td>
-                                <td class="table-data"></td>
-                                <td class="table-data"></td>
-                                <td class="table-data"><p><a href="../module2/ApplicantSubmitProofOfPayment.php">Daftar Sekarang</a></p></td>
                             </tr>
                         </table>
 

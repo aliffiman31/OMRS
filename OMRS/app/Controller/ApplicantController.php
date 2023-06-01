@@ -2,10 +2,10 @@
 
 class ApplicantController{
 
-private $FormModel;
+private $FormModel1;
 
-public function __construct($FormModel) {
-    $this->FormModel = $FormModel;
+public function __construct($FormModel1) {
+    $this->FormModel1 = $FormModel1;
 
   }
 
@@ -13,7 +13,7 @@ public function __construct($FormModel) {
   public function FormRegister($ic) {
     
     //link to function in module5 Model/repository
-    $this->FormModel->FormDetail($ic);
+    $this->FormModel1->FormDetail($ic);
 
     ?>
 
@@ -26,34 +26,11 @@ public function __construct($FormModel) {
       </script>
   <?php
 }
+public function formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy){
 
-public function SuamiFormRegister($jenispekerjaansuami, $namamajikansuami, $namapekerjaansuami, $alamatmajikansuami, $pendapatansuami, $poscodesuami, $banksuami, $negerisuami, $akaunsuami, $bandarsuami) {
-  $this->FormModel->SuamiFormDetail($jenispekerjaansuami, $namamajikansuami, $namapekerjaansuami, $alamatmajikansuami, $pendapatansuami, $poscodesuami, $banksuami, $negerisuami, $akaunsuami, $bandarsuami);
-  
-  // Redirect back to the same page
-  header("Location: " . $_SERVER['HTTP_REFERER']);
-  exit;
+  $this->FormModel1->FormDetail($office,$Venue,$Date,$Capacity,$Vacancy);
+
+
 }
-
-public function IsteriFormRegister($jenispekerjaanisteri,$namamajikanisteri,$namapekerjaanisteri,
-$alamatmajikanisteri,$pendapatanisteri,$poscodeisteri,$bankisteri,$negeristeri,$akaunisteri,$bandaristeri) {
-  $this->FormModel->IsteriFormDetail($jenispekerjaanisteri,$namamajikanisteri,$namapekerjaanisteri,
-  $alamatmajikanisteri,$pendapatanisteri,$poscodeisteri,$bankisteri,$negeristeri,$akaunisteri,$bandaristeri);
-  
-  // Redirect back to the same page
-  header("Location: " . $_SERVER['HTTP_REFERER']);
-  exit;
-}
-
-
-
-public function retrieveSuamiFormData() {
-  $formData = $this->FormModel->retrieveSuamiFormData();
-
-  // Return the form data as JSON
-  echo json_encode($formData);
-  exit;
-}
-
 }
 ?>

@@ -21,11 +21,18 @@ body {
   .table-info {
     width: 770px;
     margin-left: 30px;
-    border-color: #ffffff;
   }
-
-  #button1{
-    float: right;
-    margin-right: 50px;
+  
+  .table-data {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  
+  #search-box{
+      margin-top: 30px;
+      margin-left: 30px;
   }
   
