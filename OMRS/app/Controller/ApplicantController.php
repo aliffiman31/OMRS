@@ -2,10 +2,10 @@
 
 class ApplicantController{
 
-private $FormModel;
+private $FormModel1;
 
-public function __construct($FormModel) {
-    $this->FormModel = $FormModel;
+public function __construct($FormModel1) {
+    $this->FormModel1 = $FormModel1;
 
   }
 
@@ -13,7 +13,7 @@ public function __construct($FormModel) {
   public function FormRegister($ic) {
     
     //link to function in module5 Model/repository
-    $this->FormModel->FormDetail($ic);
+    $this->FormModel1->FormDetail($ic);
 
     ?>
 
@@ -25,6 +25,12 @@ public function __construct($FormModel) {
         window.location = "../../app/ApplicationLayer/ApplicantView/module5/test.php";
       </script>
   <?php
+}
+public function formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy){
+
+  $this->FormModel1->FormDetail($office,$Venue,$Date,$Capacity,$Vacancy);
+
+
 }
 }
 ?>
