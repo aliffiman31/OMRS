@@ -7,6 +7,20 @@
     <title>Syarat Kelayakan</title>
     <link rel="stylesheet" href="mohon.css">
 
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+
 </head>
 <body>
     <div>
@@ -34,7 +48,7 @@
                     <!-- SUAMI JOB FORM TABLE -->
                     <section id="suami" class="active">
                     <h3 style="text-align: center;">BORANG BUTIRAN PEKERJAAN SUAMI</h3>
-            <form action="suamijobform" method="post">
+                    <form id="suami-form" action="../../../../public/Facade.php?action=suamijobform" method="post">
                 <table class="suamitable">
                     <tr>
                         <th >Jenis Pekerjaan : </th>
@@ -67,14 +81,16 @@
                         <td><input type="text" name="bandar-suami" id=""></td>
                     </tr>
                 </table>
-                <button type="submit" class="kemaskini">Kemaskini</button>
+                <button type="submit" class="kemaskini" onclick="submitForm(event, 'suami-form')">Kemaskini</button>
+
+
             </form>
                     </section>
 
                     <!-- ISTERI JOB FORM TABLE -->
                     <section id="isteri">
                     <h3 style="text-align: center;">BORANG BUTIRAN PEKERJAAN ISTERI</h3>
-            <form action="isterijobform" method="post">
+                    <form id="isteri-form" action="../../../../public/Facade.php?action=isterijobform" method="post">
                 <table class="isteritable">
                     <tr>
                         <th >Jenis Pekerjaan : </th>
@@ -107,12 +123,26 @@
                         <td><input type="text" name="bandar-isteri" id=""></td>
                     </tr>
                 </table>
+                <button type="submit" class="kemaskini" onclick="submitForm(event, 'isteri-form')">Kemaskini</button>
             </form>
                     </section>
 
                     <section id="dokumen">
-                        <h2>Dokumen</h2>
-                        <p>This is the content for Dokumen.</p>
+                    <h2>Form Data</h2>
+
+                    <table id="formDataTable">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Jenis Pekerjaan (Suami)</th>
+                <th>Nama Majikan (Suami)</th>
+                <!-- Add more table headers for other form fields if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be populated dynamically -->
+        </tbody>
+    </table>
                     </section>
 
                     <!-- Navigation Buttons -->
@@ -126,5 +156,61 @@
     </div>
 
     <script src="mohon.js"></script>
+
+    <script>
+  function submitForm(event, formId) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the form data
+    var form = document.getElementById(formId);
+    var formData = new FormData(form);
+
+    // Create an AJAX request
+    var xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action, true);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        alert('Successfully Registered');
+        // You can perform any additional actions or show a success message here
+
+        // Clear the form inputs if needed
+        form.reset();
+      }
+    };
+
+    // Send the form data
+    xhr.send(formData);
+  }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+ // Function to retrieve the form data via AJAX
+function retrieveFormData() {
+    $.ajax({
+        url: "../../../../public/Facade.php?action=retrieveSuamiFormData",
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+            // Iterate through the form data and generate the table rows
+            var tableBody = document.getElementById("formDataTable");
+            tableBody.innerHTML = "";
+
+            for (var i = 0; i < response.length; i++) {
+                var row = tableBody.insertRow();
+                var fullNameCell = row.insertCell(0);
+                fullNameCell.innerHTML = response[i].fullname;
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log(error);
+        }
+    });
+}
+
+// Call the retrieveFormData function when the "Dokumen" section is clicked
+document.getElementById("nav-dokumen").addEventListener("click", retrieveFormData);
+    </script>
+
 </body>
 </html>

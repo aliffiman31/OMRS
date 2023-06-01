@@ -17,5 +17,43 @@ class Module5Repository{
     $query->execute([$names]);
 
   }
+
+  //This function will insert name data in mySQL database
+  public function SuamiFormDetail($jenispekerjaansuami,$namamajikansuami,$namapekerjaansuami,
+  $alamatmajikansuami,$pendapatansuami,$poscodesuami,$banksuami,$negerisuami,$akaunsuami,$bandarsuami) {
+
+    //syntax to insert into database
+    $query = $this->connect->prepare("INSERT INTO suamijobform(jenispekerjaan,namapekerjaan,pendapatan,namabank
+    ,nomborakaun,namamajikan,alamatmajikan,poscode,negeri,bandar) VALUES (?,?,?,?,?,?,?,?,?,?)");
+
+
+    $query->execute([$jenispekerjaansuami,$namapekerjaansuami,$pendapatansuami,$banksuami,$akaunsuami,$namamajikansuami,
+    $alamatmajikansuami,$poscodesuami,$negerisuami,$bandarsuami]);
+
+  }
+
+  public function IsteriFormDetail($jenispekerjaanisteri,$namamajikanisteri,$namapekerjaanisteri,
+  $alamatmajikanisteri,$pendapatanisteri,$poscodeisteri,$bankisteri,$negeristeri,$akaunisteri,$bandaristeri) {
+
+    //syntax to insert into database
+    $query = $this->connect->prepare("INSERT INTO isterijobform(jenispekerjaan,namapekerjaan,pendapatan,namabank
+    ,nomborakaun,namamajikan,alamatmajikan,poscode,negeri,bandar) VALUES (?,?,?,?,?,?,?,?,?,?)");
+
+
+    $query->execute([$jenispekerjaanisteri,$namapekerjaanisteri,$pendapatanisteri,$bankisteri,$akaunisteri,$namamajikanisteri,
+    $alamatmajikanisteri,$poscodeisteri,$negeristeri,$bandaristeri]);
+
+  }
+
+  public function retrieveSuamiFormData() {
+    // Retrieve the form data from the database
+    $query = $this->connect->prepare("SELECT * FROM isterijobform");
+    $query->execute();
+    $formData = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    return $formData;
+}
+
+
 }
 ?>

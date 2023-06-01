@@ -31,8 +31,8 @@ nav ul li a.active {
 @media only screen and (min-width: 1224px) {
     /* Styles */
 .navigation-buttons{
-    position:relative;
-    margin-top: 30%;
+    position:fixed;
+    margin-top: 10%;
     margin-left: 40%;
 }
 

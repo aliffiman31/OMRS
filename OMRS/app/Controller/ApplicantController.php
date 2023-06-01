@@ -26,5 +26,34 @@ public function __construct($FormModel) {
       </script>
   <?php
 }
+
+public function SuamiFormRegister($jenispekerjaansuami, $namamajikansuami, $namapekerjaansuami, $alamatmajikansuami, $pendapatansuami, $poscodesuami, $banksuami, $negerisuami, $akaunsuami, $bandarsuami) {
+  $this->FormModel->SuamiFormDetail($jenispekerjaansuami, $namamajikansuami, $namapekerjaansuami, $alamatmajikansuami, $pendapatansuami, $poscodesuami, $banksuami, $negerisuami, $akaunsuami, $bandarsuami);
+  
+  // Redirect back to the same page
+  header("Location: " . $_SERVER['HTTP_REFERER']);
+  exit;
+}
+
+public function IsteriFormRegister($jenispekerjaanisteri,$namamajikanisteri,$namapekerjaanisteri,
+$alamatmajikanisteri,$pendapatanisteri,$poscodeisteri,$bankisteri,$negeristeri,$akaunisteri,$bandaristeri) {
+  $this->FormModel->IsteriFormDetail($jenispekerjaanisteri,$namamajikanisteri,$namapekerjaanisteri,
+  $alamatmajikanisteri,$pendapatanisteri,$poscodeisteri,$bankisteri,$negeristeri,$akaunisteri,$bandaristeri);
+  
+  // Redirect back to the same page
+  header("Location: " . $_SERVER['HTTP_REFERER']);
+  exit;
+}
+
+
+
+public function retrieveSuamiFormData() {
+  $formData = $this->FormModel->retrieveSuamiFormData();
+
+  // Return the form data as JSON
+  echo json_encode($formData);
+  exit;
+}
+
 }
 ?>
