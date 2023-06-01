@@ -25,3 +25,15 @@ nav ul li a.active {
 .content section.active {
     display: block;
 }
+
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+    /* Styles */
+.navigation-buttons{
+    position:relative;
+    margin-top: 30%;
+    margin-left: 40%;
+}
+
+}

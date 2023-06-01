@@ -31,15 +31,83 @@
                         </ul>
                     </nav>
 
-                    <!-- Content Sections -->
+                    <!-- SUAMI JOB FORM TABLE -->
                     <section id="suami" class="active">
-                        <h2>Suami</h2>
-                        <p>This is the content for Suami.</p>
+                    <h3 style="text-align: center;">BORANG BUTIRAN PEKERJAAN SUAMI</h3>
+            <form action="suamijobform" method="post">
+                <table class="suamitable">
+                    <tr>
+                        <th >Jenis Pekerjaan : </th>
+                        <td ><input type="text" name="jenis-pekerjaan-suami" id=""></td>
+                        <th >Nama Majikan/Perusahaan : </th>
+                        <td ><input type="text" name="nama-majikan-suami" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Pekerjaan : </th>
+                        <td><input type="text" name="nama-pekerjaan-suami" id=""></td>
+                        <th>Alamat Majikan : </th>
+                        <td><input type="text" name="alamat-majikan-suami" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <th>Pendapatan : </th>
+                        <td><input type="text" name="pendapatan-suami" id=""></td>
+                        <th>Poscode : </th>
+                        <td><input type="text" name="poscode-suami" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Bank : </th>
+                        <td><input type="text" name="bank-suami" id=""></td>
+                        <th>Negeri : </th>
+                        <td><input type="text" name="negeri-suami" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Nombor Akaun : </th>
+                        <td><input type="text" name="akaun-suami" id=""></td>
+                        <th>Bandar : </th>
+                        <td><input type="text" name="bandar-suami" id=""></td>
+                    </tr>
+                </table>
+                <button type="submit" class="kemaskini">Kemaskini</button>
+            </form>
                     </section>
 
+                    <!-- ISTERI JOB FORM TABLE -->
                     <section id="isteri">
-                        <h2>Isteri</h2>
-                        <p>This is the content for Isteri.</p>
+                    <h3 style="text-align: center;">BORANG BUTIRAN PEKERJAAN ISTERI</h3>
+            <form action="isterijobform" method="post">
+                <table class="isteritable">
+                    <tr>
+                        <th >Jenis Pekerjaan : </th>
+                        <td ><input type="text" name="jenis-pekerjaan-isteri" id=""></td>
+                        <th >Nama Majikan/Perusahaan : </th>
+                        <td ><input type="text" name="nama-majikan-isteri" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Pekerjaan : </th>
+                        <td><input type="text" name="nama-pekerjaan-isteri" id=""></td>
+                        <th>Alamat Majikan : </th>
+                        <td><input type="text" name="alamat-majikan-isteri" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <th>Pendapatan : </th>
+                        <td><input type="text" name="pendapatan-isteri" id=""></td>
+                        <th>Poscode : </th>
+                        <td><input type="text" name="poscode-isteri" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Bank : </th>
+                        <td><input type="text" name="bank-isteri" id=""></td>
+                        <th>Negeri : </th>
+                        <td><input type="text" name="negeri-isteri" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Nombor Akaun : </th>
+                        <td><input type="text" name="akaun-isteri" id=""></td>
+                        <th>Bandar : </th>
+                        <td><input type="text" name="bandar-isteri" id=""></td>
+                    </tr>
+                </table>
+            </form>
                     </section>
 
                     <section id="dokumen">
