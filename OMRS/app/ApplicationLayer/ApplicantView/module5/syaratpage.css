@@ -25,3 +25,14 @@ body{
     margin-left: 30px;
 }
 
+li
+{
+    font-size: 13px;
+}
+.syarattitle
+{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+}
+
