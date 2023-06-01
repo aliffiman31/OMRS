@@ -1,0 +1,73 @@
+body {
+  background-image: url("/app/ApplicationLayer/Asset/background.jpg");
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  border: 1px solid black;
+  height: 700px;
+  width: 830px;
+  background-color: azure;
+  margin-top: 310px;
+  margin-left: 290px;
+  overflow: auto;
+}
+/*
+#option-table {
+    width: fit-content;
+    margin-left: 20px;
+    border-collapse: collapse;
+    background-color: #F7CBF5;
+  }
+  
+  .content #search-box{
+    margin: 20px;
+  }
+  
+  .content #search-box #search{
+    width: 360px;
+    height:20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);;
+  }
+  
+  .content #search-box #button1{
+    margin-left: 15px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border: none;
+    background-color: #5A74E6;
+    height: 18px;
+    width: 44px;
+    font-size: 14px;
+    color: #f2f2f2;
+    text-align: center;
+    display: inline-block;
+    transition-duration: 0.4s;
+  }
+  
+  .content #search-box #button1:hover {
+    background-color: #3f51a1; /* Change to the desired color */
+.table-info {
+  width: 770px;
+  margin-left: 30px;
+}
+
+.table-data {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+#search-box{
+    margin-top: 30px;
+    margin-left: 30px;
+}
