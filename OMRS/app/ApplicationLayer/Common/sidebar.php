@@ -20,8 +20,8 @@
     <style>
       body {
         background-image: url('../../Asset/background.jpg');
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
 }
 
 html {
@@ -318,10 +318,10 @@ main {
 
     <!-- MODULE 1 MENU -->
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module1-collapse" aria-expanded="true">
           Profile
         </button>
-        <div class="collapse show" id="home-collapse">
+        <div class="collapse show" id="module1-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">View Account</a></li>
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates Account</a></li>
@@ -329,12 +329,12 @@ main {
         </div>
       </li>
 
-      <!-- MODULE 2 MENU -->
+      <!-- MODULE 2.1 MENU -->
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module2.1-collapse" aria-expanded="false">
           Permohonan Kursus Kahwin
         </button>
-        <div class="collapse" id="dashboard-collapse">
+        <div class="collapse" id="module2.1-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option1</a></li>
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option2</a></li>
@@ -344,12 +344,12 @@ main {
         </div>
       </li>
 
-      <!-- MODULE 2 MENU -->
+      <!-- MODULE 2.2 MENU -->
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module2.2-collapse" aria-expanded="false">
           Permohonan Berkahwin
         </button>
-        <div class="collapse" id="orders-collapse">
+        <div class="collapse" id="module2.2-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option1</a></li>
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option2</a></li>
@@ -361,29 +361,44 @@ main {
       <!-- <li class="border-top my-3"></li> -->
       <!-- MODULE 3 MENU -->
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module3-collapse" aria-expanded="false">
           Pendaftaran Perkahwinan
         </button>
-        <div class="collapse" id="account-collapse">
+        <div class="collapse" id="module3-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option1</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option2</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option3</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option4</a></li>
           </ul>
         </div>
       </li>
+
       <!-- MODULE 4 MENU -->
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Pendaftaran Perkahwinan
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module4-collapse" aria-expanded="false">
+          Konsultasi
         </button>
-        <div class="collapse" id="account-collapse">
+        <div class="collapse" id="module4-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option1</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option2</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option3</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option4</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <!-- MODULE 5 MENU -->
+      <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module5-collapse" aria-expanded="false">
+          Insentif
+        </button>
+        <div class="collapse" id="module5-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a id="syarat-kelayakan" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Syarat Kelayakan</a></li>
+            <li><a id="mohon" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Mohon</a></li>
+            <li><a id="keputusan"  href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Keputusan</a></li>
           </ul>
         </div>
       </li>
@@ -392,7 +407,7 @@ main {
 
  
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="sidebars.js"></script></body>
+    <script src=""></script>
 </html>
