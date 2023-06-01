@@ -18,8 +18,8 @@
 
 <section>
         <div class="content-container">
-        <div class="container-registration">  
-        <form action="../../public/index.php?action=registerApplicantAcc" method="post" id="myForm">
+        <div class="container-registration">    
+        <form action="../../../../public/Facade.php?action=registerApplicantAcc" method="post" id="myForm">
             <div class="registration">
                 <img style="height:50px;"src="../../Asset/Registration.png"> 
                 <h2><b>Daftar Pengguna</b></h2>
@@ -71,7 +71,7 @@
             </table>
 
             <input type="submit" id="submit" value="DAFTAR" onclick="   ">
-            <a href="loginApplicant.html">[  KEMBALI  ]</a>
+            <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>
         </div>   

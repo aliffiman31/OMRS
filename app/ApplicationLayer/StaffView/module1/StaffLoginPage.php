@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicant Login</title>
-    <link rel="stylesheet" href="ApplicantLoginPage.css">
+    <title>Staff Login</title>
+    <link rel="stylesheet" href="StaffLoginPage.css">
 </head>
 <body>
     <div>
@@ -15,15 +15,14 @@
         include_once('../../Common/headerFrontPage(Module1).html'); 
         ?>
 
-
 <section>
 
         <div class="content-container">
-            <div class="container-login">
-            <form>
+        <div class="container-login">
+        <form>
             <div class="logMasuk">
-                <img style="height:50px;"src="../../Asset/Login_Profile.jpg">
-                <h2><b>Log Masuk</b></h2>
+                <img style="height:50px;"src="../../Asset/Login_StaffProfile.png">
+                <h2><b>Log Masuk Kakitangan</b></h2>
             </div>
             <table>
                 <tr>
@@ -38,15 +37,13 @@
             <input type="submit" id="submit" value="MASUK" onclik="   "> <br> <br> <br>
 
             <div class="href-link">
-                <a href="ApplicantRegFormPage.php" >Daftar</a>
+                <a href="StaffChangePasswordPage.php" >Tukar Kata Laluan </a>
                 <div class="verticle-line"></div>
-                <a href="ApplicantChangePasswordPage.php" >Tukar Kata Laluan </a>
-                <div class="verticle-line"></div>
-                <a href="ApplicantForgotPasswordPage.php" >Lupa Kata Laluan?</a>
+                <a href="StaffForgotPasswordPage.php">Lupa Kata Laluan?</a>
             </div>
             <br>
-            </form>
-            </div>
+        </form>
+        </div>
         </div>
 </section>
     </div>

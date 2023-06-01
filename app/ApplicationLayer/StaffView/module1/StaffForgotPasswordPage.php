@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicant Forgot Password</title>
-    <link rel="stylesheet" href="ApplicantForgotPasswordPage.css">
+    <title>Staff Forgot Password</title>
+    <link rel="stylesheet" href="StaffForgotPasswordPage.css">
 </head>
 <body>
     <div>
@@ -37,7 +37,7 @@
             </table>
 
             <input type="submit" id="submit" value="HANTAR" onclick="   ">
-            <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
+            <a href="StaffLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>
         </div>
