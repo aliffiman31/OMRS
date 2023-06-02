@@ -24,7 +24,7 @@ $FormModel1 = new Module2Repository($db);
 
 //Module 1
 $registrationController = new RegistrationController($Module1Repository);
-//$loginController = new LoginController($Module1Repository);
+$loginController = new LoginController($Module1Repository);
 //$resetPassword and changePassword Controller
 //$userProfileController = new UserProfileController($Module1Repository);
 
@@ -44,10 +44,31 @@ switch ($action) {
         $address = $_POST['appAddress'];
         $email = $_POST['appEmail'];
         $password = $_POST['userPassword'];
-        $RegistrationController->applicantRegisterFunction($ic, $name, $userType, $gender, $phoneNum, $address, $email, $password);
+        $RegistrationController->registerApplicantFunction($ic, $name, $userType, $gender, $phoneNum, $address, $email, $password);
         break;
 
-    case 'registerStaffAcc':
+    case 'loginApplicantAcc':
+        $ic = $_POST['userIC'];
+        $password = $_POST['userPassword'];
+        
+        $LoginController->loginApplicantFunction($ic, $password);  //means dia akan read LoginController dan function loginFunction
+        break;
+    
+    case 'loginStaffAcc':
+        $ic = $_POST['userIC'];
+        $password = $_POST['userPassword'];
+            
+        $LoginController->loginStaffFunction($ic, $password);  //means dia akan read LoginController dan function loginFunction
+        break;
+
+    case 'loginAdminAcc':
+        $ic = $_POST['userIC'];
+        $password = $_POST['userPassword'];
+            
+        $LoginController->loginAdminFunction($ic, $password);  //means dia akan read LoginController dan function loginFunction
+        break;
+
+    /*case 'registerStaffAcc':
         $ic = $_POST['userIC'];
         $name = $_POST['staffName'];
         $department = $_POST['staffDepartmentName'];
@@ -56,7 +77,8 @@ switch ($action) {
         $phoneNum = $_POST['staffPhoneNo'];
 
         $RegistrationController->staffRegisterFunction($ic, $name, $department, $accessCategory, $email, $phoneNum);
-        break;
+        break;*/
+
 
     //form from syaratpage.php
     case 'ReligiousInfo':

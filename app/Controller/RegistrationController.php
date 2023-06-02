@@ -9,7 +9,7 @@
         }
 
         //applicant register function 
-        public function applicantRegisterFunction($Applicant_Id, $userIC, $userType, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
+        public function registerApplicantFunction($Applicant_Id, $userIC, $userType, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
         {
             //security purpose (Admin pon tak blh tgk password user kat mysql)
             $hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
