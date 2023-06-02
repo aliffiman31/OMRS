@@ -1,11 +1,15 @@
 <?php
 
-require_once '../OMRS/OMRS/app/OMRS.dataaccess/Db_Connection_Manager.php';
+require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
 
+$selectedOffice = isset($_GET['search']) ? $_GET['search'] : '';
+$query="select * from staffreligiousinfo  WHERE office = :office"; // Fetch all the data from the table customers
+$db = (new Database())->connect();
+$stmt = $db->prepare($query);
+$stmt->bindParam(':office', $selectedOffice);
+$stmt->execute();
 
-$query="select * from staffreligiousinfo"; // Fetch all the data from the table customers
-
-$result=mysqli_query($conn,$query);
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -44,7 +48,7 @@ $result=mysqli_query($conn,$query);
             <div class="content-container">
                 <div class="content">
                     <div id="search-box">
-                        <form action="/search" method="GET">
+                        <form action="../../../../public/Facade.php?action=ReligiousInfo" method="GET">
                             <label for="search">Pilih tempat:</label><br>
                             <input type="text" id="search" list="options" placeholder="eg:- Jabatan Agama Islam Kuantan">
                             <datalist id="options">
@@ -53,7 +57,7 @@ $result=mysqli_query($conn,$query);
                                 <option value="JAIP Bentong">
                                 <option value="JAIP Temerloh">
                             </datalist>
-                            <button type="button" id="button1">Cari</button>
+                            <button type="submit" id="button1">Cari</button>
                         </form>
                     </div>
                     <br>
@@ -69,6 +73,7 @@ $result=mysqli_query($conn,$query);
                                 <td class="table-data">Kekosongan</td>
                                 <td class="table-data">Daftar Penyertaan</td>
                             </tr>
+                            <?php foreach ($result as $row): ?>
                             <tr>
                                 <td class="table-data"></td>
                                 <td class="table-data"><?php echo $row['office'];?></td>
@@ -78,6 +83,7 @@ $result=mysqli_query($conn,$query);
                                 <td class="table-data"></td>
                                 <td class="table-data"><p><a href="../module2/ApplicantSubmitProofOfPayment.php">Daftar Sekarang</a></p></td>
                             </tr>
+                            <?php endforeach; ?>
                         </table>
 
                     </div>
