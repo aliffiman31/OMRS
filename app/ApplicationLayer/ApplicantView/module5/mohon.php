@@ -47,6 +47,8 @@
 
                     <!-- SUAMI JOB FORM TABLE -->
                     <section id="suami" class="active">
+
+                    <!--  
                     <h3 style="text-align: center;">BORANG BUTIRAN PEKERJAAN SUAMI</h3>
                     <form id="suami-form" action="../../../../public/Facade.php?action=suamijobform" method="post">
                 <table class="suamitable">
@@ -85,6 +87,13 @@
 
 
             </form>
+            -->
+
+            <form id="testing-form" action="" method="post">
+                <input type="text" name="fullname" id="fullname">
+            </form>
+
+
                     </section>
 
                     <!-- ISTERI JOB FORM TABLE -->
@@ -183,34 +192,6 @@
   }
 </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
- // Function to retrieve the form data via AJAX
-function retrieveFormData() {
-    $.ajax({
-        url: "../../../../public/Facade.php?action=retrieveSuamiFormData",
-        method: "GET",
-        dataType: "json",
-        success: function(response) {
-            // Iterate through the form data and generate the table rows
-            var tableBody = document.getElementById("formDataTable");
-            tableBody.innerHTML = "";
-
-            for (var i = 0; i < response.length; i++) {
-                var row = tableBody.insertRow();
-                var fullNameCell = row.insertCell(0);
-                fullNameCell.innerHTML = response[i].fullname;
-            }
-        },
-        error: function(xhr, status, error) {
-            console.log(error);
-        }
-    });
-}
-
-// Call the retrieveFormData function when the "Dokumen" section is clicked
-document.getElementById("nav-dokumen").addEventListener("click", retrieveFormData);
-    </script>
 
 </body>
 </html>
