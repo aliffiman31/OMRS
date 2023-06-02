@@ -1,0 +1,31 @@
+body {
+    background-image: url("../../Asset/backgroundStaff.jpg");
+  }
+  
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .content {
+    border: 1px solid black;
+    height: 700px;
+    width: 830px;
+    background-color: azure;
+    margin-top: 310px;
+    margin-left: 290px;
+    overflow: auto;
+  }
+  .table-info {
+    width: 770px;
+    margin-left: 30px;
+    border-color: #ffffff;
+  }
+
+  #button1{
+    float: right;
+    margin-right: 50px;
+  }
+  
