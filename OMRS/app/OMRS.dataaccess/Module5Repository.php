@@ -45,15 +45,13 @@ class Module5Repository{
 
   }
 
-  public function retrieveSuamiFormData() {
-    // Retrieve the form data from the database
-    $query = $this->connect->prepare("SELECT * FROM isterijobform");
-    $query->execute();
-    $formData = $query->fetchAll(PDO::FETCH_ASSOC);
+  public function testing($names) {
 
-    return $formData;
-}
+    //syntax to insert into database
+    $query = $this->connect->prepare("INSERT INTO testing(fullname) VALUES (?)");
+    $query->execute([$names]);
 
+  }
 
 }
 ?>

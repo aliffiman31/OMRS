@@ -29,6 +29,13 @@ switch ($action) {
         //passing to controller with the function FormRegister(include parameter)
         $FormController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
         break;
+
+
+        case 'testing':
+            $name = $_POST['fullname'];
+            $FormController->testing($name);       
+        break;
+
     default:
 }
 ?>

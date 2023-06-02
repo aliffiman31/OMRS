@@ -32,5 +32,12 @@ public function formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy){
 
 
 }
+
+public function testing($name){
+
+  $this->FormModel1->testing($name);
+
+
+}
 }
 ?>
