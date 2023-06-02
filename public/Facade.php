@@ -28,10 +28,12 @@ $loginController = new LoginController($userAccModel);
 $resetPassword and changePassword Controller
 $userProfileController = new UserProfileController($userAccModel, $applicantModel, $staffModel, $adminModel);*/
 
-$FormController = new ApplicantController($FormModel1);
+$FormController1 = new ApplicantController($FormModel1,$FormModel2);
+
 
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
+
 
 switch ($action) {
   
@@ -63,11 +65,13 @@ switch ($action) {
     //form from syaratpage.php
     case 'ReligiousInfo':
         //input from form
-        $office = $_POST['office'];
-        $Venue = $_POST['Venue'];
-        $Date = $_POST['Date'];
-        $Capacity = $_POST['Capacity'];
-        $Vacancy = $_POST['Vacancy'];
+         $office = $_POST['office'];
+         $Venue = $_POST['Venue'];
+         $Date = $_POST['Date'];
+         $Capacity = $_POST['Capacity'];
+         $Vacancy = $_POST['Vacancy'];
+
+        
 
         //passing to controller with the function FormRegister(include parameter)
         $FormController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       

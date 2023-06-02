@@ -2,12 +2,9 @@
 
 require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
 
-$selectedOffice = isset($_GET['search']) ? $_GET['search'] : '';
 $query="select * from staffreligiousinfo  WHERE office = :office"; // Fetch all the data from the table customers
 $db = (new Database())->connect();
 $stmt = $db->prepare($query);
-$stmt->bindParam(':office', $selectedOffice);
-$stmt->execute();
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -35,7 +32,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div>
         <!-- Header -->
         <?php
-        include_once('../../Common/header.html');
+        include_once('../../Common/header.php');
         ?>
 
 
@@ -48,15 +45,15 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="content-container">
                 <div class="content">
                     <div id="search-box">
-                        <form action="../../../../public/Facade.php?action=ReligiousInfo" method="GET">
+                        <form action="../../../../public/Facade.php?action=ReligiousRetrieve" method="post">
                             <label for="search">Pilih tempat:</label><br>
-                            <input type="text" id="search" list="options" placeholder="eg:- Jabatan Agama Islam Kuantan">
-                            <datalist id="options">
+                            <input type="text" id="search" name="search" list="options" placeholder="eg:- Jabatan Agama Islam Kuantan">
+                            <!-- <datalist id="options">
                                 <option value="JAIP Kuantan">
                                 <option value="JAIP Pekan">
                                 <option value="JAIP Bentong">
                                 <option value="JAIP Temerloh">
-                            </datalist>
+                            </datalist> -->
                             <button type="submit" id="button1">Cari</button>
                         </form>
                     </div>
