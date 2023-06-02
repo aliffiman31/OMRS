@@ -8,12 +8,21 @@
          {
             $this->connect = $database;
          }
-//,$userType, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $hashed_password
-         public function createUserAcc($userIC)
+
+         //table UserAccount
+         public function createUserAcc($userIC ,$userType, $hashed_password)
          {
-            //syntax to insert into database                table (column)
-            $query = $this->connect->prepare("INSERT INTO useraccount(ICNum) VALUES (?)");
-            $query->execute([$userIC]);
+            //syntax to insert into useraccount                
+            $query = $this->connect->prepare("INSERT INTO useraccount(userIC, userPassowrd, userType) VALUES (?, ?, ?)");
+            $query->execute([$userIC, $userType, $hashed_password]);
+         }
+
+         //table Applicant
+         public function addApplicantInfo($Applicant_Id, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail)
+         {
+            //syntax to insert into Applicant 
+            $query = $this->connect->prepare("INSERT INTO applicant(Applicant_Id, UserAcc_Id, appName, appGender, appPhoneNo, appAddress, appEmail) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $query->execute([$Applicant_Id, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail]);
 
             ?>
                 <script>
@@ -21,10 +30,6 @@
                     window.location = '';
                 </script>
             <?php
-
-
          }
-        
-
     }
 ?>

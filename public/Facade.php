@@ -28,7 +28,7 @@ $registrationController = new RegistrationController($Module1Repository);
 //$resetPassword and changePassword Controller
 //$userProfileController = new UserProfileController($Module1Repository);
 
-$FormController = new ApplicantController($FormModel1);
+//$FormController = new ApplicantController($FormModel1);
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
@@ -37,18 +37,17 @@ switch ($action) {
     //Module 1 (form from ApplicantRegFormPage.php)
     case 'registerApplicantAcc':
         $ic = $_POST['userIC'];
-        // $name = $_POST['appName'];
-        // $userType = $_POST['userType'];
-        // $gender = $_POST['appGender'];
-        // $phoneNum = $_POST['appPhoneNo'];
-        // $address = $_POST['appAddress'];
-        // $email = $_POST['appEmail'];
-        // $password = $_POST['userPassword'];
-        //, $name, $userType, $gender, $phoneNum, $address, $email, $password
-        $registrationController->applicantRegisterFunction($ic);
+        $name = $_POST['appName'];
+        $userType = $_POST['userType'];
+        $gender = $_POST['appGender'];
+        $phoneNum = $_POST['appPhoneNo'];
+        $address = $_POST['appAddress'];
+        $email = $_POST['appEmail'];
+        $password = $_POST['userPassword'];
+        $RegistrationController->applicantRegisterFunction($ic, $name, $userType, $gender, $phoneNum, $address, $email, $password);
         break;
 
-    //case 'registerStaffAcc':
+    case 'registerStaffAcc':
         $ic = $_POST['userIC'];
         $name = $_POST['staffName'];
         $department = $_POST['staffDepartmentName'];
