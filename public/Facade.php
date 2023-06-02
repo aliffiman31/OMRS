@@ -28,7 +28,6 @@ $registrationController = new RegistrationController($Module1Repository);
 //$resetPassword and changePassword Controller
 //$userProfileController = new UserProfileController($Module1Repository);
 
-$FormController = new ApplicantController($FormModel1);
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
