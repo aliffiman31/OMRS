@@ -14,11 +14,15 @@
             //Send the input to Module1Repository to verify the user 
             if($this->Module1Repository->loginApplicantAcc($ic, $password))
             {
-                //header("Location: index.php?action=viewProfile&from=view");
+            ?>
+                <script>
+                    //window.location = "../app/";
+                </script>
+            <?php
             }
             else
             {
-                //If the user not exists, it will show error message 
+                //error message 
             ?>
                 <script>
                     alert("Incorrect IC or Password");

@@ -16,11 +16,11 @@ $db = (new Database())->connect();
 //Module 1
 $Module1Repository = new Module1Repository($db);
 
-//Module 5
-$FormModel = new Module5Repository($db);
-
 //Module 2
 $FormModel1 = new Module2Repository($db);
+
+//Module 5
+$FormModel = new Module5Repository($db);
 
 //Module 1
 $registrationController = new RegistrationController($Module1Repository);
@@ -36,40 +36,41 @@ switch ($action) {
   
     //Module 1 (form from ApplicantRegFormPage.php)
     case 'registerApplicantAcc':
-        $ic = $_POST['userIC'];
-        $name = $_POST['appName'];
+        $userIC = $_POST['userIC'];
+        $appName = $_POST['appName'];
         $userType = $_POST['userType'];
-        $gender = $_POST['appGender'];
-        $phoneNum = $_POST['appPhoneNo'];
-        $address = $_POST['appAddress'];
-        $email = $_POST['appEmail'];
-        $password = $_POST['userPassword'];
-        $RegistrationController->registerApplicantFunction($ic, $name, $userType, $gender, $phoneNum, $address, $email, $password);
+        $appGender = $_POST['appGender'];
+        $appPhoneNum = $_POST['appPhoneNo'];
+        $appAddress = $_POST['appAddress'];
+        $appEmail = $_POST['appEmail'];
+        $userPassword = $_POST['userPassword'];
+        
+        $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNum, $appAddress, $appEmail, $userPassword);
         break;
 
     case 'loginApplicantAcc':
-        $ic = $_POST['userIC'];
-        $password = $_POST['userPassword'];
+        $userIC = $_POST['userIC'];
+        $userPassword = $_POST['userPassword'];
         
-        $LoginController->loginApplicantFunction($ic, $password);  //means dia akan read LoginController dan function loginFunction
+        $LoginController->loginApplicantFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
     
     case 'loginStaffAcc':
-        $ic = $_POST['userIC'];
-        $password = $_POST['userPassword'];
+        $userIC  = $_POST['userIC'];
+        $userPassword = $_POST['userPassword'];
             
-        $LoginController->loginStaffFunction($ic, $password);  //means dia akan read LoginController dan function loginFunction
+        $LoginController->loginStaffFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
 
     case 'loginAdminAcc':
-        $ic = $_POST['userIC'];
-        $password = $_POST['userPassword'];
+        $userIC  = $_POST['userIC'];
+        $userPassword = $_POST['userPassword'];
             
-        $LoginController->loginAdminFunction($ic, $password);  //means dia akan read LoginController dan function loginFunction
+        $LoginController->loginAdminFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
 
-    /*case 'registerStaffAcc':
-        $ic = $_POST['userIC'];
+    case 'registerStaffAcc':
+        $userIC = $_POST['userIC'];
         $name = $_POST['staffName'];
         $department = $_POST['staffDepartmentName'];
         $accessCategory = $_POST['staffAccessCategory'];
@@ -77,7 +78,7 @@ switch ($action) {
         $phoneNum = $_POST['staffPhoneNo'];
 
         $RegistrationController->staffRegisterFunction($ic, $name, $department, $accessCategory, $email, $phoneNum);
-        break;*/
+        break;
 
 
     //form from syaratpage.php
