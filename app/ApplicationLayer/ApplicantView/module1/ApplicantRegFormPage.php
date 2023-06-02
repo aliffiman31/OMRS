@@ -19,7 +19,7 @@
 <section>
         <div class="content-container">
         <div class="container-registration">    
-        <form action="../../../../public/Facade.php?action=registerApplicantAcc" method="post" id="myForm">
+        <form id="reg-form" action="../../../../public/Facade.php?action=registerApplicantAcc" method="post" id="myForm">
             <div class="registration">
                 <img style="height:50px;"src="../../Asset/Registration.png"> 
                 <h2><b>Daftar Pengguna</b></h2>
@@ -70,7 +70,7 @@
                 </tr>
             </table>
 
-            <input type="submit" id="submit" value="DAFTAR" onclick="   ">
+            <input type="submit" id="submit" value="DAFTAR" onclick="submitForm(event, 'reg-form')">
             <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>
@@ -78,5 +78,32 @@
         </div>
 </section>
     </div>
+
+
+    <script>
+//   function submitForm(event, formId) {
+//     event.preventDefault(); // Prevent the default form submission
+
+//     // Get the form data
+//     var form = document.getElementById(formId);
+//     var formData = new FormData(form);
+
+//     // Create an AJAX request
+//     var xhr = new XMLHttpRequest();
+//     xhr.open(form.method, form.action, true);
+//     xhr.onreadystatechange = function () {
+//       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+//         alert('Successfully Registered');
+//         // You can perform any additional actions or show a success message here
+
+//         // Clear the form inputs if needed
+//         form.reset();
+//       }
+//     };
+
+//     // Send the form data
+//     xhr.send(formData);
+//   }
+</script>
 </body>
 </html>
