@@ -1,14 +1,3 @@
-<?php
-
-require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
-
-$query="select * from staffreligiousinfo  WHERE office = :office"; // Fetch all the data from the table customers
-$db = (new Database())->connect();
-$stmt = $db->prepare($query);
-
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,17 +59,15 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td class="table-data">Kekosongan</td>
                                 <td class="table-data">Daftar Penyertaan</td>
                             </tr>
-                            <?php foreach ($result as $row): ?>
                             <tr>
                                 <td class="table-data"></td>
-                                <td class="table-data"><?php echo $row['office'];?></td>
+                                <td class="table-data"></td>
                                 <td class="table-data"></td>
                                 <td class="table-data"></td>
                                 <td class="table-data"></td>
                                 <td class="table-data"></td>
                                 <td class="table-data"><p><a href="../module2/ApplicantSubmitProofOfPayment.php">Daftar Sekarang</a></p></td>
                             </tr>
-                            <?php endforeach; ?>
                         </table>
 
                     </div>

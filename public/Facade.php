@@ -28,7 +28,7 @@ $loginController = new LoginController($userAccModel);
 $resetPassword and changePassword Controller
 $userProfileController = new UserProfileController($userAccModel, $applicantModel, $staffModel, $adminModel);*/
 
-$FormController1 = new ApplicantController($FormModel1,$FormModel2);
+$FormController1 = new ApplicantController($FormModel1);
 
 
 
