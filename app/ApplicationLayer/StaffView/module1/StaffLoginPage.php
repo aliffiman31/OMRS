@@ -19,7 +19,7 @@
 
         <div class="content-container">
         <div class="container-login">
-        <form>
+        <form action="../../../../public/Facade.php?action=loginStaffAcc">
             <div class="logMasuk">
                 <img style="height:50px;"src="../../Asset/Login_StaffProfile.png">
                 <h2><b>Log Masuk Kakitangan</b></h2>
@@ -27,11 +27,11 @@
             <table>
                 <tr>
                     <td>NO. KAD PENGENALAN   :</td>
-                    <td> <input style="height:30px; width:200px;" type = "text" name="ICNum" id="ICNum"></td>
+                    <td> <input style="height:30px; width:200px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>
                     <td>KATA LALUAN :</td>
-                    <td> <input style="height:30px; width:200px;" type = "text" name="password" id="password"></td>
+                    <td> <input style="height:30px; width:200px;" type = "text" name="userPassword" id="userPassword"></td>
                 </tr>
             </table>
             <input type="submit" id="submit" value="MASUK" onclik="   "> <br> <br> <br>

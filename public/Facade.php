@@ -6,23 +6,24 @@ require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
 require_once '../app/OMRS.dataaccess/Module2Repository.php';
 //Module 1 --
+require_once '../app/OMRS.dataaccess/Module1Repository.php';
+require_once '../app/Controller/RegistrationController.php';
+require_once '../app/Controller/ApplicantController.php';
 
 // Create a new database connection
 $db = (new Database())->connect();
 
 //Module 1
-/*$adminModel = new Module1Repository($db);
-$userAccModel = new Module1Repository($db);
-$applicantModel = new Module1Repository($db);
-$staffModel = new Module1Repository($db);*/
-
-//Module 5
-$FormModel = new Module5Repository($db);
+$Module1Repository = new Module1Repository($db);
 
 //Module 2
 $FormModel1 = new Module2Repository($db);
 
+//Module 5
+$FormModel = new Module5Repository($db);
+
 //Module 1
+<<<<<<< HEAD
 /*$registrationController = new RegistrationController($userAccModel, $applicantModel, $staffModel);
 $loginController = new LoginController($userAccModel);
 $resetPassword and changePassword Controller
@@ -30,7 +31,14 @@ $userProfileController = new UserProfileController($userAccModel, $applicantMode
 
 $FormController1 = new ApplicantController($FormModel1);
 
+=======
+$registrationController = new RegistrationController($Module1Repository);
+$loginController = new LoginController($Module1Repository);
+//$resetPassword and changePassword Controller
+//$userProfileController = new UserProfileController($Module1Repository);
+>>>>>>> a343965695cd53529b77a42dd9a333ae70afe5cd
 
+//$FormController = new ApplicantController($FormModel1);
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
@@ -38,29 +46,51 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
 switch ($action) {
   
     //Module 1 (form from ApplicantRegFormPage.php)
-    /*case 'registerApplicantAcc':
-        $ic = $_POST['userIC'];
-        $name = $_POST['appName'];
+    case 'registerApplicantAcc':
+        $userIC = $_POST['userIC'];
+        $appName = $_POST['appName'];
         $userType = $_POST['userType'];
-        $gender = $_POST['appGender'];
-        $phoneNum = $_POST['appPhoneNo'];
-        $address = $_POST['appAddress'];
-        $email = $_POST['appEmail'];
-        $password = $_POST['userPassword'];
-       
-        $registrationController->applicantRegisterFunction($ic, $name, $userType, $gender, $phoneNum, $address, $email, $password);
+        $appGender = $_POST['appGender'];
+        $appPhoneNum = $_POST['appPhoneNo'];
+        $appAddress = $_POST['appAddress'];
+        $appEmail = $_POST['appEmail'];
+        $userPassword = $_POST['userPassword'];
+        
+        $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNum, $appAddress, $appEmail, $userPassword);
+        break;
+
+    case 'loginApplicantAcc':
+        $userIC = $_POST['userIC'];
+        $userPassword = $_POST['userPassword'];
+        
+        $LoginController->loginApplicantFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
+        break;
+    
+    case 'loginStaffAcc':
+        $userIC  = $_POST['userIC'];
+        $userPassword = $_POST['userPassword'];
+            
+        $LoginController->loginStaffFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
+        break;
+
+    case 'loginAdminAcc':
+        $userIC  = $_POST['userIC'];
+        $userPassword = $_POST['userPassword'];
+            
+        $LoginController->loginAdminFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
 
     case 'registerStaffAcc':
-        $ic = $_POST['userIC'];
+        $userIC = $_POST['userIC'];
         $name = $_POST['staffName'];
         $department = $_POST['staffDepartmentName'];
         $accessCategory = $_POST['staffAccessCategory'];
         $email =$_POST['staffEmail'];
         $phoneNum = $_POST['staffPhoneNo'];
 
-        $registrationController->staffRegisterFunction($ic, $name, $department, $accessCategory, $email, $phoneNum);
-        break;*/
+        $RegistrationController->staffRegisterFunction($ic, $name, $department, $accessCategory, $email, $phoneNum);
+        break;
+
 
     //form from syaratpage.php
     case 'ReligiousInfo':

@@ -1,0 +1,49 @@
+body{
+    background-image: url("backgroundStaff.jpg");
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.content-StaffRegForm{
+    border: 1px solid black;
+    height: 700px;
+    width: 830px;
+    background-color: azure;
+    margin-top: 310px;
+    margin-left: 290px;
+    overflow: auto;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  #registrationTable, td, tr{
+    padding:10px;
+  }
+
+  input[type=text]
+  {
+    width:400px;
+    height:30px;
+  }
+
+  #submit{
+    margin-top: 10px;
+    margin-left:230px;
+    background-color: blue;
+    border-radius: 5px;
+    border:hidden;
+    height:30px;
+    width: 100px;
+    color:white;
+ }
+
+
