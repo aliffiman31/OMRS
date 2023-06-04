@@ -8,7 +8,7 @@
             $this->Module1Repository = $Module1Repository;  
         }
 
-        //applicant register function   $ic, $name, $userType, $gender, $phoneNum, $address, $email, $password
+        //applicant register function   
         public function registerApplicantFunction($Applicant_Id, $userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
         {
             //security purpose (Admin pon tak blh tgk password user kat mysql)

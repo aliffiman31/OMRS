@@ -23,7 +23,6 @@ $FormModel1 = new Module2Repository($db);
 $FormModel = new Module5Repository($db);
 
 //Module 1
-<<<<<<< HEAD
 /*$registrationController = new RegistrationController($userAccModel, $applicantModel, $staffModel);
 $loginController = new LoginController($userAccModel);
 $resetPassword and changePassword Controller
@@ -31,12 +30,6 @@ $userProfileController = new UserProfileController($userAccModel, $applicantMode
 
 $FormController1 = new ApplicantController($FormModel1);
 
-=======
-$registrationController = new RegistrationController($Module1Repository);
-$loginController = new LoginController($Module1Repository);
-//$resetPassword and changePassword Controller
-//$userProfileController = new UserProfileController($Module1Repository);
->>>>>>> a343965695cd53529b77a42dd9a333ae70afe5cd
 
 //$FormController = new ApplicantController($FormModel1);
 
