@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="marriagetype.css">
+    <title>Permohonan Perkahwinan</title>
 </head>
 <body>
 <div>
@@ -27,10 +28,10 @@
             </div>
         <li class="smallbox"><a>JENIS PERKAHWINAN</a></li>
         <ol class="optionnikah">
-            <li class="nikah"><a href="nikah tanpa kebenaran.html">Perkahwinan Tanpa Kebenaran</a></li>
-            <li class="nikah"><a href="nikah sukarela.html">Perkahwinan Sukarela</a></li>
+            <li class="nikah"><a href="../module3/nikah tanpa kebenaran.php">Perkahwinan Tanpa Kebenaran</a></li>
+            <li class="nikah"><a href="../module3/nikah sukarela.php">Perkahwinan Sukarela</a></li>
         </ol>
-        <li class="smallbox"><a href="print marriage cert.html">SIJIL DAN KAD NIKAH</a></li>
+        <li class="smallbox"><a href="../module3/semak status permohonan.php">SIJIL DAN KAD NIKAH</a></li>
     </form>
     </div>
     
