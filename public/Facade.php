@@ -99,6 +99,37 @@ switch ($action) {
         //passing to controller with the function FormRegister(include parameter)
         $FormController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
         break;
+
+
+        //Module 3
+        case 'unauthorizedmarriage':
+            $ic = $_POST[ 'ApplicantPartner_IC'];
+            $passport = $POST['ApplicantPartner_Passport'];
+            $suratperakuan = $POST['Surat_Perakuan'];
+            $pemastautinan = $POST['Surat_Pemastautinan'];
+            $akuanSumpahBerkanun = $POST['Akuan_Sumpah_Berkanun'];
+    
+            $marriagetypeController->unauthorizedMarriageFunction($ic, $passport, $suratperakuan, $pemastautinan, $akuanSumpahBerkanun);
+            break;
+    
+        case 'voluntarymarriage':
+            $ic = $_POST[ 'ApplicantPartner_IC'];
+            $photo = $_POST[' ApplicantPartner_Photo'];
+            $onlineSlip = $_POST['Application_Slip'];
+            $pemastautinan = $_POST['Surat_Pemastautinan'];
+            $borangHIV = $_POST['Borang_HIV'];
+    
+            $marriagetypeController->voluntaryMarriageFunction($ic, $photo, $onlineSlip, $pemastautinan, $borangHIV);
+            break;
+    
+        case 'applystatus':
+            $ic =$_POST['userIC'];
+            $date = $_POST['date'];
+            $status = $_POST['status'];
+            $Desc = $_POST['Description'];
+    
+            $marriagecertController->applystatus($ic, $date, $status, $Desc);
+            break;
     default:
 }
 ?>
