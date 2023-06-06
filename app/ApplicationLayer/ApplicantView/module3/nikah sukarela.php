@@ -49,7 +49,7 @@
                 <td>Borang HIV (pemohon dan pasangan):</td>
                 <td><input type="file" id="surat"></td>
             </tr>
-            <button type="submit" id="submit">submit</button>
+            <button type="submit" id="button1">submit</button>
             <button type="button" id="button2">Seterusnya</button>
         </table>
 </div>
