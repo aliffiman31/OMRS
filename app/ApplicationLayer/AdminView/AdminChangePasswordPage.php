@@ -28,11 +28,11 @@
             <table>
                 <tr>
                     <td>NO. KAD PENGENALAN   :</td>
-                    <td> <input style="height:30px; width:250px;" type = "text" name="ICNum" id="ICNum"></td>
+                    <td> <input style="height:30px; width:250px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>
                     <td>KATA LALUAN SEMASA:</td>
-                    <td> <input style="height:30px; width:250px;" type = "text" name="currentPassword" id="currentPassword"></td>
+                    <td> <input style="height:30px; width:250px;" type = "text" name="userPassword" id="userPassword"></td>
                 </tr>
                 <tr>
                     <td>KATA LALUAN BARU:</td>

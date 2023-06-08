@@ -28,11 +28,11 @@
             <table>
                 <tr>
                     <td>NO. KAD PENGENALAN   :</td>
-                    <td> <input style="height:30px; width:250px;" type = "text" name="ICNum" id="ICNum"></td>
+                    <td> <input style="height:30px; width:250px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>
                     <td>EMAIL:</td>
-                    <td> <input style="height:30px; width:250px;" type = "text" name="email" id="email"></td>
+                    <td> <input style="height:30px; width:250px;" type = "text" name="adminEmail" id="adminEmail"></td>
                 </tr>
             </table>
 

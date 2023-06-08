@@ -43,7 +43,6 @@
                 </tr>
                 <tr>
                     <td>JANTINA:</td>
-                    
                     <td>
                         <select style="width:260px; height:40px;" name="appGender" id="appGender">
                             <option disabled selected>SILA PILIH</option>

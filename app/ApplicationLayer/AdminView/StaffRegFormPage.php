@@ -37,6 +37,15 @@
                         <td><input type="text" name="staffName" id="staffName"></td>
                     </tr>
                     <tr>
+                        <td>JANTINA :</td>
+                        <td><select style="width:410px; height:30px;" name="staffGender" id="staffGender">
+                            <option disabled selected>SILA PILIH</option>
+                            <option value="male">LELAKI</option>
+                            <option value="female">PEREMPUAN</option>
+                        </select>
+                    </td>
+                    </tr>
+                    <tr>
                         <td>JABATAN :</td> 
                         <td><select style="width:410px; height:30px;"name="staffDepartmentName" id="staffDepartmentName">
                                 <option disabled selected>SILA PILIH</option>
