@@ -44,12 +44,12 @@ switch ($action) {
         $appName = $_POST['appName'];
         $userType = $_POST['userType'];
         $appGender = $_POST['appGender'];
-        $appPhoneNum = $_POST['appPhoneNo'];
+        $appPhoneNo = $_POST['appPhoneNo'];
         $appAddress = $_POST['appAddress'];
         $appEmail = $_POST['appEmail'];
         $userPassword = $_POST['userPassword'];
         
-        $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNum, $appAddress, $appEmail, $userPassword);
+        $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
         break;
 
     case 'loginApplicantAcc':

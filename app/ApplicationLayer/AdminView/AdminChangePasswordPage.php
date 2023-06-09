@@ -11,8 +11,8 @@
     <div>
         <!-- Header -->
         <?php 
-        include_once('../../Common/header.html'); 
-        include_once('../../Common/headerFrontPage(Module1).html'); 
+        include_once('../Common/headerAdminView(Module1).html'); 
+        include_once('../Common/headerFrontPage(Module1).html'); 
         ?>
 
 
@@ -22,7 +22,7 @@
         <div class="container-cp">
         <form>
             <div class="changePassword">
-                <img style="height:50px;"src="../../Asset/Change_Password.png"> 
+                <img style="height:50px;"src="../Asset/Change_Password.png"> 
                 <h2><b>Tukar Kata Laluan</b></h2>
             </div>
             <table>

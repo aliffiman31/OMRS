@@ -19,8 +19,8 @@
 <section>
 
         <div class="content-container">
-            <div class="container-login">
-            <form action="../../../../public/Facade.php?action=loginApplicantAcc" method="post">
+            <div class="container-login"> 
+            <form action="/public/Facade.php?action=loginApplicantAcc" method="post">
             <div class="logMasuk">
                 <img style="height:50px;"src="../../Asset/Login_Profile.jpg">
                 <h2><b>Log Masuk</b></h2>
@@ -35,7 +35,7 @@
                     <td> <input style="height:30px; width:200px;" type = "text" name="userPassword" id="userPassword"></td>
                 </tr>
             </table>
-            <input type="submit" id="submit" value="MASUK" onclik="   "> <br> <br> <br>
+            <input type="submit" id="submit" value="MASUK" onclik=""> <br> <br> <br>
 
             <div class="href-link">
                 <a href="ApplicantRegFormPage.php" >Daftar</a>

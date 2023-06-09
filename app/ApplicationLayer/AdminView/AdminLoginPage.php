@@ -11,17 +11,17 @@
     <div>
         <!-- Header -->
         <?php 
-        include_once('../../Common/header.html'); 
-        include_once('../../Common/headerFrontPage(Module1).html'); 
+        include_once('../Common/headerAdminView(Module1).html'); 
+        include_once('../Common/headerFrontPage(Module1).html'); 
         ?>
 
 <section>
 
         <div class="content-container">
-        <div class="container-login">
-        <form>
-            <div class="logMasuk">
-                <img style="height:50px;"src="../../Asset/Login_StaffProfile.png">
+        <div class="container-login"> 
+        <form action ="/public/Facade.php?action=loginAdminAcc" method="post">
+            <div class="logMasuk">  
+                <img style="height:50px;"src="../Asset/Login_StaffProfile.png">
                 <h2><b>Log Masuk Kakitangan</b></h2>
             </div>
             <table>

@@ -11,14 +11,14 @@
     <div>
         <!-- Header -->
         <?php 
-        include_once('../../Common/header.html'); 
+        include_once('../Common/headerAdminView(Module1).html'); 
         ?>
 
 
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebar.php');  ?>
+            <?php include_once('../Common/sidebar.php');  ?>
         </div>
 
         <div class="content-container">
@@ -49,7 +49,7 @@
                         <td>JABATAN :</td> 
                         <td><select style="width:410px; height:30px;"name="staffDepartmentName" id="staffDepartmentName">
                                 <option disabled selected>SILA PILIH</option>
-                                <option value="staffDepartmentName">JABATAN AGAMA ISLAM NEGERI PAHANG</option>
+                                <option value="Jabatan Agama Islam Negeri Pahang">JABATAN AGAMA ISLAM NEGERI PAHANG</option>
                             </select>
                         </td>
                     </tr>

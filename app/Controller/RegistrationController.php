@@ -7,7 +7,7 @@
         {
             $this->Module1Repository = $Module1Repository;  
         }
-
+       
         //applicant register function   
         public function registerApplicantFunction($Applicant_Id, $userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
         {
@@ -26,9 +26,6 @@
             //call addApplicantInfo function in Module1Repository (table Applicant)
             $this->Module1Repository->addApplicantInfo($Applicant_Id, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
         }
-        //end about Applicant Registration
-
-        
-        
+        //end about Applicant Registration   
     }
 ?>

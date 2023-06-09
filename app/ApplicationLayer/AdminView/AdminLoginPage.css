@@ -1,5 +1,6 @@
 body{
-    background-image: url("../../Asset/backgroundStaff.jpg");
+   background-image: url('/app/ApplicationLayer/Asset/backgroundStaff.jpg');
+
 }
 
 .content-container {
@@ -60,3 +61,4 @@ body{
     display: flex;
     justify-content: center;
  }
+
