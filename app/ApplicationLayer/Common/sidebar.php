@@ -312,13 +312,13 @@ main {
 
     <!-- MODULE 1 MENU -->
       <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module1-collapse" aria-expanded="true">
-          Profile
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module1-collapse" aria-expanded="false">
+          Profil
         </button>
-        <div class="collapse show" id="module1-collapse">
+        <div class="collapse" id="module1-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">View Account</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates Account</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Lihat Akaun Profil</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sunting Akaun Profil</a></li>
           </ul>
         </div>
       </li>

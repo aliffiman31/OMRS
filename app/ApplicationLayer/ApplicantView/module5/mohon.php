@@ -26,7 +26,7 @@
     <div>
         <!-- Header -->
         <?php 
-        include_once('../../Common/header.php');
+        include_once('../../Common/header.html');
         ?>
 
         <section>
