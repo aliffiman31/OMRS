@@ -1,3 +1,6 @@
+body {
+    background-image: url("/app/ApplicationLayer/Asset/background.jpg");
+  }
 .content{
     position: fixed;
     overflow: auto;
