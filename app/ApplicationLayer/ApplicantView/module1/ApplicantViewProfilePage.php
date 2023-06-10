@@ -18,7 +18,7 @@
     }else{
 
          // Retrieve the serialized and URL-encoded data from the URL parameter
-        $encodedData = $_GET['returnInfo'];
+        $encodedData = $_GET['returnProfileInfo'];
         
         // Decode the URL-encoded data and unserialize it
         $decodedApplicantData = unserialize(urldecode($encodedData));

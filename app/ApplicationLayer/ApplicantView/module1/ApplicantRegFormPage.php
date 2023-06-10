@@ -38,7 +38,7 @@
                     <td>KATEGORI AKSES :</td>
                     <td><select style="width:260px; height:40px;" name="userType" id="userType">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="userType">PEMOHON</option>
+                            <option value="Pemohon">PEMOHON</option>
                         </select>
                     </td>
                 </tr>

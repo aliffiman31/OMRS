@@ -22,11 +22,11 @@ $FormModel1 = new Module2Repository($db);
 //Module 5
 $FormModel = new Module5Repository($db);
 
-//Module 1
-/*$registrationController = new RegistrationController($userAccModel, $applicantModel, $staffModel);
-$loginController = new LoginController($userAccModel);
-$resetPassword and changePassword Controller
-$userProfileController = new UserProfileController($userAccModel, $applicantModel, $staffModel, $adminModel);*/
+//Module 1 (Create a new instance of the controller)
+//$registrationController = new RegistrationController($Module1Repository);
+//$loginController = new LoginController($Module1Repository);
+//$resetPassword and changePassword Controller
+//$userProfileController = new UserProfileController($Module1Repository);*/
 
 $FormController1 = new ApplicantController($FormModel1);
 
@@ -82,6 +82,13 @@ switch ($action) {
         $phoneNum = $_POST['staffPhoneNo'];
 
         $RegistrationController->staffRegisterFunction($ic, $name, $department, $accessCategory, $email, $phoneNum);
+        break;
+
+    case 'viewProfile':
+
+        $from = isset($_GET['from']) ? $_GET['from'] : '';
+            
+        $UserProfileController->viewProfileFunction($from);   
         break;
 
 

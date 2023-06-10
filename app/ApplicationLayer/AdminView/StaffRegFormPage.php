@@ -57,7 +57,7 @@
                         <td>KATEGORI AKSES :</td>
                         <td><select style="width:410px; height:30px;" name="userType" id="userType">
                                 <option disabled selected>SILA PILIH</option>
-                                <option value="userType">KAKITANGAN</option>
+                                <option value="Kakitangan">KAKITANGAN</option>
                             </select>
                         </td>
                     </tr>
