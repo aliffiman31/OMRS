@@ -1,5 +1,6 @@
 body{
-    background-image: url("/app/ApplicationLayer/Asset/backgroundStaff.jpg");
+  background-image: url('../../Asset/backgroundStaff.jpg');
+
 }
 .content-container {
 
