@@ -1,35 +1,51 @@
-<?php
+ <?php 
 
 require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
-require_once '../app/OMRS.dataaccess/Module5Repository.php';
+//require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
 require_once '../app/OMRS.dataaccess/Module2Repository.php';
 //Module 1 --
-require_once '../app/OMRS.dataaccess/Module1Repository.php';
-require_once '../app/Controller/RegistrationController.php';
-require_once '../app/Controller/ApplicantController.php';
+//require_once '../app/OMRS.dataaccess/Module1Repository.php';
+//require_once '../app/Controller/RegistrationController.php';
+//require_once '../app/Controller/ApplicantController.php';
 
 // Create a new database connection
 $db = (new Database())->connect();
 
 //Module 1
-$Module1Repository = new Module1Repository($db);
+//$Module1Repository = new Module1Repository($db);
 
 //Module 2
-$FormModel1 = new Module2Repository($db);
+$Module2Repository = new Module2Repository($db);
 
 //Module 5
-$FormModel = new Module5Repository($db);
+//$FormModel = new Module5Repository($db);
 
+
+<<<<<<< Updated upstream
 //Module 1 (Create a new instance of the controller)
 //$registrationController = new RegistrationController($Module1Repository);
 //$loginController = new LoginController($Module1Repository);
 //$resetPassword and changePassword Controller
 //$userProfileController = new UserProfileController($Module1Repository);*/
+=======
+//Module 1
+/*$registrationController = new RegistrationController($userAccModel, $applicantModel, $staffModel);
+$loginController = new LoginController($userAccModel);
+$resetPassword and changePassword Controller
+$userProfileController = new UserProfileController($userAccModel, $applicantModel, $staffModel, $adminModel);*/
+>>>>>>> Stashed changes
 
-$FormController1 = new ApplicantController($FormModel1);
+$ApplicantController = new ApplicantController($Module2Repository);
 
+<<<<<<< Updated upstream
+=======
+//$registrationController = new RegistrationController($Module1Repository);
+//$loginController = new LoginController($Module1Repository);
+//$resetPassword and changePassword Controller
+//$userProfileController = new UserProfileController($Module1Repository);
+>>>>>>> Stashed changes
 
 //$FormController = new ApplicantController($FormModel1);
 
@@ -104,7 +120,7 @@ switch ($action) {
         
 
         //passing to controller with the function FormRegister(include parameter)
-        $FormController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
+        $ApplicantController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
         break;
 
 
