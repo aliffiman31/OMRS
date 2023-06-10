@@ -62,7 +62,7 @@
                                     <label for="Date">Date:</label>
                                 </td>
                                 <td>
-                                    <input type="Date" id="date" name="Date" required>
+                                    <input type="Date" id="Date" name="Date" required>
                                 </td>
                             </tr>
                             <tr>

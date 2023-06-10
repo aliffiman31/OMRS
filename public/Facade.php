@@ -23,29 +23,14 @@ $Module2Repository = new Module2Repository($db);
 //$FormModel = new Module5Repository($db);
 
 
-<<<<<<< Updated upstream
 //Module 1 (Create a new instance of the controller)
 //$registrationController = new RegistrationController($Module1Repository);
 //$loginController = new LoginController($Module1Repository);
 //$resetPassword and changePassword Controller
 //$userProfileController = new UserProfileController($Module1Repository);*/
-=======
-//Module 1
-/*$registrationController = new RegistrationController($userAccModel, $applicantModel, $staffModel);
-$loginController = new LoginController($userAccModel);
-$resetPassword and changePassword Controller
-$userProfileController = new UserProfileController($userAccModel, $applicantModel, $staffModel, $adminModel);*/
->>>>>>> Stashed changes
 
-$ApplicantController = new ApplicantController($Module2Repository);
+$ApplicantController = new MarriageCourseRequestController($Module2Repository);
 
-<<<<<<< Updated upstream
-=======
-//$registrationController = new RegistrationController($Module1Repository);
-//$loginController = new LoginController($Module1Repository);
-//$resetPassword and changePassword Controller
-//$userProfileController = new UserProfileController($Module1Repository);
->>>>>>> Stashed changes
 
 //$FormController = new ApplicantController($FormModel1);
 
