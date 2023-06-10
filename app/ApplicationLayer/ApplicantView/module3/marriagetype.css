@@ -1,20 +1,26 @@
 body{
     background-image: url("/app/ApplicationLayer/Asset/background.jpg");
 }
-.content{
-    position: fixed;
-    overflow: auto;
-    background-color: #f2f2f2;
-    height: 450px;
-    width: 850px;
-    margin-left: 390px;
-    margin-top: 150px;
+.content-container {
+
+  height: 100vh;
 }
+
+.content {
+  border: 1px solid black;
+  height: 700px;
+  width: 830px;
+  background-color: azure;
+  margin-top: 310px;
+  margin-left: 490px;
+ 
+}
+  
+
 .box{
     background-color:lightgray;
     
     }
-    .smallbox{
+.smallbox{
     background-color:lightgray;
     }
-    

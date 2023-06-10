@@ -1,4 +1,4 @@
-<?php
+ <?php 
 
 require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
 require_once '../app/OMRS.dataaccess/Module5Repository.php';
@@ -19,10 +19,11 @@ $db = (new Database())->connect();
 $Module1Repository = new Module1Repository($db);
 
 //Module 2
-$FormModel1 = new Module2Repository($db);
+$Module2Repository = new Module2Repository($db);
 
 //Module 5
 $FormModel = new Module5Repository($db);
+
 
 //Module 1 (Create a new instance of the controller)
 $RegistrationController = new RegistrationController($Module1Repository);
@@ -30,10 +31,11 @@ $LoginController = new LoginController($Module1Repository);
 $UserPasswordController = new UserPasswordController($Module1Repository);
 $UserProfileController = new UserProfileController($Module1Repository);
 
-$FormController1 = new ApplicantController($FormModel1);
+
+$ApplicantController = new ApplicantController($Module2Repository);
 
 
-//$FormController = new ApplicantController($FormModel1);
+$FormController = new ApplicantController($FormModel1);
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
@@ -104,7 +106,7 @@ switch ($action) {
          $Vacancy = $_POST['Vacancy'];
 
         //passing to controller with the function FormRegister(include parameter)
-        $FormController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
+        $ApplicantController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
         break;
 
 
