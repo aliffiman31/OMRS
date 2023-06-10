@@ -1,5 +1,4 @@
 <?php
-
     class UserProfileController
     {
         private $Module1Repository;
@@ -17,8 +16,8 @@
 
             if($userType == "Pemohon")
             {
-                $Applicant_Id = $_SESSION['currentApplicant_Id'];
-                $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_Id);
+                $Applicant_IC = $_SESSION['currentUserIC'];
+                $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_IC);
 
                 if($from == 'view')
                 {
@@ -31,8 +30,8 @@
             }
             else if($userType == "Kakitangan")
             {
-                $Staff_Id = $_SESSION['currentStaff_Id'];
-                $staffProfileInfo = $this->Module1Repository->getStaffProfileInfo($Staff_Id);
+                $Staff_IC = $_SESSION['UserAcc_Id'];
+                $staffProfileInfo = $this->Module1Repository->getStaffProfileInfo($Staff_IC);
 
                 if($from == 'view')
                 {
@@ -45,7 +44,7 @@
             }
             else if($userType == "Admin")
             {
-                $Admin_Id = $_SESSION['Admin_Id'];
+                $Admin_Id = $_SESSION['UserAcc_Id'];
                 $adminProfileInfo = $this->Module1Repository->getAdminProfileInfo($Admin_Id);
 
                 if($from == 'view')
@@ -61,8 +60,6 @@
             {
                 echo "Maaf, sistem tidak dapat meneruskan aktiviti anda.";
             }
-        }
-        
+        }  
     }
-
 ?>

@@ -9,10 +9,10 @@
         }
 
         //Applicant login function 
-        public function loginApplicantFunction($ic, $password)
+        public function loginApplicantFunction($userIC, $userPassword)
         {
             //Send the input to Module1Repository to verify the user 
-            if($this->Module1Repository->loginApplicantAcc($ic, $password))
+            if($this->Module1Repository->loginApplicantAcc($userIC, $userPassword))
             {
             ?>
                 <script>
@@ -33,10 +33,10 @@
         }
 
          //Staff login function
-        public function loginStaffFunction($ic, $password)
+        public function loginStaffFunction($userIC, $userPassword)
         {
             //Send the input to Module1Repository to verify the user 
-            if($this->Module1Repository->loginStaffAcc($ic, $password))
+            if($this->Module1Repository->loginStaffAcc($userIC, $userPassword))
             {
                 //header("Location: index.php?action=viewProfile&from=view");
             }
@@ -53,10 +53,10 @@
         }
 
          //Admin login function
-        public function loginAdminFunction($ic, $password)
+        public function loginAdminFunction($Admin_Id, $userPassword)
         {
             //Send the input to Module1Repository to verify the user 
-            if($this->Module1Repository->loginAdminAcc($ic, $password))
+            if($this->Module1Repository->loginAdminAcc($Admin_Id, $userPassword))
             {
                 //header("Location: index.php?action=viewProfile&from=view");
             }

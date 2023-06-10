@@ -19,7 +19,7 @@
 
 <section>
         <div class="content-container">
-        <div class="container-registration">    
+        <div class="container-registration">  
         <form id="reg-form" action="/public/Facade.php?action=registerApplicantAcc" method="post">
             <div class="registration">
                 <img style="height:50px;"src="../../Asset/Registration.png"> 
@@ -66,11 +66,11 @@
                 </tr>
                 <tr>
                     <td>KATA LALUAN:</td>
-                    <td> <input style="height:30px; width:250px;" type = "text" name="userPassword" id="userPassword"></td>
+                    <td> <input style="height:30px; width:250px;" type = "password" name="userPassword" id="userPassword"></td>
                 </tr>
             </table>
 
-            <input type="submit" id="submit" value="DAFTAR" onclick="submitForm(event, 'reg-form')">  <!--submitForm(event, 'reg-form')-->
+            <input type="submit" id="submit" value="DAFTAR" onclick = "submitForm(event, 'reg-form')">  <!--submitForm(event, 'reg-form')-->
             <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>

@@ -9,7 +9,7 @@
         }
        
         //applicant register function   
-        public function registerApplicantFunction($Applicant_Id, $userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
+        public function registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
         {
             //security purpose (Admin pon tak blh tgk password user kat mysql)
             $hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
@@ -17,15 +17,50 @@
             //call createUserAcc function in Module1Repository (table UserAccount)
             $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
 
-            //(dlm table Applicant)
-            $this->addApplicantInfo($Applicant_Id, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
+            //(dlm table ApplicantInfo)
+            $this->addApplicantInfo($UserAcc_Id, $userIC, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
         }
 
-        public function addApplicantInfo($Applicant_Id, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail)
+        
+        public function addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail)
         {
-            //call addApplicantInfo function in Module1Repository (table Applicant)
-            $this->Module1Repository->addApplicantInfo($Applicant_Id, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
+            //call addApplicantInfo function in Module1Repository (table ApplicantInfo)
+            $this->Module1Repository->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
+        
+            ?>
+                <script>
+                    alert("Pendaftaran anda telah berjaya!");
+                    window.location = "../../ApplicantView/module1/ApplicantUserLogin.php";
+                </script>
+            <?php
         }
         //end about Applicant Registration   
+
+        //admin register staff account
+        public function staffRegisterFunction($userIC, $staffName, $staffGender, $staffDepartmentName, $userType, $staffEmail, $staffPhoneNo, $userPassword)
+        {
+            //security purpose (Admin pon tak blh tgk password user kat mysql)
+            $hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
+
+            //call createUserAcc function in Module1Repository (table UserAccount)
+            $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
+
+            //(dlm table StaffInfo)
+            $this->addStaffInfo($UserAcc_Id, $userIC, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo);
+        }
+
+        public function addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo)
+        {
+            //call staffInfo function in Module1Repository (table StaffInfo) 
+            $this->Module1Repository->addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo);
+        
+            ?>
+                <script>
+                    alert("Akaun anda telah berjaya didaftar!");
+                    //window.location = "../../homepage.php";
+                </script>
+            <?php
+        }
+        //end about Staff Registration  
     }
 ?>

@@ -69,6 +69,10 @@
                         <td>NO. TELEFON  :</td>
                         <td><input type="text" name="staffPhoneNo" id="staffPhoneNo"></td>
                     </tr>
+                    <tr>
+                        <td>KATA LALUAN :</td>
+                        <td><input type="password" name="userPassword" id="userPassword"></td>
+                    </tr>
                 </table>
 
                 <input type="submit" id="submit" value="DAFTAR" onclik="   ">

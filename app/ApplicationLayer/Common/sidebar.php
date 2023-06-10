@@ -318,7 +318,6 @@ main {
         <div class="collapse" id="module1-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Lihat Akaun Profil</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sunting Akaun Profil</a></li>
           </ul>
         </div>
       </li>
