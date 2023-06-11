@@ -269,7 +269,7 @@
                     </tr>
                 </table>
             </article>
-            <button  id="submit" ><a href="../module3/ApplicantNikahSukarelaPage.php">Back</a></button>
+            <button  id="submit" ><a href="../module3/ApplicantVoluntaryMarriagePage.php">Back</a></button>
                 <button  id="print" onclick="downloadForm(event)">Cetak</button>
         </article>
        </div>
