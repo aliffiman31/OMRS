@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syarat Kelayakan</title>
-    <link rel="stylesheet" href="mohon.css">
+    <link rel="stylesheet" href="ApplicantApplyPage.css">
 
     <style>
         th,
@@ -106,7 +106,7 @@
                             </tr>
 
                             <tr>
-                                <th class="title">BORANG PEKERJAAN SAUDARA TERDEKAT</th>
+                                <th class="title">BORANG MAKLUMAT SAUDARA TERDEKAT</th>
                             </tr>
 
                             <tr>
