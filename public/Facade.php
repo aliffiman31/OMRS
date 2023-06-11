@@ -1,14 +1,16 @@
-<?php
+ <?php 
 
 require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
 require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
 require_once '../app/OMRS.dataaccess/Module2Repository.php';
-//Module 1 --
+//Module 1 
 require_once '../app/OMRS.dataaccess/Module1Repository.php';
 require_once '../app/Controller/RegistrationController.php';
-require_once '../app/Controller/ApplicantController.php';
+require_once '../app/Controller/LoginController.php';
+require_once '../app/Controller/UserPasswordController.php';
+require_once '../app/Controller/UserProfileController.php';
 
 // Create a new database connection
 $db = (new Database())->connect();
@@ -17,21 +19,23 @@ $db = (new Database())->connect();
 $Module1Repository = new Module1Repository($db);
 
 //Module 2
-$FormModel1 = new Module2Repository($db);
+$Module2Repository = new Module2Repository($db);
 
 //Module 5
 $FormModel = new Module5Repository($db);
 
+
 //Module 1 (Create a new instance of the controller)
-//$registrationController = new RegistrationController($Module1Repository);
-//$loginController = new LoginController($Module1Repository);
-//$resetPassword and changePassword Controller
-//$userProfileController = new UserProfileController($Module1Repository);*/
-
-$FormController1 = new ApplicantController($FormModel1);
+$RegistrationController = new RegistrationController($Module1Repository);
+$LoginController = new LoginController($Module1Repository);
+$UserPasswordController = new UserPasswordController($Module1Repository);
+$UserProfileController = new UserProfileController($Module1Repository);
 
 
-//$FormController = new ApplicantController($FormModel1);
+$ApplicantController = new ApplicantController($Module2Repository);
+
+
+$FormController = new ApplicantController($FormModel1);
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
@@ -52,6 +56,19 @@ switch ($action) {
         $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
         break;
 
+    case 'registerStaffAcc':
+        $userIC = $_POST['userIC'];
+        $staffName = $_POST['staffName'];
+        $staffGender = $_POST['staffGender'];
+        $staffDepartmentName = $_POST['staffDepartmentName'];
+        $userType = $_POST['userType'];
+        $staffEmail =$_POST['staffEmail'];
+        $staffPhoneNo = $_POST['staffPhoneNo'];
+        $userPassword = $_POST['userPassword'];
+    
+        $RegistrationController->staffRegisterFunction($userIC, $staffName, $staffGender, $staffDepartmentName, $userType, $staffEmail, $staffPhoneNo, $userPassword);
+        break;
+
     case 'loginApplicantAcc':
         $userIC = $_POST['userIC'];
         $userPassword = $_POST['userPassword'];
@@ -67,30 +84,17 @@ switch ($action) {
         break;
 
     case 'loginAdminAcc':
-        $userIC  = $_POST['userIC'];
+        $Admin_Id  = $_POST['Admin_Id'];
         $userPassword = $_POST['userPassword'];
             
-        $LoginController->loginAdminFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
-        break;
-
-    case 'registerStaffAcc':
-        $userIC = $_POST['userIC'];
-        $name = $_POST['staffName'];
-        $department = $_POST['staffDepartmentName'];
-        $accessCategory = $_POST['staffAccessCategory'];
-        $email =$_POST['staffEmail'];
-        $phoneNum = $_POST['staffPhoneNo'];
-
-        $RegistrationController->staffRegisterFunction($ic, $name, $department, $accessCategory, $email, $phoneNum);
+        $LoginController->loginAdminFunction($Admin_Id, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
 
     case 'viewProfile':
-
         $from = isset($_GET['from']) ? $_GET['from'] : '';
             
         $UserProfileController->viewProfileFunction($from);   
         break;
-
 
     //form from syaratpage.php
     case 'ReligiousInfo':
@@ -101,10 +105,8 @@ switch ($action) {
          $Capacity = $_POST['Capacity'];
          $Vacancy = $_POST['Vacancy'];
 
-        
-
         //passing to controller with the function FormRegister(include parameter)
-        $FormController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
+        $ApplicantController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
         break;
 
 
