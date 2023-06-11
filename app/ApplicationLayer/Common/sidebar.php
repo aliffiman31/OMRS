@@ -413,25 +413,19 @@
           window.location.replace("../../../ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php");
 
         //modul 2 route
-        else if (btnid == "syarat-kelayakan")
-          window.location.replace("../../ApplicantView/module5/syaratpage.php");
 
 
         //module 3 route
-        else if (btnid == "marriage-type")
-          window.location.replace("../../ApplicantView/module3/marriagetype.php");
-        else if (btnid == "marriage-type")
-          window.location.replace("../../ApplicantView/module5/syaratpage.php");
+
 
         //module 4 route
-        else if (btnid == "marriage-type")
-          window.location.replace("../../ApplicantView/module5/syaratpage.php");
+
 
         //module 5 route
         else if (btnid == "syarat-kelayakan")
-          window.location.replace("../../ApplicantView/module5/syaratpage.php");
+          window.location.replace("../../ApplicantView/module5/ApplicantRequirementPage.php");
         else if (btnid == "mohon")
-          window.location.replace("../../ApplicantView/module5/mohon.php");
+          window.location.replace("../../ApplicantView/module5/ApplicantApplyPage.php");
       }
     </script>
 
