@@ -28,10 +28,10 @@
     <div>
     <li class="smallbox"><a>JENIS PERKAHWINAN</a></li>
     <ol class="optionnikah">
-    <li class="nikah"><a href="../module3/nikah tanpa kebenaran.php">Perkahwinan Tanpa Kebenaran</a></li>
-    <li class="nikah"><a href="../module3/nikah sukarela.php">Perkahwinan Sukarela</a></li>
+    <li class="nikah"><a href="../module3/ApplicantNikahTanpaKebenaran.php">Perkahwinan Tanpa Kebenaran</a></li>
+    <li class="nikah"><a href="../module3/ApplicantNikahSukarelaPage.php">Perkahwinan Sukarela</a></li>
     </ol>
-    <li class="smallbox"><a href="../module3/semak status permohonan.php">SIJIL DAN KAD NIKAH</a></li>
+    <li class="smallbox"><a href="../module3/ApplicantSemakStatusPage.php">SIJIL DAN KAD NIKAH</a></li>
     </div>
     </div>
 
