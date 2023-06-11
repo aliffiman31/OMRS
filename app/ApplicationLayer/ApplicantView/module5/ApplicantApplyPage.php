@@ -106,7 +106,7 @@
                             </tr>
 
                             <tr>
-                                <th class="title">BORANG PEKERJAAN SAUDARA TERDEKAT</th>
+                                <th class="title">BORANG MAKLUMAT SAUDARA TERDEKAT</th>
                             </tr>
 
                             <tr>
