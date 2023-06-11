@@ -26,13 +26,20 @@ $FormModel = new Module5Repository($db);
 
 
 //Module 1 (Create a new instance of the controller)
+<<<<<<< HEAD
+//$registrationController = new RegistrationController($Module1Repository);
+//$loginController = new LoginController($Module1Repository);
+//$resetPassword and changePassword Controller
+//$userProfileController = new UserProfileController($Module1Repository);*/
+=======
 $RegistrationController = new RegistrationController($Module1Repository);
 $LoginController = new LoginController($Module1Repository);
 $UserPasswordController = new UserPasswordController($Module1Repository);
 $UserProfileController = new UserProfileController($Module1Repository);
 
+>>>>>>> f467c9e08963b20cc5fa7b7ce5bc802ca885d2a1
 
-$ApplicantController = new ApplicantController($Module2Repository);
+$ApplicantController = new MarriageCourseRequestController($Module2Repository);
 
 
 $FormController = new ApplicantController($FormModel1);
