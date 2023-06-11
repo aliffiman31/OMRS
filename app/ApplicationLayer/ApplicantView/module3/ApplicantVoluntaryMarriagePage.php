@@ -39,7 +39,7 @@
                 <td><input type="file" id="surat"></td>
             </tr>
             <tr >
-                <td>Slip Permohonan Online: <a href="slip pendaftaran online.php">(tekan sini)</a></td> 
+                <td>Slip Permohonan Online: <a href="ApplicantMarriageApplicationPage.php">(tekan sini)</a></td> 
                 <td><input type="file" id="surat"></td>
             </tr>
             <tr >
@@ -57,7 +57,7 @@
           
         </table>
         <button type="submit" id="button1" onclick="submitForm(event, myForm)">Hantar</button>
-            <button type="submit" id="button2" ><a href="../module3/semak status permohonan.php">Seterusnya</a></button>
+            <button type="submit" id="button2" ><a href="../module3/ApplicantCheckStatusPage.php">Seterusnya</a></button>
 </div>
     </div>
         </section>

@@ -32,10 +32,8 @@ $UserPasswordController = new UserPasswordController($Module1Repository);
 $UserProfileController = new UserProfileController($Module1Repository);
 
 
-$ApplicantController = new ApplicantController($Module2Repository);
-
-
-$FormController = new ApplicantController($FormModel1);
+$ApplicantController = new MarriageCourseRequestController($Module2Repository);
+$MarriageRequestController = new MarriageRequestController($Module2Repository);
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 

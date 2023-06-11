@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <script src="../module2/ApplicantReligiousOfficeOptions.js"></script>
     <div>
         <!-- Header -->
         <?php
