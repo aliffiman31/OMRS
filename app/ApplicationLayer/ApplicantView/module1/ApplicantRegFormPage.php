@@ -70,7 +70,7 @@
                 </tr>
             </table>
 
-            <input type="submit" id="submit" value="DAFTAR" onclick = "submitForm(event, 'reg-form')">  <!--submitForm(event, 'reg-form')-->
+            <input type="submit" id="submit" value="DAFTAR" onclick = "  ">  <!--submitForm(event, 'reg-form')-->
             <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>
@@ -80,7 +80,7 @@
     </div>
 
 
-    <script>
+    <script>  //bila tekan submit..reload page ni shj
  function submitForm(event, formId) {
    event.preventDefault(); // Prevent the default form submission
 
