@@ -26,13 +26,12 @@ $FormModel = new Module5Repository($db);
 
 
 //Module 1 (Create a new instance of the controller)
-//$registrationController = new RegistrationController($Module1Repository);
-//$loginController = new LoginController($Module1Repository);
-//$resetPassword and changePassword Controller
-//$userProfileController = new UserProfileController($Module1Repository);*/
+$registrationController = new RegistrationController($Module1Repository);
+$loginController = new LoginController($Module1Repository);
+$passwordController = new PasswordController($Module1Repository, $database);
+$profileController = new ProfileController($Module1Repository);
 
 $ApplicantController = new MarriageCourseRequestController($Module2Repository);
-
 
 //$FormController = new ApplicantController($FormModel1);
 
@@ -89,11 +88,38 @@ switch ($action) {
         $LoginController->loginAdminFunction($Admin_Id, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
 
+    case 'forgotPasswordApplicant':
+        $userIC = $_POST['userIC'];
+        $appEmail = $_POST['appEmail'];
+
+        $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
+
+        break;
+
+    case 'forgotPasswordStaff':
+        $userIC = $_POST['userIC'];
+        $staffEmail = $_POST['staffEmail'];
+    
+        $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
+    
+        break;
+    
+    case 'forgotPasswordAdmin':
+        $userIC = $_POST['userIC'];
+        $staffEmail = $_POST['adminEmail'];
+        
+        $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
+        
+        break;
+
     case 'viewProfile':
         $from = isset($_GET['from']) ? $_GET['from'] : '';
             
         $UserProfileController->viewProfileFunction($from);   
         break;
+
+
+
 
     //form from syaratpage.php
     case 'ReligiousInfo':

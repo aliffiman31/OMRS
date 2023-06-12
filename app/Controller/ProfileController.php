@@ -1,5 +1,5 @@
 <?php
-    class UserProfileController
+    class ProfileController
     {
         private $Module1Repository;
 

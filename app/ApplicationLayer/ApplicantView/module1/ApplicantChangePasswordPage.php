@@ -20,11 +20,18 @@
 
         <div class="content-container">
         <div class="container-cp">
-        <form>
+
+        <div id="errorMessage">
+            <!-- the error or success message password-->  
+        </div>
+
+        <form action = "/app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php">
             <div class="changePassword">
                 <img style="height:50px;"src="../../Asset/Change_Password.png"> 
                 <h2><b>Tukar Kata Laluan</b></h2>
             </div>
+
+            
             <table>
                 <tr>
                     <td>NO. KAD PENGENALAN   :</td>
@@ -48,5 +55,36 @@
         </div>
 </section>
     </div>
+
+
+    <script>
+    //Validation code for change password form
+    function changePasswordFormValidate()
+    {
+        //Declaring variable based on id
+        var ic = document.getElementById("userIC").value;
+        var password = document.getElementById("userPassword").value;
+        var confirm_password = document.getElementById("newPassword").value;
+        var error_message = document.getElementById("errorMessage");
+
+        var text;
+
+        //Validation Condition
+        if(password.length <= 8 || password.length >= 21)
+        {
+            text = "Sila masukkan Kata Laluan yang sah.";
+            error_message.innerHTML = text;
+            return false;
+        }
+
+        if(password != confirm_password){
+        text = "Kata laluan anda tidak sepadan";
+        error_message.innerHTML = text;
+        return false;
+        }
+
+        return true;
+    }
+    </script>
 </body>
 </html>
