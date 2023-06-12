@@ -26,7 +26,7 @@
                 <div class="text-container">
                   <p><b>PENDAFTARAN KAKITANGAN:</b></p>
                 </div>
-            <form>
+            <form action="../../../public/Facade.php?action=registerStaffAcc" method="POST">
                 <table id="registrationTable">
                     <tr>
                         <td>NO. KAD PENGENALAN  :</td>

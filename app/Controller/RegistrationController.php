@@ -7,7 +7,7 @@
         {
             $this->Module1Repository = $Module1Repository;  
         }
-       
+        
         //applicant register function   
         public function registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
         {
@@ -18,7 +18,7 @@
             $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
 
             //(dlm table ApplicantInfo)
-            $this->addApplicantInfo($UserAcc_Id, $userIC, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
+            $this->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
         }
 
         
@@ -29,8 +29,8 @@
         
             ?>
                 <script>
-                    alert("Pendaftaran anda telah berjaya!");
-                    window.location = "../../ApplicantView/module1/ApplicantUserLogin.php";
+                    alert("Akaun anda telah berjaya didaftar");
+                    window.location = "../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php";
                 </script>
             <?php
         }
@@ -46,7 +46,7 @@
             $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
 
             //(dlm table StaffInfo)
-            $this->addStaffInfo($UserAcc_Id, $userIC, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo);
+            $this->addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo);
         }
 
         public function addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo)
@@ -56,8 +56,8 @@
         
             ?>
                 <script>
-                    alert("Akaun anda telah berjaya didaftar!");
-                    //window.location = "../../homepage.php";
+                    alert("Akaun telah berjaya didaftar!");
+                    window.location = "../app/ApplicationLayer/AdminView/StaffRegFormPage.php";
                 </script>
             <?php
         }

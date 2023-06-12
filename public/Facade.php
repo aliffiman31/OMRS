@@ -1,16 +1,16 @@
  <?php 
 
 require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
-require_once '../app/OMRS.dataaccess/Module5Repository.php';
+/*require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
-require_once '../app/OMRS.dataaccess/Module2Repository.php';
+require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
 //Module 1 
 require_once '../app/OMRS.dataaccess/Module1Repository.php';
 require_once '../app/Controller/RegistrationController.php';
 require_once '../app/Controller/LoginController.php';
-require_once '../app/Controller/UserPasswordController.php';
-require_once '../app/Controller/UserProfileController.php';
+require_once '../app/Controller/PasswordController.php';
+require_once '../app/Controller/ProfileController.php';
 
 // Create a new database connection
 $db = (new Database())->connect();
@@ -19,19 +19,19 @@ $db = (new Database())->connect();
 $Module1Repository = new Module1Repository($db);
 
 //Module 2
-$Module2Repository = new Module2Repository($db);
+//$Module2Repository = new Module2Repository($db);
 
 //Module 5
-$FormModel = new Module5Repository($db);
+//$FormModel = new Module5Repository($db);
 
 
 //Module 1 (Create a new instance of the controller)
-$registrationController = new RegistrationController($Module1Repository);
-$loginController = new LoginController($Module1Repository);
-$passwordController = new PasswordController($Module1Repository, $database);
-$profileController = new ProfileController($Module1Repository);
+$RegistrationController = new RegistrationController($Module1Repository);
+$LoginController = new LoginController($Module1Repository);
+$PasswordController = new PasswordController($Module1Repository, $db);
+$ProfileController = new ProfileController($Module1Repository);
 
-$ApplicantController = new MarriageCourseRequestController($Module2Repository);
+//$ApplicantController = new MarriageCourseRequestController($Module2Repository);
 
 //$FormController = new ApplicantController($FormModel1);
 
@@ -122,7 +122,7 @@ switch ($action) {
 
 
     //form from syaratpage.php
-    case 'ReligiousInfo':
+   /* case 'ReligiousInfo':
         //input from form
          $office = $_POST['office'];
          $Venue = $_POST['Venue'];
@@ -163,7 +163,7 @@ switch ($action) {
             $Desc = $_POST['Description'];
     
             $marriagecertController->applystatus($ic, $date, $status, $Desc);
-            break;
+            break;*/
     default:
 }
 ?>

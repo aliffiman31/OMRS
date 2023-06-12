@@ -1,6 +1,6 @@
 <?php
     // Start up your PHP Session
-    session_start();
+   /* session_start();
 
     $encodedData;
     $decodedApplicantData;
@@ -26,7 +26,7 @@
         //Sidebar Active path
         $_SESSION['route'] = 'viewProfile';
     }
-
+*/
 ?>
 
 <!DOCTYPE html>

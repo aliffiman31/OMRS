@@ -16,9 +16,10 @@
             {
             ?>
                 <script>
-                    //window.location = "../app/";
+                    window.location = "../app/ApplicationLayer/ApplicantView/module1/homepage.php";
                 </script>
             <?php
+            //header("Location: Facade.php?action=viewProfile&from=view");  ni tak tau
             }
             else
             {
@@ -26,7 +27,7 @@
             ?>
                 <script>
                     alert("Incorrect IC or Password");
-                   // window.location = "../app/View/ManageLogin/adminLoginView.php";
+                    window.location = "../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php";
                 </script>
             <?php
             }

@@ -19,8 +19,8 @@
 
 <section>
         <div class="content-container">
-        <div class="container-registration">  
-        <form id="reg-form" action="/public/Facade.php?action=registerApplicantAcc" method="post">
+        <div class="container-registration">    
+        <form id="reg-form" action="../../../../public/Facade.php?action=registerApplicantAcc" method="POST">
             <div class="registration">
                 <img style="height:50px;"src="../../Asset/Registration.png"> 
                 <h2><b>Daftar Pengguna</b></h2>

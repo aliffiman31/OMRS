@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applicant Change Password</title>
     <link rel="stylesheet" href="ApplicantChangePasswordPage.css">
+    <script type="text/javascript" src="../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantChangePasswordPage.js"></script>
+
 </head>
 <body>
     <div>
@@ -19,22 +21,20 @@
 <section>
 
         <div class="content-container">
-        <div class="container-cp">
-
-        <div id="errorMessage">
-            <!-- the error or success message password-->  
+        <div id="error_message">
+        <!-- the error or success message pass in this div from js -->  
         </div>
-
-        <form action = "/app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php">
+        
+        <div class="container-cp">
+        <form action = "../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php" id="myform" onsubmit = "return changePasswordFormValidate();">
             <div class="changePassword">
                 <img style="height:50px;"src="../../Asset/Change_Password.png"> 
                 <h2><b>Tukar Kata Laluan</b></h2>
             </div>
-
             
             <table>
                 <tr>
-                    <td>NO. KAD PENGENALAN   :</td>
+                    <td>NO. KAD PENGENALAN:</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>
@@ -47,44 +47,13 @@
                 </tr>
             </table>
 
-            <input type="submit" id="submit" value="TUKAR KATA LALUAN" onclick="   ">
+            <input type="submit" id="submit" value="TUKAR KATA LALUAN" >
             <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
-        </form>
         </div>
         </div>
 </section>
     </div>
-
-
-    <script>
-    //Validation code for change password form
-    function changePasswordFormValidate()
-    {
-        //Declaring variable based on id
-        var ic = document.getElementById("userIC").value;
-        var password = document.getElementById("userPassword").value;
-        var confirm_password = document.getElementById("newPassword").value;
-        var error_message = document.getElementById("errorMessage");
-
-        var text;
-
-        //Validation Condition
-        if(password.length <= 8 || password.length >= 21)
-        {
-            text = "Sila masukkan Kata Laluan yang sah.";
-            error_message.innerHTML = text;
-            return false;
-        }
-
-        if(password != confirm_password){
-        text = "Kata laluan anda tidak sepadan";
-        error_message.innerHTML = text;
-        return false;
-        }
-
-        return true;
-    }
-    </script>
+    
 </body>
 </html>

@@ -9,58 +9,50 @@
             $this->connect = $database;
          }
 
-         //Get user account data using UserAcc_Id (Foreign Key) -login
+         // Get user account data using UserAcc_Id (Foreign Key) - login
          public function getUserAccInfo($UserAcc_Id) 
          {
-            // Prepare SQL statement with placeholders to prevent SQL injection
             $query = $this->connect->prepare("SELECT userIC, userType FROM UserAccount WHERE UserAcc_Id = :userAccId");
             $query->bindParam(':userAccId', $UserAcc_Id);            
 
-            // Execute SQL statement
             $query->execute();
 
-            //Store the result of user from mySQL
             $UserAccInfo = $query->fetch(PDO::FETCH_ASSOC);  
 
-            return $UserAccInfo; //return to login controller
+            return $UserAccInfo; // return to login controller
          }
 
-         //table UserAccount
+         // table UserAccount
          public function createUserAcc($userIC, $userType, $userPassword)
          {
             $UserAcc_Id = uniqid();
-            // Syntax to insert into useraccount
-            $query = $this->connect->prepare("INSERT INTO UserAccount(UserAcc_Id, userIC, userPassowrd, userType) VALUES (:UserAcc_Id, :userIC, :userPassword, :userType)");
-            $query->bindParam(':UserAcc_Id', $UserAcc_Id);
-            $query->bindParam(':userIC', $userIC);
-            $query->bindParam(':userPassword', $userPassword);
-            $query->bindParam(':userType', $userType);
 
-            $query->execute();
+            $query = $this->connect->prepare("INSERT INTO UserAccount (UserAcc_Id, userIC, userPassword, userType) VALUES (?, ?, ?, ?)");
+            $query->execute([$UserAcc_Id, $userIC, $userType, $userPassword]);
 
-            return $UserAcc_Id; //return UserAcc_Id to registration controller
+            return $UserAcc_Id; // return UserAcc_Id to registration controller
          }
 
-         //table ApplicantInfo (register)
+         // table ApplicantInfo (register)
          public function addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail)
          {
-            //syntax to insert into ApplicantInfo 
-            $query = $this->connect->prepare("INSERT INTO ApplicantInfo (Applicant_IC, UserAcc_Id, appName, appGender, appPhoneNo, appAddress, appEmail) VALUES (:applicantIC, :userAccIC, :appName, :appGender, :appPhoneNo, :appAddress, :appEmail)");
-            $query->bindParam(':applicantIC', $userIC);
-            $query->bindParam(':userAccId', $UserAcc_Id);
-            $query->bindParam(':appName', $appName);
-            $query->bindParam(':appGender', $appGender);
-            $query->bindParam(':appPhoneNo', $appPhoneNo);
-            $query->bindParam(':appAddress', $appAddress);
-            $query->bindParam(':appEmail', $appEmail);
+            // Check if the UserAcc_Id exists in UserAccount table
+            $query = $this->connect->prepare("SELECT UserAcc_Id FROM UserAccount WHERE UserAcc_Id = ?");
+            $query->execute([$UserAcc_Id]);
 
-            $query->execute();
-            ?>
-                <script>
-                    alert('Akaun anda telah berjaya didaftar!');
-                    window.location = '';
-                </script>
-            <?php
+            //dia read else statement
+            if ($query->rowCount() > 0) {
+            
+            // UserAcc_Id exists, proceed with insertion                                                                                 
+            $query = $this->connect->prepare("INSERT INTO ApplicantInfo (Applicant_IC, UserAcc_Id, appName, appGender, appPhoneNo, appAddress, appEmail) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                                          
+            return $query->execute([$userIC, $UserAcc_Id,  $appName, $appGender, $appPhoneNo, $appAddress, $appEmail]); 
+            }
+
+            else
+            {
+               throw new Exception('Invalid UserAcc_Id');
+            }
          }
 
          //table StaffInfo (register)
@@ -68,27 +60,23 @@
          {
             $Staff_Id = uniqid();
 
+            // Check if the UserAcc_Id exists in UserAccount table
+            $query = $this->connect->prepare("SELECT UserAcc_Id FROM UserAccount WHERE UserAcc_Id = ?");
+            $query->execute([$UserAcc_Id]);
+
+            //dia read else statement
+            if ($query->rowCount() > 0) {
+
             //syntax to insert into StaffInfo 
-            $query = $this->connect->prepare("INSERT INTO StaffInfo (Staff_Id, UserAcc_Id, staffName, staffGender, staffDepartmentName, staffEmail, staffPhoneNo) VALUES (:staffId, :userAccId, :staffName, :staffGender, :staffDepartmentName, :staffEmail, :staffPhoneNo)");
-            $query->bindParam(':staffId', $Staff_Id);
-            $query->bindParam(':userAccId', $UserAcc_Id);
-            $query->bindParam(':staffName', $staffName);
-            $query->bindParam(':staffGender', $staffGender);
-            $query->bindParam(':staffDepartmentName', $staffDepartmentName);
-            $query->bindParam(':staffEmail', $staffEmail);
-            $query->bindParam(':staffPhoneNo', $staffPhoneNo);
+            $query = $this->connect->prepare("INSERT INTO StaffInfo (Staff_Id, UserAcc_Id, staffName, staffGender, staffDepartmentName, staffEmail, staffPhoneNo) VALUES (?, ?, ?, ?, ?, ?, ?)");
            
-            $query->execute();
-            ?>
-                <script>
-                    alert('Akaun telah berjaya didaftar!');
-                    window.location = '';
-                </script>
-            <?php
+            //return to registration controller
+            return $query->execute([$Staff_Id, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo]); 
+            }
          }          
 
          //login applicant account using mySQL database
-         public function loginApplicantFunction($userIC, $userPassword) 
+         public function loginApplicantAcc($userIC, $userPassword) 
          {
             // Prepare SQL statement with placeholders to prevent SQL injection
             $query = $this->connect->prepare("SELECT * FROM UserAccount WHERE UserIC = :applicantIC");
@@ -119,7 +107,7 @@
          }
 
          //login staff account using mySQL database
-         public function loginStaffFunction($userIC, $userPassword) 
+         public function loginStaffAcc($userIC, $userPassword) 
          {
             // Prepare SQL statement with placeholders to prevent SQL injection
             $query = $this->connect->prepare("SELECT * FROM UserAccount WHERE userIC = :staffIC");
@@ -150,7 +138,7 @@
          }
 
          //login admin account using mySQL database
-         public function loginAdminFunction($Admin_Id, $userPassword) 
+         public function loginAdminAcc($Admin_Id, $userPassword) 
          {
             // Prepare SQL statement with placeholders to prevent SQL injection
             $query = $this->connect->prepare("SELECT * FROM UserAccount WHERE UserAcc_Id = :adminId");

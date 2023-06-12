@@ -20,7 +20,7 @@
 
         <div class="content-container">
         <div class="container-fp">   
-        <form action="/public/Facade.php?action=forgotPasswordApplicant" method = "POST">
+        <form action="../../../../public/Facade.php?action=forgotPasswordApplicant" method = "POST">
             <div class="forgotPassword">
                 <img style="height:50px;"src="../../Asset/Forgot_Password.jpg"> 
                 <h2><b>Lupa Kata Laluan?</b></h2>
@@ -36,7 +36,7 @@
                 </tr>
             </table>
 
-            <input type="submit" id="submit" value="HANTAR" onclick="   ">
+            <input type="submit" id="submit" value="HANTAR" >
             <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>

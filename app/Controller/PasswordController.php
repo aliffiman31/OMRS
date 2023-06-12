@@ -4,10 +4,10 @@
         private $connect;
         private $Module1Repository;
 
-        public function __construct($Module1Repository, $database) 
+        public function __construct($Module1Repository, $db) 
         {
             $this->Module1Repository = $Module1Repository;
-            $this->connect = $database;
+            $this->connect = $db;
         }
 
         function passwordFunctionApplicant($userIC, $appEmail)

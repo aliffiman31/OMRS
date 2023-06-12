@@ -45,8 +45,8 @@ CREATE TABLE `admininfo` (
 --
 
 CREATE TABLE `applicantinfo` (
-  `Applicant_IC` varchar(20) NOT NULL,
-  `UserAcc_Id` varchar(20) DEFAULT NULL,
+  `Applicant_IC` varchar(14) NOT NULL,
+  `UserAcc_Id` varchar(20) NOT NULL,
   `appName` varchar(50) NOT NULL,
   `appGender` varchar(10) NOT NULL,
   `appPhoneNo` varchar(20) NOT NULL,
@@ -59,6 +59,13 @@ CREATE TABLE `applicantinfo` (
   `appOKUStatus` varchar(20) NOT NULL,
   `appStatus` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `applicantinfo`
+--
+
+INSERT INTO `applicantinfo` (`Applicant_IC`, `UserAcc_Id`, `appName`, `appGender`, `appPhoneNo`, `appAddress`, `appEmail`, `appAge`, `appRace`, `appNationality`, `appEduLevel`, `appOKUStatus`, `appStatus`) VALUES
+('020715060540', '64875dced435e', 'Nurul Syazana Binti Zainal Abidin', 'female', '011-61007875', 'NO 47, LRG SERI INDERAPURA 25, TAMAN SERI INDERAPU', 'nurulsyazanazainal@gmail.com', 0, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -76,6 +83,13 @@ CREATE TABLE `staffinfo` (
   `staffPhoneNo` varchar(20) NOT NULL,
   `staffAge` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `staffinfo`
+--
+
+INSERT INTO `staffinfo` (`Staff_Id`, `UserAcc_Id`, `staffName`, `staffGender`, `staffDepartmentName`, `staffEmail`, `staffPhoneNo`, `staffAge`) VALUES
+('64875ebe0a5be', '64875ebe09e54', 'Zainal Abidin', 'male', 'Jabatan Agama Islam Negeri Pahang', 'sss', '768768', 0);
 
 -- --------------------------------------------------------
 
@@ -95,7 +109,8 @@ CREATE TABLE `useraccount` (
 --
 
 INSERT INTO `useraccount` (`UserAcc_Id`, `userIC`, `userPassword`, `userType`) VALUES
-('001', '020715060540', '12345', 'Admin');
+('64875dced435e', '020715060540', '$2y$10$BTB8zQjGjUnh7', 'Pemohon'),
+('64875ebe09e54', '020715060540', '$2y$10$pBmxmyzPmpNF0', 'Kakitangan');
 
 --
 -- Indexes for dumped tables
