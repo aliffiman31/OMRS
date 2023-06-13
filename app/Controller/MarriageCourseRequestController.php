@@ -1,18 +1,17 @@
 <?php
 
-class MarriageCourseRequestController{
+class MarriageCourseRequestController
+{
+    private $module2Repository;
 
-private $MarriageForm;
+    public function __construct($module2Repository)
+    {
+        $this->module2Repository = $module2Repository;
+    }
 
-
-public function __construct($MarriageForm) {
-    $this->MarriageForm = $MarriageForm;
-
-  }
-public function formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy){
-
-  $this->MarriageForm->FormDetail($office,$Venue,$Date,$Capacity,$Vacancy);
-
-}
+    public function insertForm($office, $venue, $date, $capacity, $vacancy)
+    {
+        $this->module2Repository->insertForm($office, $venue, $date, $capacity, $vacancy);
+    }
 }
 ?>

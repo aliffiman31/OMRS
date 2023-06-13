@@ -12,6 +12,9 @@ require_once '../app/Controller/LoginController.php';
 require_once '../app/Controller/PasswordController.php';
 require_once '../app/Controller/ProfileController.php';
 
+require_once '../app/Controller/MarriageCourseRequestController.php';
+require_once '../app/OMRS.dataaccess/Module2Repository.php';
+
 // Create a new database connection
 $db = (new Database())->connect();
 
@@ -20,6 +23,10 @@ $Module1Repository = new Module1Repository($db);
 
 //Module 2
 //$Module2Repository = new Module2Repository($db);
+$marriageCourseRequestController = new MarriageCourseRequestController($module2Repository);
+$marriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy);
+$Module2Repository = new Module2Repository($db);
+
 
 //Module 5
 //$FormModel = new Module5Repository($db);
@@ -118,6 +125,18 @@ switch ($action) {
         $UserProfileController->viewProfileFunction($from);   
         break;
 
+    case 'ReligiousInfo':
+            // Retrieve form data
+            $office = $_POST['office'];
+            $venue = $_POST['Venue'];
+            $date = $_POST['Date'];
+            $capacity = $_POST['Capacity'];
+            $vacancy = $_POST['Vacancy'];
+        
+            // Call the controller method to insert the form data
+            $marriageCourseController->insertForm($office,$venue, $date, $capacity, $vacancy);
+        
+        break;
 
 
 
@@ -164,6 +183,6 @@ switch ($action) {
     
             $marriagecertController->applystatus($ic, $date, $status, $Desc);
             break;*/
-    default:
+            default:
 }
 ?>

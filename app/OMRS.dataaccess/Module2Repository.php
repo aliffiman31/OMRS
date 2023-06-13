@@ -1,21 +1,25 @@
 <?php 
-class Module2Repository{
+class Module2Repository
+{
+    private $db;
 
-    private $connect;
-
-    //Registration controller's constructor
-    public function __construct($database) {
-      $this->connect = $database;
+    public function __construct($db)
+    {
+        $this->db = $db;
     }
 
+    public function insertForm($office, $venue, $date, $capacity, $vacancy)
+    {
+        $stmt = $this->db->prepare("INSERT INTO marriagecourse (office, Venue, Date, Capacity, Vacancy) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssii", $office, $venue, $date, $capacity, $vacancy);
+        
+        if ($stmt->execute()) {
+            echo "Form data inserted successfully!";
+        } else {
+            echo "Error inserting form data: " . $stmt->error;
+        }
 
-  //This function will insert name data in mySQL database
-  public function FormDetail($office,$Venue,$Date,$Capacity,$Vacancy) {
-
-    //syntax to insert into database
-    $query = $this->connect->prepare("INSERT INTO staffreligiousinfo (office,Venue,Date,Capacity,Vacancy) VALUES (?,?,?,?,?)");
-    $query->execute([$office,$Venue,$Date,$Capacity,$Vacancy]);
-
-  }
+        $stmt->close();
+    }
 }
 ?>
