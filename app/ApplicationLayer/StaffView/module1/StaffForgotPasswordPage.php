@@ -20,7 +20,7 @@
 
         <div class="content-container">
         <div class="container-fp">   
-        <form action="/public/Facade.php?action=forgotPasswordStaff" method = "POST">
+        <form action="../../../../public/Facade.php?action=forgotPasswordStaff" method = "POST">
             <div class="forgotPassword">
                 <img style="height:50px;"src="../../Asset/Forgot_Password.jpg"> 
                 <h2><b>Lupa Kata Laluan?</b></h2>

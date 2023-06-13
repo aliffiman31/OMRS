@@ -21,13 +21,17 @@
 <section>
 
         <div class="content-container">
+        
+        <div class="container-cp">
+
+        <form action = "../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php" id="myform" onsubmit = "return changePasswordFormValidate();">
         <div id="error_message">
         <!-- the error or success message pass in this div from js -->  
         </div>
         
-        <div class="container-cp">
-        <form action = "../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php" id="myform" onsubmit = "return changePasswordFormValidate();">
             <div class="changePassword">
+            
+                <br>
                 <img style="height:50px;"src="../../Asset/Change_Password.png"> 
                 <h2><b>Tukar Kata Laluan</b></h2>
             </div>
