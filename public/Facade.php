@@ -82,10 +82,10 @@ switch ($action) {
         break;
 
     case 'loginAdminAcc':
-        $Admin_Id  = $_POST['Admin_Id'];
+        $userIC  = $_POST['userIC'];
         $userPassword = $_POST['userPassword'];
             
-        $LoginController->loginAdminFunction($Admin_Id, $userPassword);  //means dia akan read LoginController dan function loginFunction
+        $LoginController->loginAdminFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
         break;
 
     case 'forgotPasswordApplicant':
@@ -115,7 +115,7 @@ switch ($action) {
     case 'viewProfile':
         $from = isset($_GET['from']) ? $_GET['from'] : '';
             
-        $UserProfileController->viewProfileFunction($from);   
+        $ProfileController->viewProfileFunction($from);   
         break;
 
 

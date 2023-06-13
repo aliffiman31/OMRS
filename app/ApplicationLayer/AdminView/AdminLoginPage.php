@@ -19,14 +19,14 @@
 
         <div class="content-container">
         <div class="container-login"> 
-        <form action ="/public/Facade.php?action=loginAdminAcc" method="post">
+        <form action ="../../../public/Facade.php?action=loginAdminAcc" method="post">
             <div class="logMasuk">  
                 <img style="height:50px;"src="../Asset/Login_StaffProfile.png">
                 <h2><b>Log Masuk Kakitangan</b></h2>
             </div>
             <table>
                 <tr>
-                    <td>NO. KAD PENGENALAN   :</td>
+                    <td>ADMIN ID   :</td>
                     <td> <input style="height:30px; width:200px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>

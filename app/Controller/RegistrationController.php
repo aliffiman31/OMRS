@@ -14,7 +14,7 @@
             //security purpose (Admin pon tak blh tgk password user kat mysql)
             $hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
 
-            //call createUserAcc function in Module1Repository (table UserAccount)
+            //call createUserAcc function in Module1Repository (table UserAccount)  
             $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
 
             //(dlm table ApplicantInfo)

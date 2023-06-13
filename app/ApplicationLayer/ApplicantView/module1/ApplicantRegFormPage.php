@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applicant Registration Form</title>
     <link rel="stylesheet" href="ApplicantRegFormPage.css">
+    <script type="text/javascript" src="../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantRegFormPage.js"></script>
 
 </head>
 <body>
@@ -20,7 +21,12 @@
 <section>
         <div class="content-container">
         <div class="container-registration">    
-        <form id="reg-form" action="../../../../public/Facade.php?action=registerApplicantAcc" method="POST">
+        <form id="myform" action="../../../../public/Facade.php?action=registerApplicantAcc" method="POST" onsubmit = "return registerFormValidate();">
+
+        <div id="error_message">
+        <!-- the error or success message pass in this div from js -->  
+        </div>
+
             <div class="registration">
                 <img style="height:50px;"src="../../Asset/Registration.png"> 
                 <h2><b>Daftar Pengguna</b></h2>
@@ -81,7 +87,7 @@
 
 
     <script>  //bila tekan submit..reload page ni shj
- function submitForm(event, formId) {
+ /*function submitForm(event, formId) {
    event.preventDefault(); // Prevent the default form submission
 
       //Get the form data
@@ -103,7 +109,7 @@
 
     //Send the form data
     xhr.send(formData);
-  }
+  }*/
 </script>
 </body>
 </html>

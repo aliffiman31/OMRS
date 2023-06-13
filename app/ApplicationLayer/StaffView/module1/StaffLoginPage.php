@@ -19,7 +19,7 @@
 
         <div class="content-container">  
         <div class="container-login">
-        <form action="/public/Facade.php?action=loginStaffAcc">
+        <form action="../../../../public/Facade.php?action=loginStaffAcc" method="POST">
             <div class="logMasuk">
                 <img style="height:50px;"src="../../Asset/Login_StaffProfile.png">
                 <h2><b>Log Masuk Kakitangan</b></h2>
