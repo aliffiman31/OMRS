@@ -326,8 +326,8 @@
             Profil
           </button>
           <div class="collapse" id="module1-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a id="profile-page" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Lihat Akaun Profil</a></li>
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                    
+              <li><a id="profile-page" href="../../../public/Facade.php?action=viewProfile$from=view" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Lihat Akaun Profil</a></li>
             </ul>
           </div>
         </li>

@@ -1,32 +1,13 @@
 <?php
     // Start up your PHP Session
-   /* session_start();
-
     $encodedData;
     $decodedApplicantData;
 
-    //If the user is not logged in send him/her to the login form
-    if(!isset($_SESSION['currentUserIC'])) {
-
-      ?>
-          <script>
-              alert("Access denied !!!")
-              window.location = "../ManageLogin/userLoginView.php";
-          </script>
-      <?php
-
-    }else{
-
-         // Retrieve the serialized and URL-encoded data from the URL parameter
-        $encodedData = $_GET['returnProfileInfo'];
+    // Retrieve the serialized and URL-encoded data from the URL parameter
+    $encodedData = $_GET['returnProfileInfo'];
         
-        // Decode the URL-encoded data and unserialize it
-        $decodedApplicantData = unserialize(urldecode($encodedData));
-
-        //Sidebar Active path
-        $_SESSION['route'] = 'viewProfile';
-    }
-*/
+    // Decode the URL-encoded data and unserialize it
+    $decodedApplicantData = unserialize(urldecode($encodedData)); //semua dlm table ApplicantInfo
 ?>
 
 <!DOCTYPE html>

@@ -11,49 +11,47 @@
         }
 
         function passwordFunctionApplicant($userIC, $appEmail)
-        {
-            $query = "SELECT * FROM UserAccount WHERE userIC = :ic";
-            $query = $this->connect->prepare($query);
-            $query->bindParam(':ic', $userIC);
-            $query->execute();
-                
-        
-            if ($query->rowCount() > 0) 
-            {
-                // Generate a random password
-                $newPassword = $this->generateRandomPassword();
-        
-                // Update applicant password in the database
-                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                $updateQuery = "UPDATE UserAccount SET userPassword = :password WHERE userIC = :ic";
-                $stmt = $this->connect->prepare($updateQuery);
-                $stmt->bindParam(':password', $hashedPassword);
-                $stmt->bindParam(':ic', $userIC);
-                $stmt->execute();
-        
-                // Send new password to the applicant email   
-                $emailTitle = 'Kata Laluan Baharu';
-                $emailMessage = 'Kata laluan baharu anda adalah seperti yang tertera ' . $newPassword;
-                $emailHeader = 'From: your-email@example.com' . "\r\n" .
-                        'Reply-To: your-email@example.com' . "\r\n" .
-                        'X-Mailer: PHP/' . phpversion();
-        
-                $sent = mail($appEmail, $emailTitle, $emailMessage, $emailHeader);
-                
-                if ($sent) 
-                {
-                    echo 'Sila lihat e-mel anda. Kata laluan telah dihantar ke e-mel anda.';
-                } 
-                else 
-                {
-                    echo 'Maaf, proses tukar kata laluan anda gagal.';
-                }
-            }
-            else 
-            {
-                echo 'E-mel anda tiada dalam sistem. Sila isi e-mel anda yang SAH.';
-            }
+{
+    $query = "SELECT * FROM UserAccount WHERE userIC = :ic";
+    $query = $this->connect->prepare($query);
+    $query->bindParam(':ic', $userIC);
+    $query->execute();
+
+    if ($query->rowCount() > 0) {
+        // Generate a random password
+        $newPassword = $this->generateRandomPassword();
+
+        // Update applicant password in the database
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+        $updateQuery = "UPDATE UserAccount SET userPassword = :password WHERE userIC = :ic";
+        $stmt = $this->connect->prepare($updateQuery);
+        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':ic', $userIC);
+        $stmt->execute();
+
+        // Set SMTP and smtp_port settings
+        ini_set('SMTP', 'localhost');
+        ini_set('smtp_port', '25');
+
+        // Send new password to the applicant email   
+        $emailTitle = 'Kata Laluan Baharu';
+        $emailMessage = 'Kata laluan baharu anda adalah seperti yang tertera: ' . $newPassword;
+        $emailHeader = 'From: your-email@example.com' . "\r\n" .
+            'Reply-To: your-email@example.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        $sent = mail($appEmail, $emailTitle, $emailMessage, $emailHeader);
+
+        if ($sent) {
+            echo 'Sila lihat e-mel anda. Kata laluan telah dihantar ke e-mel anda.';
+        } else {
+            echo 'Maaf, proses tukar kata laluan anda gagal.';
         }
+    } else {
+        echo 'E-mel anda tiada dalam sistem. Sila isi e-mel anda yang SAH.';
+    }
+}
+
 
         function passwordFunctionStaff($userIC, $staffEmail)
         {

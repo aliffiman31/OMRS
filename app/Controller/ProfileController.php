@@ -49,11 +49,11 @@
 
                 if($from == 'view')
                 {
-                    header('Location: ../app/StaffView/AdminViewProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
+                    header('Location: ../../../app/AdminView/AdminViewProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
                 }
                 else if($from == 'edit')
                 {
-                    header('Location: ../app/StaffView/AdminUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
+                    header('Location: ../../../app/AdminView/AdminUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
                 }
             }
             else
