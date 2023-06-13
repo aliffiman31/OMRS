@@ -1,6 +1,5 @@
 <?php
 
-
 class Module2Repository
 {
     private $db;
@@ -30,3 +29,5 @@ class Module2Repository
     $stmt->closeCursor();
 }
 }
+
+?>

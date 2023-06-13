@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
+require_once '../../../OMRS.dataaccess/DB_Connection_Manager.php';
 
 
 
@@ -31,17 +31,14 @@ require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
         <?php
         include_once('../../Common/header.html');
         ?>
-
-
         <section>
-
             <div>
                 <?php include_once('../../Common/sidebar.php');  ?>
             </div>
 
             <div class="content-container">
                 <div class="content">
-                <form id="religious-form" action="../../../../public/Facade.php?action=ReligiousInfo" method="POST" enctype="multipart/form-data">
+                    <form id="religious-form" action="../../../../public/Facade.php?action=ReligiousInfo" method="POST" enctype="multipart/form-data">
                         <table class="table-info">
                             <tr>
                                 <td>
@@ -106,38 +103,15 @@ require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
                                 </td>
                             </tr>
                         </table>
-                        <button type="submit" class="kemaskini" onclick="submitForm(event, 'religious-form')">Kemaskini</button>
+                        <button type="submit" class="kemaskini" onclick="submitForm('religious-form')">Kemaskini</button>
                     </form>
                 </div>
             </div>
         </section>
     </div>
     <script>
-        function submitForm(event, formId) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Get the form data
-            var form = document.getElementById(formId);
-            var formData = new FormData(form);
-
-            // Create an AJAX request
-            var xhr = new XMLHttpRequest();
-            xhr.open(form.method, form.action, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    alert('Successfully Registered');
-                    // You can perform any additional actions or show a success message here
-
-                    // Clear the form inputs if needed
-                    form.reset();
-                }
-            };
-
-            // Send the form data
-            xhr.send(formData);
-        }
+        
     </script>
-
 
 </body>
 

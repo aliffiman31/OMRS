@@ -1,6 +1,6 @@
  <?php
 
-    require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
+    require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
     /*require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
@@ -24,8 +24,8 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
 
     //Module 2
     //$Module2Repository = new Module2Repository($db);
-    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
     $Module2Repository = new Module2Repository($db);
+    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
 
 
     //Module 5
@@ -48,82 +48,82 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
     switch ($action) {
 
             //Module 1 (form from ApplicantRegFormPage.php)
-        // case 'registerApplicantAcc':
-        //     $userIC = $_POST['userIC'];
-        //     $appName = $_POST['appName'];
-        //     $userType = $_POST['userType'];
-        //     $appGender = $_POST['appGender'];
-        //     $appPhoneNo = $_POST['appPhoneNo'];
-        //     $appAddress = $_POST['appAddress'];
-        //     $appEmail = $_POST['appEmail'];
-        //     $userPassword = $_POST['userPassword'];
+            // case 'registerApplicantAcc':
+            //     $userIC = $_POST['userIC'];
+            //     $appName = $_POST['appName'];
+            //     $userType = $_POST['userType'];
+            //     $appGender = $_POST['appGender'];
+            //     $appPhoneNo = $_POST['appPhoneNo'];
+            //     $appAddress = $_POST['appAddress'];
+            //     $appEmail = $_POST['appEmail'];
+            //     $userPassword = $_POST['userPassword'];
 
-        //     $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
-        //     break;
+            //     $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
+            //     break;
 
-        // case 'registerStaffAcc':
-        //     $userIC = $_POST['userIC'];
-        //     $staffName = $_POST['staffName'];
-        //     $staffGender = $_POST['staffGender'];
-        //     $staffDepartmentName = $_POST['staffDepartmentName'];
-        //     $userType = $_POST['userType'];
-        //     $staffEmail = $_POST['staffEmail'];
-        //     $staffPhoneNo = $_POST['staffPhoneNo'];
-        //     $userPassword = $_POST['userPassword'];
+            // case 'registerStaffAcc':
+            //     $userIC = $_POST['userIC'];
+            //     $staffName = $_POST['staffName'];
+            //     $staffGender = $_POST['staffGender'];
+            //     $staffDepartmentName = $_POST['staffDepartmentName'];
+            //     $userType = $_POST['userType'];
+            //     $staffEmail = $_POST['staffEmail'];
+            //     $staffPhoneNo = $_POST['staffPhoneNo'];
+            //     $userPassword = $_POST['userPassword'];
 
-        //     $RegistrationController->staffRegisterFunction($userIC, $staffName, $staffGender, $staffDepartmentName, $userType, $staffEmail, $staffPhoneNo, $userPassword);
-        //     break;
+            //     $RegistrationController->staffRegisterFunction($userIC, $staffName, $staffGender, $staffDepartmentName, $userType, $staffEmail, $staffPhoneNo, $userPassword);
+            //     break;
 
-        // case 'loginApplicantAcc':
-        //     $userIC = $_POST['userIC'];
-        //     $userPassword = $_POST['userPassword'];
+            // case 'loginApplicantAcc':
+            //     $userIC = $_POST['userIC'];
+            //     $userPassword = $_POST['userPassword'];
 
-        //     $LoginController->loginApplicantFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
-        //     break;
+            //     $LoginController->loginApplicantFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
+            //     break;
 
-        // case 'loginStaffAcc':
-        //     $userIC  = $_POST['userIC'];
-        //     $userPassword = $_POST['userPassword'];
+            // case 'loginStaffAcc':
+            //     $userIC  = $_POST['userIC'];
+            //     $userPassword = $_POST['userPassword'];
 
-        //     $LoginController->loginStaffFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
-        //     break;
+            //     $LoginController->loginStaffFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
+            //     break;
 
-        // case 'loginAdminAcc':
-        //     $Admin_Id  = $_POST['Admin_Id'];
-        //     $userPassword = $_POST['userPassword'];
+            // case 'loginAdminAcc':
+            //     $Admin_Id  = $_POST['Admin_Id'];
+            //     $userPassword = $_POST['userPassword'];
 
-        //     $LoginController->loginAdminFunction($Admin_Id, $userPassword);  //means dia akan read LoginController dan function loginFunction
-        //     break;
+            //     $LoginController->loginAdminFunction($Admin_Id, $userPassword);  //means dia akan read LoginController dan function loginFunction
+            //     break;
 
-        // case 'forgotPasswordApplicant':
-        //     $userIC = $_POST['userIC'];
-        //     $appEmail = $_POST['appEmail'];
+            // case 'forgotPasswordApplicant':
+            //     $userIC = $_POST['userIC'];
+            //     $appEmail = $_POST['appEmail'];
 
-        //     $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
+            //     $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
-        //     break;
+            //     break;
 
-        // case 'forgotPasswordStaff':
-        //     $userIC = $_POST['userIC'];
-        //     $staffEmail = $_POST['staffEmail'];
+            // case 'forgotPasswordStaff':
+            //     $userIC = $_POST['userIC'];
+            //     $staffEmail = $_POST['staffEmail'];
 
-        //     $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
+            //     $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
 
-        //     break;
+            //     break;
 
-        // case 'forgotPasswordAdmin':
-        //     $userIC = $_POST['userIC'];
-        //     $staffEmail = $_POST['adminEmail'];
+            // case 'forgotPasswordAdmin':
+            //     $userIC = $_POST['userIC'];
+            //     $staffEmail = $_POST['adminEmail'];
 
-        //     $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
+            //     $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
 
-        //     break;
+            //     break;
 
-        // case 'viewProfile':
-        //     $from = isset($_GET['from']) ? $_GET['from'] : '';
+            // case 'viewProfile':
+            //     $from = isset($_GET['from']) ? $_GET['from'] : '';
 
-        //     $UserProfileController->viewProfileFunction($from);
-        //     break;
+            //     $UserProfileController->viewProfileFunction($from);
+            //     break;
 
 
             //module 2
@@ -137,7 +137,7 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             $speakerName = $_POST['speakerName'];
             $MCcertificate = $_FILES['MCcertificate'];
             // Call the controller method to insert the form data
-            $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($module2Repository);
+            $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
 
             break;
