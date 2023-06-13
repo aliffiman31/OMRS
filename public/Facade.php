@@ -1,7 +1,7 @@
  <?php 
 
-require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
-/*require_once '../app/OMRS.dataaccess/Module5Repository.php';
+    require_once '../app/OMRS.dataaccess/Db_Connection_Manager.php';
+    /*require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
 require_once '../app/OMRS.dataaccess/Module2Repository.php';*/

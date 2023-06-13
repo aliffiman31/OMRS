@@ -1,21 +1,32 @@
-<?php 
-class Module2Repository{
+<?php
 
-    private $connect;
 
-    //Registration controller's constructor
-    public function __construct($database) {
-      $this->connect = $database;
+class Module2Repository
+{
+    private $db;
+
+    public function __construct($db)
+    {
+        $this->db = $db;
     }
 
+    public function insertForm($office, $venue, $date, $capacity, $vacancy,$speakerName,$MCcertificate)
+{
+    $stmt = $this->db->prepare("INSERT INTO marriagecourse (office, Venue, Date, Capacity, Vacancy, SpeakerName, MCCertificate) VALUES (:office, :venue, :date, :capacity, :vacancy, :speakerName, :MCcertificate)");
+    $stmt->bindParam(':office', $office);
+    $stmt->bindParam(':venue', $venue);
+    $stmt->bindParam(':date', $date);
+    $stmt->bindParam(':capacity', $capacity);
+    $stmt->bindParam(':vacancy', $vacancy);
+    $stmt->bindParam(':speakerName', $speakerName);
+    $stmt->bindParam(':MCcertificate', $MCcertificate);
 
-  //This function will insert name data in mySQL database
-  public function FormDetail($office,$Venue,$Date,$Capacity,$Vacancy) {
+    if ($stmt->execute()) {
+        echo "Form data inserted successfully!";
+    } else {
+        echo "Error inserting form data: " . $stmt->errorInfo()[2];
+    }
 
-    //syntax to insert into database
-    $query = $this->connect->prepare("INSERT INTO staffreligiousinfo (office,Venue,Date,Capacity,Vacancy) VALUES (?,?,?,?,?)");
-    $query->execute([$office,$Venue,$Date,$Capacity,$Vacancy]);
-
-  }
+    $stmt->closeCursor();
 }
-?>
+}
