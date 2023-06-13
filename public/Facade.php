@@ -12,6 +12,9 @@ require_once '../app/Controller/LoginController.php';
 require_once '../app/Controller/PasswordController.php';
 require_once '../app/Controller/ProfileController.php';
 
+require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
+require_once '../app/OMRS.dataaccess/Module2Repository.php';
+
 // Create a new database connection
 $db = (new Database())->connect();
 
@@ -21,15 +24,10 @@ $Module1Repository = new Module1Repository($db);
 //Module 2
 //$Module2Repository = new Module2Repository($db);
 
-<<<<<<< HEAD
     //Module 2
     //$Module2Repository = new Module2Repository($db);
     $Module2Repository = new Module2Repository($db);
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
-=======
-//Module 5
-//$FormModel = new Module5Repository($db);
->>>>>>> 7c08c19e0a59880a189abd34c8da8535c9a56ed1
 
 
 //Module 1 (Create a new instance of the controller)
@@ -101,7 +99,6 @@ switch ($action) {
 
         $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
-<<<<<<< HEAD
             //Module 1 (form from ApplicantRegFormPage.php)
             // case 'registerApplicantAcc':
             //     $userIC = $_POST['userIC'];
@@ -196,31 +193,6 @@ switch ($action) {
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
 
             break;
-=======
-        break;
-
-    case 'forgotPasswordStaff':
-        $userIC = $_POST['userIC'];
-        $staffEmail = $_POST['staffEmail'];
-    
-        $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
-    
-        break;
-    
-    case 'forgotPasswordAdmin':
-        $userIC = $_POST['userIC'];
-        $staffEmail = $_POST['adminEmail'];
-        
-        $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
-        
-        break;
-
-    case 'viewProfile':
-        $from = isset($_GET['from']) ? $_GET['from'] : '';
-            
-        $ProfileController->viewProfileFunction($from);   
-        break;
->>>>>>> 7c08c19e0a59880a189abd34c8da8535c9a56ed1
 
 
 

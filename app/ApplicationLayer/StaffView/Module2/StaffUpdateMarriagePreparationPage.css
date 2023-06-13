@@ -1,5 +1,7 @@
-body {
-  background-image: url("../../Asset/backgroundStaff.jpg");
+table,
+th,
+td {
+  border: 1px solid black;
 }
 
 .content-container {
@@ -18,15 +20,16 @@ body {
   margin-left: 290px;
   overflow: auto;
 }
+
 .table-info {
   width: 770px;
   margin-left: 30px;
-  border-color: #ffffff;
 }
 
-#button1{
-  float: right;
-  margin-right: 100px;
+.table-data {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
 }
-
-  
