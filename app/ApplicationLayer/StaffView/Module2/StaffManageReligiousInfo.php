@@ -1,3 +1,12 @@
+<?php
+
+require_once '../../../../app/OMRS.dataaccess/Db_Connection_Manager.php';
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,8 +41,7 @@
 
             <div class="content-container">
                 <div class="content">
-                    <form id="religious-form" action="../../../../public/Facade.php?action=ReligiousInfo" method="POST">
-
+                <form id="religious-form" action="../../../../public/Facade.php?action=ReligiousInfo" method="POST" enctype="multipart/form-data">
                         <table class="table-info">
                             <tr>
                                 <td>
@@ -79,6 +87,22 @@
                                 </td>
                                 <td>
                                     <input type="number" id="Vacancy" name="Vacancy" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="speakerName">Speaker Name:</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="speakerName" name="speakerName" required>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="MCcertificate">Marriage Course Certificate:</label>
+                                </td>
+                                <td>
+                                    <input type="file" id="MCcertificate" name="MCcertificate" required>
                                 </td>
                             </tr>
                         </table>
