@@ -1,13 +1,21 @@
 <?php
-    // Start up your PHP Session
-    $encodedData;
-    $decodedApplicantData;
+// Start up your PHP Session
+session_start();
 
-    // Retrieve the serialized and URL-encoded data from the URL parameter
-    $encodedData = $_GET['returnProfileInfo'];
-        
-    // Decode the URL-encoded data and unserialize it
-    $decodedApplicantData = unserialize(urldecode($encodedData)); //semua dlm table ApplicantInfo
+$encodedData;
+$decodedApplicantData;
+
+// Retrieve the serialized and URL-encoded data from the URL parameter
+$encodedData = $_GET['returnProfileInfo'];
+
+$decodedApplicantData = unserialize(urldecode($encodedData));
+var_dump($decodedApplicantData); // Debug statement
+
+// Decode the URL-encoded data and unserialize it
+$decodedApplicantData = unserialize(urldecode($encodedData));
+
+// Sidebar Active path
+$_SESSION['route'] = 'viewProfile';
 ?>
 
 <!DOCTYPE html>
@@ -29,17 +37,13 @@
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebar.php');  ?>
+            <?php include_once('../../Common/sidebarSyazana.php');  ?>
         </div>
 
         <div class="content-container">
-            <div class="content">
-                <!-- Put Your Content Here  -->
-                <div class="container-ApplicantViewProfile">    
-                    <form method="post">
-                        <div class="ApplicantViewProfile">
-
-                    <table>
+        <div class="content"> 
+                <table>
+                    <tbody>
                     <tr>
                         <td scope="row">NO KAD PENGENALAN : </td>
                         <td><?php echo $decodedApplicantData['userIC']; ?></td>
@@ -71,13 +75,12 @@
                         <td><?php echo $decodedApplicantData['appAddress']; ?></td> 
                     </tr>
                     </table>
+                </tbody>
 
-                    <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onclick="  ">  
-                    <br>
-                    </form>
-                </div> 
-            </div>  
-        </div>             
+                    <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onclick="  ">      
+        </div> 
+        </div>  
+                 
 </section>
     </div>
 </body>

@@ -8,8 +8,8 @@
             $this->Module1Repository = $Module1Repository;  
         }
 
-        //view profile function
-        public function viewProfileFunction($from)
+        //view profile function 
+        /*public function viewProfileFunction($from)
         {
             session_start();
             $userType = $_SESSION['currentUserType'];
@@ -17,7 +17,7 @@
             if($userType == "Pemohon")
             {
                 $Applicant_IC = $_SESSION['currentUserIC'];
-                $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_IC);
+                $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_IC); //returnProfileInfo
 
                 if($from == 'view')
                 {
@@ -30,8 +30,8 @@
             }
             else if($userType == "Kakitangan")
             {
-                $Staff_IC = $_SESSION['UserAcc_Id'];
-                $staffProfileInfo = $this->Module1Repository->getStaffProfileInfo($Staff_IC);
+                $Staff_Id = $_SESSION['currentUserIC'];
+                $staffProfileInfo = $this->Module1Repository->getStaffProfileInfo($Staff_Id);
 
                 if($from == 'view')
                 {
@@ -44,7 +44,7 @@
             }
             else if($userType == "Admin")
             {
-                $Admin_Id = $_SESSION['UserAcc_Id'];
+                $Admin_Id = $_SESSION['currentUserIC'];
                 $adminProfileInfo = $this->Module1Repository->getAdminProfileInfo($Admin_Id);
 
                 if($from == 'view')
@@ -60,6 +60,32 @@
             {
                 echo "Maaf, sistem tidak dapat meneruskan aktiviti anda.";
             }
-        }  
+        }*/
+
+        public function viewProfileFunction($from)
+        {
+    session_start();
+    $userType = $_SESSION['currentUserType'];
+
+    
+
+    if ($userType == "Pemohon") {
+        $Applicant_IC = $_SESSION['currentUserIC'];
+        $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_IC); //returnProfileInfo
+
+        if ($from == 'view') {
+            header('Location: ../ApplicantView/module1/ApplicantViewProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));  //GET Method
+            exit;
+        } else if ($from == 'edit') {
+            header('Location: ../ApplicantView/module1/ApplicantUpdateProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));
+            exit;
+        }
+
+    } else {
+        echo "Maaf, sistem tidak dapat meneruskan aktiviti anda.";
+        exit;
+    }
+}
+
     }
 ?>

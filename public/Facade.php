@@ -104,7 +104,7 @@ switch ($action) {
 
         break;
 
-        case 'forgotPasswordAdmin':
+    case 'forgotPasswordAdmin':
         $userIC = $_POST['userIC'];
         $staffEmail = $_POST['adminEmail'];
 
@@ -112,7 +112,17 @@ switch ($action) {
 
         break;
 
-        case 'viewProfile':
+    case 'changePassword':
+        $userIC = $_POST['userIC'];
+        $userPassord = $_POST['userPassword'];
+        $newPassword = $_POST['newPassword'];
+    
+        $PasswordController->changePasswordFunction($userIC, $userPassword, $newPassword);
+    
+        break;
+
+
+    case 'viewProfile':
         $from = isset($_GET['from']) ? $_GET['from'] : '';
 
         $ProfileController->viewProfileFunction($from);

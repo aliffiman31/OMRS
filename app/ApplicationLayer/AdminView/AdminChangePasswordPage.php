@@ -38,11 +38,11 @@
                     <td> <input style="height:30px; width:250px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>
-                    <td>KATA LALUAN SEMASA:</td>
+                    <td>KATA LALUAN BAHARU:</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="userPassword" id="userPassword"></td>
                 </tr>
                 <tr>
-                    <td>KATA LALUAN BARU:</td>
+                    <td>ULANAG KATA LALUAN:</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="newPassword" id="newPassword"></td>
                 </tr>
             </table>

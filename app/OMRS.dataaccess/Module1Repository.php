@@ -160,6 +160,25 @@
             }
         }
 
+        public function changePassword($userIC, $userPassword, $newPassword)
+        {
+            $query = $this->connect->prepare("UPDATE UserAccount SET userPassword = :newPassword WHERE userIC = :userIC AND userPassword = :userPassword");
+            $query->bindParam(':newPassword', $newPassword);
+            $query->bindParam(':userIC', $userIC);
+            $query->bindParam(':userPassword', $userPassword);
+            $query->execute();
+     
+            // Check if the update was successful
+            if ($query->rowCount() > 0) 
+            {
+               $_SESSION['passwordUpdateSuccess'] = true;
+            } 
+            else 
+            {
+               $_SESSION['passwordUpdateError'] = true;
+            }
+         }
+
          //view profile (table ApplicantInfo)
          public function getApplicantProfileInfo($userIC)
          {
@@ -168,9 +187,9 @@
 
             $query->execute();
 
-            $appProfileInfo = $query->fetch(PDO::FETCH_ASSOC);
+            $profileInfo = $query->fetch(PDO::FETCH_ASSOC);
 
-            return $appProfileInfo;  
+            return $profileInfo;  
          }
 
          //view profile (table StaffInfo)
@@ -181,9 +200,9 @@
 
             $query->execute();
 
-            $staffProfileInfo = $query->fetch(PDO::FETCH_ASSOC);
+            $profileInfo = $query->fetch(PDO::FETCH_ASSOC);
 
-            return $staffProfileInfo;
+            return $profileInfo;
          }
 
          //view profile (table AdminInfo)
@@ -194,9 +213,9 @@
 
             $query->execute();
 
-            $adminProfileInfo = $query->fetch(PDO::FETCH_ASSOC);
+            $profileInfo = $query->fetch(PDO::FETCH_ASSOC);
 
-            return $adminProfileInfo;
+            return $profileInfo;
          }
 
          
