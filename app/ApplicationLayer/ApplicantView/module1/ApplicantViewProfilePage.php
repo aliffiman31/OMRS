@@ -5,17 +5,29 @@ session_start();
 $encodedData;
 $decodedApplicantData;
 
-// Retrieve the serialized and URL-encoded data from the URL parameter
-$encodedData = $_GET['returnProfileInfo'];
-
-$decodedApplicantData = unserialize(urldecode($encodedData));
-var_dump($decodedApplicantData); // Debug statement
-
-// Decode the URL-encoded data and unserialize it
-$decodedApplicantData = unserialize(urldecode($encodedData));
-
 // Sidebar Active path
 $_SESSION['route'] = 'viewProfile';
+//If the user is not logged in send him/her to the login form
+if(!isset($_SESSION['currentUserIC'])) {
+
+    ?>
+        <script>
+            alert("Access denied !!!")
+            window.location = "../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php";
+        </script>
+    <?php
+
+  }else{
+
+       // Retrieve the serialized and URL-encoded data from the URL parameter
+      $encodedData = $_GET['returnProfileInfo'];
+      
+      // Decode the URL-encoded data and unserialize it
+      $decodedApplicantData = unserialize(urldecode($encodedData));
+
+      //Sidebar Active path
+      $_SESSION['route'] = 'viewProfile';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -42,14 +54,17 @@ $_SESSION['route'] = 'viewProfile';
 
         <div class="content-container">
         <div class="content"> 
+
+        <div class="ApplicantViewProfile">
+
+            <form>
                 <table>
-                    <tbody>
                     <tr>
-                        <td scope="row">NO KAD PENGENALAN : </td>
-                        <td><?php echo $decodedApplicantData['userIC']; ?></td>
+                        <td scope="row">NO KAD PENGENALAN  : </td>
+                        <td><?php echo $decodedApplicantData['Applicant_IC']; ?></td>
                     </tr>
                     <tr>
-                        <td scope="row">NAMA : </td>
+                        <td scope="row">NAMA  : </td>
                         <td><?php echo $decodedApplicantData['appName']; ?></td> 
                     </tr>
                     <tr>
@@ -60,10 +75,11 @@ $_SESSION['route'] = 'viewProfile';
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedApplicantData['appGender']; ?></td> 
                     </tr>
-                    <td scope="row">KATEGORI AKSES : </td>
-                        <td><?php echo $decodedApplicantData['userType']; ?></td> 
+                    
+
+
                     <tr>
-                        <td scope="row">NO. TELEFON: </td>
+                        <td scope="row">NO. TELEFON   : </td>
                         <td><?php echo $decodedApplicantData['appPhoneNo']; ?></td> 
                     </tr>
                     <tr>
@@ -75,11 +91,12 @@ $_SESSION['route'] = 'viewProfile';
                         <td><?php echo $decodedApplicantData['appAddress']; ?></td> 
                     </tr>
                     </table>
-                </tbody>
 
-                    <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onclick="  ">      
+                   
+            </form>      
         </div> 
-        </div>  
+        </div> 
+        </div> 
                  
 </section>
     </div>

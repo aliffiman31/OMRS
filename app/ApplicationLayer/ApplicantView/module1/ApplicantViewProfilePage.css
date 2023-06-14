@@ -10,6 +10,10 @@ body{
     height: 100vh;
 }
 
+.content{
+   margin-top: 100px;
+}
+
 .container-ApplicantViewProfile{
     border:5px solid;
     display: flex;
@@ -31,16 +35,5 @@ body{
  }
  
  table td{
-    padding:5px;
- }
-
- #kemaskiniBtn{
-    margin-top: 10px;
-    margin-left:205px;
-    background-color: blue;
-    border-radius: 5px;
-    border:hidden;
-    height:30px;
-    width: 100px;
-    color:white;
+    padding-bottom:10px;
  }

@@ -180,10 +180,10 @@
          }
 
          //view profile (table ApplicantInfo)
-         public function getApplicantProfileInfo($userIC)
+         public function getApplicantProfileInfo($Applicant_IC)
          {
             $query = $this->connect->prepare("SELECT * FROM ApplicantInfo WHERE Applicant_IC = :userIC");
-            $query->bindParam(':userIC', $userIC);
+            $query->bindParam(':userIC', $Applicant_IC);
 
             $query->execute();
 
@@ -218,6 +218,32 @@
             return $profileInfo;
          }
 
-         
+         //Update applicant data using user ic 
+         public function updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress) 
+         {
+               //session_start();
+               $Applicant_IC = $_SESSION['currentUserIC'];
+
+                // Prepare your update statement
+                $sql = "UPDATE ApplicantInfo SET appPhoneNo = :appPhoneNo, appEmail = :appEmail, appAddress = :appAddress WHERE Applicant_IC = :ic";
+
+               // Prepare the statement
+               $stmt = $this->connect->prepare($sql);
+
+               // Bind parameters
+               $stmt->bindParam(':appPhoneNo', $appPhoneNo);
+               $stmt->bindParam(':appEmail', $appEmail);
+               $stmt->bindParam(':appAddress', $appAddress);
+               $stmt->bindParam(':ic', $Applicant_IC);
+
+               // Execute the statement
+               if ($stmt->execute() === TRUE) {
+                  return true;  //return back to ProfileController
+
+               } else {
+      
+               return false;
+            }
+         }  
     }
 ?>

@@ -27,11 +27,7 @@ $Module1Repository = new Module1Repository($db);
     //Module 2
     /*$Module2Repository = new Module2Repository($db);
     $Module2Repository = new Module2Repository($db);
-<<<<<<< HEAD
-    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
-=======
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);*/
->>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
 
 //Module 1 (Create a new instance of the controller)
@@ -103,22 +99,9 @@ switch ($action) {
 
         $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
-<<<<<<< HEAD
-            //Module 1 (form from ApplicantRegFormPage.php)
-            // case 'registerApplicantAcc':
-            //     $userIC = $_POST['userIC'];
-            //     $appName = $_POST['appName'];
-            //     $userType = $_POST['userType'];
-            //     $appGender = $_POST['appGender'];
-            //     $appPhoneNo = $_POST['appPhoneNo'];
-            //     $appAddress = $_POST['appAddress'];
-            //     $appEmail = $_POST['appEmail'];
-            //     $userPassword = $_POST['userPassword'];
-=======
     case 'forgotPasswordStaff':
         $userIC = $_POST['userIC'];
         $staffEmail = $_POST['staffEmail'];
->>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
         $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
 
@@ -147,6 +130,15 @@ switch ($action) {
 
         $ProfileController->viewProfileFunction($from);
         break;
+    
+    case 'updateAppProfile':
+        $appPhoneNo = $_POST['appPhoneNo'];
+        $appEmail = $_POST['appEmail'];
+        $appAddress = $_POST['appAddress'];
+    
+        $ProfileController->updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress);
+            
+        break;
 
         //module 2
         case 'ReligiousInfo':
@@ -162,30 +154,8 @@ switch ($action) {
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
 
-<<<<<<< HEAD
-            break;
-
-
-=======
         break;
       
->>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
-
-
-    //form from syaratpage.php
-   /* case 'ReligiousInfo':
-        //input from form
-         $office = $_POST['office'];
-         $Venue = $_POST['Venue'];
-         $Date = $_POST['Date'];
-         $Capacity = $_POST['Capacity'];
-         $Vacancy = $_POST['Vacancy'];
-
-        //passing to controller with the function FormRegister(include parameter)
-        $ApplicantController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
-        break;
-
-
         //Module 3
         case 'unauthorizedmarriage':
             $ic = $_POST[ 'ApplicantPartner_IC'];
@@ -214,7 +184,7 @@ switch ($action) {
             $Desc = $_POST['Description'];
     
             $marriagecertController->applystatus($ic, $date, $status, $Desc);
-            break;*/
+            break;
     default:
 }
 ?>

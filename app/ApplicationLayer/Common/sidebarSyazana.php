@@ -223,7 +223,7 @@
 
       .content {
         border: 1px solid black;
-        height: 700px;
+        height: 600px;
         width: 830px;
         background-color: azure;
         margin-top: 20%;
@@ -249,6 +249,19 @@
       }
     }
   </style>
+
+<?php
+
+/*$route = $_SESSION['route'];
+
+if($route == 'viewProfile'){
+    $viewProfileRoute = 'active' ;
+
+}else if($route == 'editProfile'){
+    $editProfileRoute = 'active' ;
+}*/
+
+?>
   <!-- Custom styles for this template -->
   <link href="sidebars.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -318,19 +331,6 @@
 
     </div>
 
-    <?php
-
-    /*$route = $_SESSION['route'];
-
-    if($route == 'viewProfile'){
-        $viewProfileRoute = 'active' ;
-
-    }else if($route == 'editProfile'){
-        $editProfileRoute = 'active' ;
-    }*/
-    
-   ?>
-
     <!-- Sidebar -->
     <div id="collapsible" class="flex-shrink-0 p-3" style="width: 280px; border: 1px solid black;">
       <ul class="list-unstyled ps-0">
@@ -342,8 +342,9 @@
           </button>
           <div class="collapse" id="module1-collapse">                                                                                  
 
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                                                                                                                     <!-- onclick="redirectToURL(this.id) -->
-              <li><a id="profile-page"  class="link-body-emphasis d-inline-flex text-decoration-none rounded" href="../../../public/Facade.php?action=viewProfile&from=view">Lihat Akaun Profil</a></li>
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                                                                                                                   <!-- onclick="redirectToURL(this.id) -->
+              <li><a id="profile-page"  class="link-body-emphasis d-inline-flex text-decoration-none rounded" href="../../../../public/Facade.php?action=viewProfile&from=view">Lihat Akaun Profil</a></li>
+              <li><a id="profile-page" class="link-body-emphasis d-inline-flex text-decoration-none rounded"   href="../../../../public/Facade.php?action=viewProfile$from=edit">Sunting Akaun Profil</a></li>
             </ul>
           </div>
         </li>

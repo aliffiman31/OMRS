@@ -9,7 +9,7 @@
         }
 
         //view profile function 
-        /*public function viewProfileFunction($from)
+        public function viewProfileFunction($from)
         {
             session_start();
             $userType = $_SESSION['currentUserType'];
@@ -21,11 +21,11 @@
 
                 if($from == 'view')
                 {
-                    header('Location: ../app/ApplicantView/module1/ApplicantViewProfilePage.php?returnProfileInfo='. urlencode(serialize($appProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php?returnProfileInfo='. urlencode(serialize($appProfileInfo)));
                 }
                 else if($from == 'edit')
                 {
-                    header('Location: ../app/ApplicantView/module1/ApplicantUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($appProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/ApplicantView/module1/ApplicantUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($appProfileInfo)));
                 }
             }
             else if($userType == "Kakitangan")
@@ -35,11 +35,11 @@
 
                 if($from == 'view')
                 {
-                    header('Location: ../app/StaffView/module1/StafftViewProfilePage.php?returnProfileInfo='. urlencode(serialize($staffProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/StaffView/module1/StafftViewProfilePage.php?returnProfileInfo='. urlencode(serialize($staffProfileInfo)));
                 }
                 else if($from == 'edit')
                 {
-                    header('Location: ../app/StaffView/module1/StaffUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($staffProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/StaffView/module1/StaffUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($staffProfileInfo)));
                 }
             }
             else if($userType == "Admin")
@@ -49,43 +49,66 @@
 
                 if($from == 'view')
                 {
-                    header('Location: ../../../app/AdminView/AdminViewProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
+                    header('Location: ../../../app/ApplicationLayer/AdminView/AdminViewProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
                 }
                 else if($from == 'edit')
                 {
-                    header('Location: ../../../app/AdminView/AdminUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
+                    header('Location: ../../../app/ApplicationLayer/AdminView/AdminUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
                 }
             }
             else
             {
                 echo "Maaf, sistem tidak dapat meneruskan aktiviti anda.";
             }
-        }*/
+        }
 
-        public function viewProfileFunction($from)
+        //Update the applicant profile data 
+        public function updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress) 
         {
-    session_start();
-    $userType = $_SESSION['currentUserType'];
+            //Firstly, the updateApplicationProfileInfo will update the data in mySQL.
+            if($this->Module1Repository->updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress)){
+                ?>
+                    <script>
+                        alert("Proses KEMASKINI anda telah berjaya.");
+                    </script>
+                <?php
+                
+                header("Location: ../../../public/Facade.php?action=viewProfile&from=view");
 
-    
+            }else{
+                ?>
+                    <script>
+                        alert("Error updating record");
+                    </script>
+                <?php
+                                          
+                header("Location: ../../../public/Facade.php?action=viewProfile&from=view");
+            }
+            
+        }
 
-    if ($userType == "Pemohon") {
+       /* public function viewProfileFunction($from)
+        {
+            session_start();
+            $userType = $_SESSION['currentUserType'];
+
+     if ($userType == "Pemohon") {
         $Applicant_IC = $_SESSION['currentUserIC'];
         $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_IC); //returnProfileInfo
 
         if ($from == 'view') {
-            header('Location: ../ApplicantView/module1/ApplicantViewProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));  //GET Method
-            exit;
+            header('Location: ../app/ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));  //GET Method
+            
         } else if ($from == 'edit') {
-            header('Location: ../ApplicantView/module1/ApplicantUpdateProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));
-            exit;
+            header('Location: ../app/ApplicationLayer/ApplicantView/module1/ApplicantUpdateProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));
+        
         }
 
     } else {
         echo "Maaf, sistem tidak dapat meneruskan aktiviti anda.";
         exit;
     }
-}
+}*/
 
     }
 ?>
