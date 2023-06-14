@@ -18,7 +18,7 @@
             border-collapse: collapse;
             width: 96%;
             text-align: center;
-            
+
         }
 
         .table-data td {
@@ -40,6 +40,7 @@
             width: 300px;
             height: 30px;
         }
+
         #button1 {
             border-radius: 9px;
             height: 28px;
@@ -89,6 +90,9 @@
                                     <p><b>Status</b></p>
                                 </td>
                                 <td>
+                                    <p><b>Kehadiran</b></p>
+                                </td>
+                                <td>
                                     <p><b>Operasi</b></p>
                                 </td>
                             </tr>
@@ -103,11 +107,13 @@
                                     <p id="#"></p>
                                 </td>
                                 <td>
-                                    <p><a href="#">View</a>/<a href="#">Print</a></p>
+                                    <p id="#"></p>
+                                </td>
+                                <td>
+                                    <p><a href="#">GAGAL</a>/<a href="#">LULUS</a></p>
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
             </div>

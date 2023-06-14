@@ -31,8 +31,25 @@ if (isset($_POST['office'])) {
     <style>
         table,
         th,
-        td {
-            border: 1px solid black;
+        .table-data-title{
+            border: 2px solid black;
+            text-align: center;
+        }
+        .header-title{
+            background-color: aqua;
+        }
+
+        #button1{
+            border-radius: 9px;
+            height: 28px;
+            background-color: blue;
+            color: aliceblue;
+            border: none;
+            width: 50px;
+            margin-left: 20px;
+        }
+        #office{
+            width: 200px;
         }
     </style>
 </head>
@@ -67,7 +84,7 @@ if (isset($_POST['office'])) {
                     <br>
                     <div>
                         <table class="table-info">
-                            <tr>
+                            <tr class="header-title">
                                 <td class="table-data-title">Bil</td>
                                 <td class="table-data-title">Anjuran</td>
                                 <td class="table-data-title">Tempat</td>
