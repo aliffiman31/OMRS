@@ -26,12 +26,12 @@
             </div>
             <table>
                 <tr>
-                    <td>ADMIN ID   :</td>
+                    <td>NO. KAD PENGENALAN  :</td>
                     <td> <input style="height:30px; width:200px;" type = "text" name="userIC" id="userIC"></td>
                 </tr>
                 <tr>
                     <td>KATA LALUAN :</td>
-                    <td> <input style="height:30px; width:200px;" type = "text" name="userPassword" id="userPassword"></td>
+                    <td> <input style="height:30px; width:200px;" type = "password" name="userPassword" id="userPassword"></td>
                 </tr>
             </table>
             <input type="submit" id="submit" value="MASUK" onclik="   "> <br> <br> <br>

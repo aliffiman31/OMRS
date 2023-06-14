@@ -32,17 +32,20 @@
                 </tr>
                 <tr>
                     <td>KATA LALUAN :</td>
-                    <td> <input style="height:30px; width:200px;" type = "text" name="userPassword" id="userPassword"></td>
+                    <td> <input style="height:30px; width:200px;" type = "password" name="userPassword" id="userPassword"></td>
                 </tr>
             </table>
-            <input type="submit" id="submit" value="MASUK" onclik=""> <br> <br> <br>
-
+            <input type="submit" id="submit" value="MASUK" onclik=""> <br> <br>
+       
+                <a href="../../../ApplicationLayer/StaffView/module1/StaffLoginPage.php" >Log Masuk Kakitangan</a>
+          
+            <br><br>
             <div class="href-link">
                 <a href="ApplicantRegFormPage.php" >Daftar</a>
                 <div class="verticle-line"></div>
                 <a href="ApplicantChangePasswordPage.php" >Tukar Kata Laluan </a>
                 <div class="verticle-line"></div>
-                <a href="ApplicantForgotPasswordPage.php" >Lupa Kata Laluan?</a>
+                <a href="ApplicantForgotPasswordPage.php" >Lupa Kata Laluan?</a> 
             </div>
             <br>
             </form>

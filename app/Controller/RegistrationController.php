@@ -12,10 +12,10 @@
         public function registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
         {
             //security purpose (Admin pon tak blh tgk password user kat mysql)
-            $hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
+            //$hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
 
             //call createUserAcc function in Module1Repository (table UserAccount)  
-            $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
+            $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $userPassword, $userType);
 
             //(dlm table ApplicantInfo)
             $this->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
@@ -40,10 +40,10 @@
         public function staffRegisterFunction($userIC, $staffName, $staffGender, $staffDepartmentName, $userType, $staffEmail, $staffPhoneNo, $userPassword)
         {
             //security purpose (Admin pon tak blh tgk password user kat mysql)
-            $hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
+            //$hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
 
             //call createUserAcc function in Module1Repository (table UserAccount)
-            $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $hashed_password, $userType);
+            $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $userPassword, $userType);
 
             //(dlm table StaffInfo)
             $this->addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo);

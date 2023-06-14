@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td>KATA LALUAN :</td>
-                    <td> <input style="height:30px; width:200px;" type = "text" name="userPassword" id="userPassword"></td>
+                    <td> <input style="height:30px; width:200px;" type = "password" name="userPassword" id="userPassword"></td>
                 </tr>
             </table>
             <input type="submit" id="submit" value="MASUK" onclik="   "> <br> <br> <br>

@@ -1,6 +1,6 @@
  <?php 
 
-    require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
+require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
     /*require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
@@ -25,9 +25,13 @@ $Module1Repository = new Module1Repository($db);
 //$Module2Repository = new Module2Repository($db);
 
     //Module 2
-    //$Module2Repository = new Module2Repository($db);
+    /*$Module2Repository = new Module2Repository($db);
     $Module2Repository = new Module2Repository($db);
+<<<<<<< HEAD
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
+=======
+    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);*/
+>>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
 
 //Module 1 (Create a new instance of the controller)
@@ -99,6 +103,7 @@ switch ($action) {
 
         $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
+<<<<<<< HEAD
             //Module 1 (form from ApplicantRegFormPage.php)
             // case 'registerApplicantAcc':
             //     $userIC = $_POST['userIC'];
@@ -109,76 +114,31 @@ switch ($action) {
             //     $appAddress = $_POST['appAddress'];
             //     $appEmail = $_POST['appEmail'];
             //     $userPassword = $_POST['userPassword'];
+=======
+    case 'forgotPasswordStaff':
+        $userIC = $_POST['userIC'];
+        $staffEmail = $_POST['staffEmail'];
+>>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
-            //     $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
-            //     break;
+        $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
 
-            // case 'registerStaffAcc':
-            //     $userIC = $_POST['userIC'];
-            //     $staffName = $_POST['staffName'];
-            //     $staffGender = $_POST['staffGender'];
-            //     $staffDepartmentName = $_POST['staffDepartmentName'];
-            //     $userType = $_POST['userType'];
-            //     $staffEmail = $_POST['staffEmail'];
-            //     $staffPhoneNo = $_POST['staffPhoneNo'];
-            //     $userPassword = $_POST['userPassword'];
+        break;
 
-            //     $RegistrationController->staffRegisterFunction($userIC, $staffName, $staffGender, $staffDepartmentName, $userType, $staffEmail, $staffPhoneNo, $userPassword);
-            //     break;
+        case 'forgotPasswordAdmin':
+        $userIC = $_POST['userIC'];
+        $staffEmail = $_POST['adminEmail'];
 
-            // case 'loginApplicantAcc':
-            //     $userIC = $_POST['userIC'];
-            //     $userPassword = $_POST['userPassword'];
+        $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
 
-            //     $LoginController->loginApplicantFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
-            //     break;
+        break;
 
-            // case 'loginStaffAcc':
-            //     $userIC  = $_POST['userIC'];
-            //     $userPassword = $_POST['userPassword'];
+        case 'viewProfile':
+        $from = isset($_GET['from']) ? $_GET['from'] : '';
 
-            //     $LoginController->loginStaffFunction($userIC, $userPassword);  //means dia akan read LoginController dan function loginFunction
-            //     break;
+        $ProfileController->viewProfileFunction($from);
+        break;
 
-            // case 'loginAdminAcc':
-            //     $Admin_Id  = $_POST['Admin_Id'];
-            //     $userPassword = $_POST['userPassword'];
-
-            //     $LoginController->loginAdminFunction($Admin_Id, $userPassword);  //means dia akan read LoginController dan function loginFunction
-            //     break;
-
-            // case 'forgotPasswordApplicant':
-            //     $userIC = $_POST['userIC'];
-            //     $appEmail = $_POST['appEmail'];
-
-            //     $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
-
-            //     break;
-
-            // case 'forgotPasswordStaff':
-            //     $userIC = $_POST['userIC'];
-            //     $staffEmail = $_POST['staffEmail'];
-
-            //     $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
-
-            //     break;
-
-            // case 'forgotPasswordAdmin':
-            //     $userIC = $_POST['userIC'];
-            //     $staffEmail = $_POST['adminEmail'];
-
-            //     $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
-
-            //     break;
-
-            // case 'viewProfile':
-            //     $from = isset($_GET['from']) ? $_GET['from'] : '';
-
-            //     $UserProfileController->viewProfileFunction($from);
-            //     break;
-
-
-            //module 2
+        //module 2
         case 'ReligiousInfo':
             // Retrieve form data
             $office = $_POST['office'];
@@ -192,9 +152,14 @@ switch ($action) {
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
 
+<<<<<<< HEAD
             break;
 
 
+=======
+        break;
+      
+>>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
 
     //form from syaratpage.php
