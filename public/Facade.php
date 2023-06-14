@@ -12,6 +12,9 @@ require_once '../app/Controller/LoginController.php';
 require_once '../app/Controller/PasswordController.php';
 require_once '../app/Controller/ProfileController.php';
 
+require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
+require_once '../app/OMRS.dataaccess/Module2Repository.php';
+
 // Create a new database connection
 $db = (new Database())->connect();
 
@@ -24,7 +27,11 @@ $Module1Repository = new Module1Repository($db);
     //Module 2
     /*$Module2Repository = new Module2Repository($db);
     $Module2Repository = new Module2Repository($db);
+<<<<<<< HEAD
+    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
+=======
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);*/
+>>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
 
 //Module 1 (Create a new instance of the controller)
@@ -96,9 +103,22 @@ switch ($action) {
 
         $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
+<<<<<<< HEAD
+            //Module 1 (form from ApplicantRegFormPage.php)
+            // case 'registerApplicantAcc':
+            //     $userIC = $_POST['userIC'];
+            //     $appName = $_POST['appName'];
+            //     $userType = $_POST['userType'];
+            //     $appGender = $_POST['appGender'];
+            //     $appPhoneNo = $_POST['appPhoneNo'];
+            //     $appAddress = $_POST['appAddress'];
+            //     $appEmail = $_POST['appEmail'];
+            //     $userPassword = $_POST['userPassword'];
+=======
     case 'forgotPasswordStaff':
         $userIC = $_POST['userIC'];
         $staffEmail = $_POST['staffEmail'];
+>>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
         $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
 
@@ -142,8 +162,14 @@ switch ($action) {
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
 
+<<<<<<< HEAD
+            break;
+
+
+=======
         break;
       
+>>>>>>> 539bcc729230e52ce32b8a01e3da2e9d7215eb70
 
 
     //form from syaratpage.php

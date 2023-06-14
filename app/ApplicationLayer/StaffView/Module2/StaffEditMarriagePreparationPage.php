@@ -117,6 +117,44 @@
                         </table>
                         <button type="submit">Simpan</button>
                     </form>
+                    <select id="paid" name="paid" required>
+                        <option value="">Select an office</option>
+                        <option value="JAIPTermerloh">JAIP Termerloh</option>
+                        <option value="JAIPPekan">JAIP Pekan</option>
+                        <option value="JAIPKuantan">JAIP Kuantan</option>
+                        <!-- Add more options as needed -->
+                    </select>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <p>Bil</p>
+                            </td>
+                            <td>
+                                <p>PAID</p>
+                            </td>
+                            <td>
+                                <p>Tempat</p>
+                            </td>
+                            <td>
+                                <p>Tarikh</p>
+                            </td>
+                            <td>
+                                <p>Kapasiti Peserta</p>
+                            </td>
+                            <td>
+                                <p>Operasi</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p id="#"></p></td>
+                            <td><p id="#"></p></td>
+                            <td><p id="#"></p></td>
+                            <td><p id="#"></p></td>
+                            <td><p id="#"></p></td>
+                            <td><p><a href="#">Delete</a>/<a href="../../StaffView/Module2/StaffSaveUpdateMarriagePreparationPage.php">Edit</a></p></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </section>

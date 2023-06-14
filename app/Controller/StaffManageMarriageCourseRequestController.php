@@ -15,6 +15,15 @@ class StaffManageMarriageCourseRequestController
         $this->module2Repository->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
 
     }
+    public function getMarriageCourseData()
+    {
+        return $this->module2Repository->getMarriageCourseData();
+    }
+    
+    public function getMarriageCourseDataByOffice($office)
+    {
+        return $this->module2Repository->getMarriageCourseData($office);
+    }
 }
 
 ?>

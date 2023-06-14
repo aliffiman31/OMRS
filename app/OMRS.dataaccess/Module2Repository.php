@@ -28,6 +28,18 @@ class Module2Repository
 
     $stmt->closeCursor();
 }
-}
+public function getMarriageCourseData($office = null)
+    {
+        if ($office) {
+            // Filter the data based on the selected office
+            $stmt = $this->db->prepare("SELECT * FROM marriagecourse WHERE office = ?");
+            $stmt->execute([$office]);
+        } else {
+            // Retrieve all the data
+            $stmt = $this->db->query("SELECT * FROM marriagecourse");
+        }
 
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+}
 ?>
