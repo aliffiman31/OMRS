@@ -13,10 +13,6 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
-
-
-
-
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
@@ -208,6 +204,8 @@
 
 
 
+
+
     /* Desktops and laptops ----------- */
     @media only screen and (min-width: 1224px) {
       /* Styles */
@@ -221,7 +219,7 @@
 
       .content {
         border: 1px solid black;
-        height: 700px;
+        height: 600px;
         width: 830px;
         background-color: azure;
         margin-top: 20%;
@@ -234,19 +232,32 @@
         border: 1px solid black;
         border-radius: 5px;
         background-color: #f2f2f2;
-        width: 265px;
+        width: 280px;
         height: 70px;
-        margin-left: 14%;
+        margin-left: 5%;  
         margin-top: 10.4%;
       }
 
       #collapsible {
         position: absolute;
-        margin-left: 13%;
+        margin-left: 5%;
         margin-top: 16%;
       }
     }
   </style>
+
+<?php
+
+/*$route = $_SESSION['route'];
+
+if($route == 'viewProfile'){
+    $viewProfileRoute = 'active' ;
+
+}else if($route == 'editProfile'){
+    $editProfileRoute = 'active' ;
+}*/
+
+?>
   <!-- Custom styles for this template -->
   <link href="sidebars.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -306,11 +317,11 @@
       <div class="profile">
         <div class="profilename">
           <p class="profile-name">NAME : </p>
-          <p class="profile-name">AlEX</p>
+          <p class="profile-name">NURUL SYAZANA</p>
         </div>
         <div class="profileid">
           <p class="profile-id">ID : </p>
-          <p class="profile-id">0202541230</p>
+          <p class="profile-id">020715060540</p>
         </div>
       </div>
 
@@ -325,15 +336,16 @@
           <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module1-collapse" aria-expanded="false">
             Profil
           </button>
-          <div class="collapse" id="module1-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                    
-              <li><a id="profile-page" href="../../../../public/Facade.php?action=viewProfile$from=view" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Lihat Akaun Profil</a></li>
-              <li><a id="profile-page" href="../../../../public/Facade.php?action=updateProfile$from=edit" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sunting Akaun Profil</a></li>
+          <div class="collapse" id="module1-collapse">                                                                                  
+
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                                                                                                                   <!-- onclick="redirectToURL(this.id) -->
+              <li><a id="profile-page"  class="link-body-emphasis d-inline-flex text-decoration-none rounded" href="../../../../public/Facade.php?action=viewProfile&from=view">Lihat Akaun Profil</a></li>
+              <li><a id="profile-page" class="link-body-emphasis d-inline-flex text-decoration-none rounded"   href="../../../../public/Facade.php?action=viewProfile$from=edit">Sunting Akaun Profil</a></li>
             </ul>
           </div>
         </li>
 
-        <!-- MODULE 2.1 MENU -->
+        <!-- MODULE 2.1 MENU -->  
         <li class="mb-1">
           <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module2.1-collapse" aria-expanded="false">
             Permohonan Kursus Kahwin
@@ -410,8 +422,8 @@
       function redirectToURL(btnid) {
 
         //Module 1 route
-        if (btnid == "profile-page")
-          window.location.replace("../../../ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php");
+        //if (btnid == "profile-page")  
+          //window.location.replace("../../../ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php");
 
         //modul 2 route
 
@@ -423,10 +435,10 @@
 
 
         //module 5 route
-        else if (btnid == "syarat-kelayakan")
+        /*else if (btnid == "syarat-kelayakan")
           window.location.replace("../../ApplicantView/module5/ApplicantRequirementPage.php");
         else if (btnid == "mohon")
-          window.location.replace("../../ApplicantView/module5/ApplicantApplyPage.php");
+          window.location.replace("../../ApplicantView/module5/ApplicantApplyPage.php");*/
       }
     </script>
 

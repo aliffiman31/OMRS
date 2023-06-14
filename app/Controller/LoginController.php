@@ -43,7 +43,7 @@
                 ?>
                 <script>
                     alert("Berjaya Log Masuk");
-                    window.location = "../app/ApplicationLayer/StaffView/module1/homepage.php";
+                    window.location = "../app/ApplicationLayer/ApplicantView/ApplicantPartnerInformationPage.php";
                 </script>
                 <?php 
                 //header("Location: index.php?action=viewProfile&from=view");

@@ -1,13 +1,33 @@
 <?php
-    // Start up your PHP Session
-    $encodedData;
-    $decodedApplicantData;
+// Start up your PHP Session
+session_start();
 
-    // Retrieve the serialized and URL-encoded data from the URL parameter
-    $encodedData = $_GET['returnProfileInfo'];
-        
-    // Decode the URL-encoded data and unserialize it
-    $decodedApplicantData = unserialize(urldecode($encodedData)); //semua dlm table ApplicantInfo
+$encodedData;
+$decodedApplicantData;
+
+// Sidebar Active path
+$_SESSION['route'] = 'viewProfile';
+//If the user is not logged in send him/her to the login form
+if(!isset($_SESSION['currentUserIC'])) {
+
+    ?>
+        <script>
+            alert("Access denied !!!")
+            window.location = "../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php";
+        </script>
+    <?php
+
+  }else{
+
+       // Retrieve the serialized and URL-encoded data from the URL parameter
+      $encodedData = $_GET['returnProfileInfo'];
+      
+      // Decode the URL-encoded data and unserialize it
+      $decodedApplicantData = unserialize(urldecode($encodedData));
+
+      //Sidebar Active path
+      $_SESSION['route'] = 'viewProfile';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -29,23 +49,22 @@
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebar.php');  ?>
+            <?php include_once('../../Common/sidebarSyazana.php');  ?>
         </div>
 
         <div class="content-container">
-            <div class="content">
-                <!-- Put Your Content Here  -->
-                <div class="container-ApplicantViewProfile">    
-                    <form method="post">
-                        <div class="ApplicantViewProfile">
+        <div class="content"> 
 
-                    <table>
+        <div class="ApplicantViewProfile">
+
+            <form>
+                <table>
                     <tr>
-                        <td scope="row">NO KAD PENGENALAN : </td>
-                        <td><?php echo $decodedApplicantData['userIC']; ?></td>
+                        <td scope="row">NO KAD PENGENALAN  : </td>
+                        <td><?php echo $decodedApplicantData['Applicant_IC']; ?></td>
                     </tr>
                     <tr>
-                        <td scope="row">NAMA : </td>
+                        <td scope="row">NAMA  : </td>
                         <td><?php echo $decodedApplicantData['appName']; ?></td> 
                     </tr>
                     <tr>
@@ -56,10 +75,9 @@
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedApplicantData['appGender']; ?></td> 
                     </tr>
-                    <td scope="row">KATEGORI AKSES : </td>
-                        <td><?php echo $decodedApplicantData['userType']; ?></td> 
+                    
                     <tr>
-                        <td scope="row">NO. TELEFON: </td>
+                        <td scope="row">NO. TELEFON   : </td>
                         <td><?php echo $decodedApplicantData['appPhoneNo']; ?></td> 
                     </tr>
                     <tr>
@@ -70,14 +88,12 @@
                         <td scope="row">ALAMAT : </td>
                         <td><?php echo $decodedApplicantData['appAddress']; ?></td> 
                     </tr>
-                    </table>
-
-                    <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onclick="  ">  
-                    <br>
-                    </form>
-                </div> 
-            </div>  
-        </div>             
+                    </table>     
+            </form>      
+        </div> 
+        </div> 
+        </div> 
+                 
 </section>
     </div>
 </body>

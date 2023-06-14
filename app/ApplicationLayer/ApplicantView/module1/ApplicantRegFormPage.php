@@ -53,8 +53,8 @@
                     <td>
                         <select style="width:260px; height:40px;" name="appGender" id="appGender">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="male">LELAKI</option>
-                            <option value="female">PEREMPUAN</option>
+                            <option value="Lelaki">LELAKI</option>
+                            <option value="Perempuan">PEREMPUAN</option>
                         </select>
                     </td>
                 </tr>

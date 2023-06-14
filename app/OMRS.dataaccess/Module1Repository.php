@@ -160,17 +160,36 @@
             }
         }
 
+        public function changePassword($userIC, $userPassword, $newPassword)
+        {
+            $query = $this->connect->prepare("UPDATE UserAccount SET userPassword = :newPassword WHERE userIC = :userIC AND userPassword = :userPassword");
+            $query->bindParam(':newPassword', $newPassword);
+            $query->bindParam(':userIC', $userIC);
+            $query->bindParam(':userPassword', $userPassword);
+            $query->execute();
+     
+            // Check if the update was successful
+            if ($query->rowCount() > 0) 
+            {
+               $_SESSION['passwordUpdateSuccess'] = true;
+            } 
+            else 
+            {
+               $_SESSION['passwordUpdateError'] = true;
+            }
+         }
+
          //view profile (table ApplicantInfo)
-         public function getApplicantProfileInfo($userIC)
+         public function getApplicantProfileInfo($Applicant_IC)
          {
             $query = $this->connect->prepare("SELECT * FROM ApplicantInfo WHERE Applicant_IC = :userIC");
-            $query->bindParam(':userIC', $userIC);
+            $query->bindParam(':userIC', $Applicant_IC);
 
             $query->execute();
 
-            $appProfileInfo = $query->fetch(PDO::FETCH_ASSOC);
+            $profileInfo = $query->fetch(PDO::FETCH_ASSOC);
 
-            return $appProfileInfo;  
+            return $profileInfo;  
          }
 
          //view profile (table StaffInfo)
@@ -181,9 +200,9 @@
 
             $query->execute();
 
-            $staffProfileInfo = $query->fetch(PDO::FETCH_ASSOC);
+            $profileInfo = $query->fetch(PDO::FETCH_ASSOC);
 
-            return $staffProfileInfo;
+            return $profileInfo;
          }
 
          //view profile (table AdminInfo)
@@ -194,11 +213,37 @@
 
             $query->execute();
 
-            $adminProfileInfo = $query->fetch(PDO::FETCH_ASSOC);
+            $profileInfo = $query->fetch(PDO::FETCH_ASSOC);
 
-            return $adminProfileInfo;
+            return $profileInfo;
          }
 
-         
+         //Update applicant data using user ic 
+         public function updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress) 
+         {
+               //session_start();
+               $Applicant_IC = $_SESSION['currentUserIC'];
+
+                // Prepare your update statement
+                $sql = "UPDATE ApplicantInfo SET appPhoneNo = :appPhoneNo, appEmail = :appEmail, appAddress = :appAddress WHERE Applicant_IC = :ic";
+
+               // Prepare the statement
+               $stmt = $this->connect->prepare($sql);
+
+               // Bind parameters
+               $stmt->bindParam(':appPhoneNo', $appPhoneNo);
+               $stmt->bindParam(':appEmail', $appEmail);
+               $stmt->bindParam(':appAddress', $appAddress);
+               $stmt->bindParam(':ic', $Applicant_IC);
+
+               // Execute the statement
+               if ($stmt->execute() === TRUE) {
+                  return true;  //return back to ProfileController
+
+               } else {
+      
+               return false;
+            }
+         }  
     }
 ?>

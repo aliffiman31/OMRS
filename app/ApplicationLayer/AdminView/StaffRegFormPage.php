@@ -40,8 +40,8 @@
                         <td>JANTINA :</td>
                         <td><select style="width:410px; height:30px;" name="staffGender" id="staffGender">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="male">LELAKI</option>
-                            <option value="female">PEREMPUAN</option>
+                            <option value="Lelaki">LELAKI</option>
+                            <option value="Perempuan">PEREMPUAN</option>
                         </select>
                     </td>
                     </tr>

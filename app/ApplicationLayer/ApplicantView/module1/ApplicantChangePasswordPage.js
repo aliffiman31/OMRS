@@ -4,7 +4,6 @@
         //Declaring variable based on id
         var ic = document.getElementById("userIC").value;
         var password = document.getElementById("userPassword").value;
-        var confirm_password = document.getElementById("newPassword").value;
         var error_message = document.getElementById("error_message");
 
         //Error Message style
@@ -27,13 +26,5 @@
             error_message.innerHTML = text;
             return false;
         }
-
-        if(password != confirm_password){
-        text = "*Kata laluan anda tidak sepadan.";
-        error_message.innerHTML = text;
-        return false;
-        }
-
-        return true;
     }
    

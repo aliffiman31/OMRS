@@ -27,7 +27,11 @@ $Module1Repository = new Module1Repository($db);
     //Module 2
     /*$Module2Repository = new Module2Repository($db);
     $Module2Repository = new Module2Repository($db);
+<<<<<<< HEAD
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
+=======
+    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);*/
+>>>>>>> f6363bb392f625af9ecb1b9bb553833b60b2d9cd
 
 
 //Module 1 (Create a new instance of the controller)
@@ -99,6 +103,7 @@ switch ($action) {
 
         $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
+<<<<<<< HEAD
             //Module 1 (form from ApplicantRegFormPage.php)
             // case 'registerApplicantAcc':
             //     $userIC = $_POST['userIC'];
@@ -109,12 +114,17 @@ switch ($action) {
             //     $appAddress = $_POST['appAddress'];
             //     $appEmail = $_POST['appEmail'];
             //     $userPassword = $_POST['userPassword'];
+=======
+    case 'forgotPasswordStaff':
+        $userIC = $_POST['userIC'];
+        $staffEmail = $_POST['staffEmail'];
+>>>>>>> f6363bb392f625af9ecb1b9bb553833b60b2d9cd
 
         $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
 
         break;
 
-        case 'forgotPasswordAdmin':
+    case 'forgotPasswordAdmin':
         $userIC = $_POST['userIC'];
         $staffEmail = $_POST['adminEmail'];
 
@@ -122,10 +132,29 @@ switch ($action) {
 
         break;
 
-        case 'viewProfile':
+    case 'changePassword':
+        $userIC = $_POST['userIC'];
+        $userPassord = $_POST['userPassword'];
+        $newPassword = $_POST['newPassword'];
+    
+        $PasswordController->changePasswordFunction($userIC, $userPassword, $newPassword);
+    
+        break;
+
+
+    case 'viewProfile':
         $from = isset($_GET['from']) ? $_GET['from'] : '';
 
         $ProfileController->viewProfileFunction($from);
+        break;
+    
+    case 'updateAppProfile':
+        $appPhoneNo = $_POST['appPhoneNo'];
+        $appEmail = $_POST['appEmail'];
+        $appAddress = $_POST['appAddress'];
+    
+        $ProfileController->updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress);
+            
         break;
 
         //module 2
@@ -144,6 +173,7 @@ switch ($action) {
 
         break;
       
+<<<<<<< HEAD
 
 
     //form from syaratpage.php
@@ -160,6 +190,8 @@ switch ($action) {
         break;
 
 
+=======
+>>>>>>> f6363bb392f625af9ecb1b9bb553833b60b2d9cd
         //Module 3
         case 'unauthorizedmarriage':
             $ic = $_POST[ 'ApplicantPartner_IC'];
@@ -188,7 +220,7 @@ switch ($action) {
             $Desc = $_POST['Description'];
     
             $marriagecertController->applystatus($ic, $date, $status, $Desc);
-            break;*/
+            break;
     default:
 }
 ?>
