@@ -13,10 +13,6 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
-
-
-
-
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>

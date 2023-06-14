@@ -52,7 +52,7 @@
 
         <div class="content-container">
         <div class="content">   
-        <form action="../../../../public/Facade.php?action=updateAppProfile" method="POST" onsubmit = "return userProfileUpdateValidate();">
+        <form action="../../../../public/Facade.php?action=updateAppProfile" method="POST">
                 <table>
                     <tbody>
                     <tr>

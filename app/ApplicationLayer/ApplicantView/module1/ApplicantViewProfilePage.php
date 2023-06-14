@@ -76,8 +76,6 @@ if(!isset($_SESSION['currentUserIC'])) {
                         <td><?php echo $decodedApplicantData['appGender']; ?></td> 
                     </tr>
                     
-
-
                     <tr>
                         <td scope="row">NO. TELEFON   : </td>
                         <td><?php echo $decodedApplicantData['appPhoneNo']; ?></td> 
@@ -90,9 +88,7 @@ if(!isset($_SESSION['currentUserIC'])) {
                         <td scope="row">ALAMAT : </td>
                         <td><?php echo $decodedApplicantData['appAddress']; ?></td> 
                     </tr>
-                    </table>
-
-                   
+                    </table>     
             </form>      
         </div> 
         </div> 
