@@ -126,14 +126,32 @@ class Module5Repository
     $query->execute([$uniqid, $file1Data, $file2Data, $file3Data]);
   }
 
-
-  function fetchAllSpecialIncentives()
+  public function getAllApplicantIDs()
   {
-    $query = $this->connect->prepare("SELECT * FROM groomform");
-    $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+      $query = $this->connect->prepare("SELECT SI_ApplicantID FROM specialincentive WHERE SI_Status='Pending' ");
+      $query->execute();
+      $applicantIDs = $query->fetchAll(PDO::FETCH_COLUMN);
+      return $applicantIDs;
+  }
+
+  // Inside the Module5Repository class
+
+  public function getApplicantData($applicantID) {
+    $query = "SELECT *
+    FROM specialincentive
+    JOIN groomform ON specialincentive.SI_GFID = groomform.GF_ID
+    JOIN brideform ON specialincentive.SI_BFID = brideform.BF_ID
+    JOIN closerelativeform ON specialincentive.SI_CRFID = closerelativeform.CRF_ID
+    JOIN supportingdocument ON specialincentive.SI_SDID = supportingdocument.SD_ID
+    WHERE specialincentive.SI_ApplicantID = :applicantID";
+    $stmt = $this->connect->prepare($query);
+    $stmt->bindParam(':applicantID', $applicantID);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+  
     return $result;
   }
+  
 
 
 }

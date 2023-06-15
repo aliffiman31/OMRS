@@ -8,11 +8,6 @@ class StaffIncentiveController
         $this->Module5Repository = $Module5Repository;
     }
 
-    public function showSpecialIncentives()
-    {
-        $specialIncentives = $this->Module5Repository->fetchAllSpecialIncentives();
-        include '../ApplicationLayer/StaffView/module5/UrusanIncenticePage.php';
-    }
 }
 
 ?>
