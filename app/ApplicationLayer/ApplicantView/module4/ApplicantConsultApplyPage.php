@@ -1,6 +1,7 @@
 <?php
 include 'DB_Connection_Manager.php';
 include 'ConsultationMainController.php';
+include 'ConsultationApplyController.php';
 
 // Retrieve the Request_Id from the query parameter
 $requestId = $_GET['requestId'];

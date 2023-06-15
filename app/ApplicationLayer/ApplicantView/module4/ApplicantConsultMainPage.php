@@ -1,3 +1,12 @@
+<?php
+
+include 'DB_Connection_Manager.php';
+include 'ConsultationSessionController.php';
+include 'ConsultationApplyController.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

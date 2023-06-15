@@ -1,3 +1,11 @@
+<?php
+
+include 'DB_Connection_Manager.php';
+include 'ConsultationMainController.php';
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>

@@ -50,6 +50,7 @@
     //  ----------------------------------------------------
     // | module 4 create object for repository & controller |
     //  ----------------------------------------------------
+    $Module4Repository = new Module4Repository($db);
     $ConsultationMainController = new ConsultationMainController();
     $ConsultationSessionController = new ConsultationSessionController();
     $ConsultationApplicationController = new ConsultationApplicationController();
@@ -285,6 +286,14 @@
             $applicationId = $_GET['applicationId'];
 
             $ConsultationApplicationController->cancelConsultationApplication($applicationId);
+            break;
+
+        case 'getConsultationData':
+            $consultation_ID = $_GET['CS_Id'];
+            $consultation_date = $_GET['CSdate'];
+            $consultation_time = $_GET['CStime'];
+
+            $ConsultationSessionController->getConsultationData($CS_Id, $CSdate, $CStime);
             break;
 
 
