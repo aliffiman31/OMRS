@@ -1,7 +1,7 @@
  <?php 
 
 require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
-    /*require_once '../app/OMRS.dataaccess/Module5Repository.php';
+/*require_once '../app/OMRS.dataaccess/Module5Repository.php';
 require_once '../app/Controller/ApplicantController.php';
 require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
 require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
@@ -18,36 +18,31 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';
 // Create a new database connection
 $db = (new Database())->connect();
 
-//Module 1
-$Module1Repository = new Module1Repository($db);
-
-//Module 2
-//$Module2Repository = new Module2Repository($db);
+    //Module 1
+    $Module1Repository = new Module1Repository($db);
 
     //Module 2
-    /*$Module2Repository = new Module2Repository($db);
+    //$Module2Repository = new Module2Repository($db);
+
+    //Module 2
     $Module2Repository = new Module2Repository($db);
-<<<<<<< HEAD
+    $Module2Repository = new Module2Repository($db);
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
-=======
-    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);*/
->>>>>>> f6363bb392f625af9ecb1b9bb553833b60b2d9cd
 
 
-//Module 1 (Create a new instance of the controller)
-$RegistrationController = new RegistrationController($Module1Repository);
-$LoginController = new LoginController($Module1Repository);
-$PasswordController = new PasswordController($Module1Repository, $db);
-$ProfileController = new ProfileController($Module1Repository);
+    //Module 1 (Create a new instance of the controller)
+    $RegistrationController = new RegistrationController($Module1Repository);
+    $LoginController = new LoginController($Module1Repository);
+    $PasswordController = new PasswordController($Module1Repository, $db);
+    $ProfileController = new ProfileController($Module1Repository);
 
-//$ApplicantController = new MarriageCourseRequestController($Module2Repository);
+    //$ApplicantController = new MarriageCourseRequestController($Module2Repository);
 
-//$FormController = new ApplicantController($FormModel1);
+    //$FormController = new ApplicantController($FormModel1);
 
-$action = isset($_GET['action']) ? $_GET['action'] : '';
+    $action = isset($_GET['action']) ? $_GET['action'] : '';
 
-
-switch ($action) {
+    switch ($action) {
   
     //Module 1 (form from ApplicantRegFormPage.php)
     case 'registerApplicantAcc':
@@ -103,25 +98,6 @@ switch ($action) {
 
         $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
 
-<<<<<<< HEAD
-            //Module 1 (form from ApplicantRegFormPage.php)
-            // case 'registerApplicantAcc':
-            //     $userIC = $_POST['userIC'];
-            //     $appName = $_POST['appName'];
-            //     $userType = $_POST['userType'];
-            //     $appGender = $_POST['appGender'];
-            //     $appPhoneNo = $_POST['appPhoneNo'];
-            //     $appAddress = $_POST['appAddress'];
-            //     $appEmail = $_POST['appEmail'];
-            //     $userPassword = $_POST['userPassword'];
-=======
-    case 'forgotPasswordStaff':
-        $userIC = $_POST['userIC'];
-        $staffEmail = $_POST['staffEmail'];
->>>>>>> f6363bb392f625af9ecb1b9bb553833b60b2d9cd
-
-        $PasswordController->passwordFunctionStaff($userIC, $staffEmail);
-
         break;
 
     case 'forgotPasswordAdmin':
@@ -173,9 +149,6 @@ switch ($action) {
 
         break;
       
-<<<<<<< HEAD
-
-
     //form from syaratpage.php
    /* case 'ReligiousInfo':
         //input from form
@@ -190,8 +163,6 @@ switch ($action) {
         break;
 
 
-=======
->>>>>>> f6363bb392f625af9ecb1b9bb553833b60b2d9cd
         //Module 3
         case 'unauthorizedmarriage':
             $ic = $_POST[ 'ApplicantPartner_IC'];
@@ -220,7 +191,7 @@ switch ($action) {
             $Desc = $_POST['Description'];
     
             $marriagecertController->applystatus($ic, $date, $status, $Desc);
-            break;
+            break;*/
     default:
 }
 ?>
