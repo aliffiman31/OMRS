@@ -48,11 +48,11 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
   // Perform your logic here (e.g., fetch applicant data from the database)
 
   // Example applicant data
-  var applicantData = [
+  /*var applicantData = [
     ['990205-05-0987', 'John Doe', '2023-06-01', 'Approved'],
     ['990205-05-0989', 'Jane Smith', '2023-06-02', 'Pending']
     // Add more applicant data retrieved from the database
-  ];
+  ];*/
 
   // Generate the applicant table
   var html = '<table>';
