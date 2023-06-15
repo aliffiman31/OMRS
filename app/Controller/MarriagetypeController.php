@@ -1,6 +1,6 @@
 <?php
 
-class $marriagetypeController{
+/*class MarriagetypeController{
 
     private $module3Repository;
     
@@ -30,5 +30,5 @@ class $marriagetypeController{
 
     
     
-    }
+    }*/
 ?>

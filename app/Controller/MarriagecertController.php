@@ -1,5 +1,5 @@
 <?php
-class $marriagecertController{
+/*class MarriagecertController{
     private $module3Repository;
      
     public function Insertform($marriage_cert_ID, $VoluntaryMarriage_ID, $UnauthorizedMarriage_ID, $Fee_id, $applied_date, $payment_proof_status)
@@ -10,5 +10,5 @@ class $marriagecertController{
     {
         return $this->module2Repository->getapplystatusData();
     }
-}
+}*/
 ?>

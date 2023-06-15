@@ -44,9 +44,9 @@
     //  ----------------------------------------------------
     // | module 3 create object for repository & controller |
     //  ----------------------------------------------------
-    $Module3Repository = new Module3Repository($db);
+    /*$Module3Repository = new Module3Repository($db);
     $MarriagetypeController = new MarriagetypeController($Module3Repository);
-    $MarriagecertController = new MarriagecertController($Module3Repository);
+    $MarriagecertController = new MarriagecertController($Module3Repository);*/
 
     //  ----------------------------------------------------
     // | module 4 create object for repository & controller |
