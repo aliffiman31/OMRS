@@ -34,20 +34,15 @@
                     <th>No K/P </th>
                     <th>Status</th>
                     <th>Keterangan</th>
-                    <th>Senarai Semak</th>
                     <th>Operasi(Klik di sini untuk muat turun sijil perkahwinan)</th>
                     
                   </tr>
                   <tr>
                     <td></td>
                     <td></td>
-                    <td>
-                       
-                    </td>
+                    <td> </td>
                     <td></td>
-                    <td>
-                        
-                      </td>
+                  
                       <td>
                       <a href="#" class="print-link">KLIK DI SINI</a>
                      </td>
@@ -61,5 +56,37 @@
 </div>
 </section>
 </div>
+<script>
+  // Function to handle file download
+  function downloadFile() {
+    // Code to get the file URL or path
+    var fileUrl = 'path/to/your/file.pdf'; // Replace with the actual file URL or path
+
+    // Create a temporary anchor element
+    var link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = 'marriage_certificate.pdf'; // Specify the desired file name
+
+    // Append the anchor element to the document body
+    document.body.appendChild(link);
+
+    // Trigger a click event on the anchor element
+    link.click();
+
+    // Remove the anchor element from the document body
+    document.body.removeChild(link);
+  }
+
+  // Check if the file exists and show or hide the download link accordingly
+  var fileExists = true; // Replace with the logic to determine if the file exists
+
+  var downloadLink = document.querySelector('.print-link');
+  if (fileExists) {
+    downloadLink.style.display = 'block';
+    downloadLink.addEventListener('click', downloadFile);
+  } else {
+    downloadLink.style.display = 'none';
+  }
+</script>
 </body>
 </html>
