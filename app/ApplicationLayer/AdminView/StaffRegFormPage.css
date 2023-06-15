@@ -11,6 +11,7 @@ body{
 
 .content{
   margin-top: 100px; 
+  padding-left:50px;
 }
 
 .container-StaffRegForm{
@@ -24,26 +25,19 @@ body{
    padding-bottom: 30px;
 }
 
-.text-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
-    padding-top: 40px;
-  }
-
-  #registrationTable, td, tr{
-    padding:10px;
-  }
+table td{
+  padding-bottom:10px;
+}
 
   input[type=text]
   {
-    width:405px;
+    width:400px;
     height:30px;
   }
 
   #submit{
-    margin-top: 10px;
-    margin-left:50px;
+    margin-top: 20px;
+    margin-left:475px;
     background-color: blue;
     border-radius: 5px;
     border:hidden;

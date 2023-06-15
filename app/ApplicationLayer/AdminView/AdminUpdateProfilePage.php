@@ -66,25 +66,21 @@
                         <td scope="row">NAMA : </td>
                         <td><?php echo $decodedAdminData['adminName']; ?></td> 
                     </tr>
-                    <tr>
-                        <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedAdminData['adminAge']; ?></td>  
-                    </tr>
+                    
                     <tr>
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedAdminData['adminGender']; ?></td> 
                     </tr>
                     <tr>
                         <td scope="row">NO. TELEFON: </td>
-                        <td><input type="text" id="adminPhoneNo" name="adminPhoneNo" value="<?php echo $decodedAdminData['adminPhoneNo']; ?>"/></td>
+                        <td><input style="width:287px; height:30px;" type="text" id="adminPhoneNo" name="adminPhoneNo" value="<?php echo $decodedAdminData['adminPhoneNo']; ?>"/></td>
                     </tr>
                     <tr>
                         <td scope="row">EMAIL : </td>
-                        <td><input type="text" id="adminEmail" name="adminEmail" value="<?php echo $decodedAdminData['adminEmail']; ?>"/></td>
+                        <td><input style="width:287px; height:30px;" type="text" id="adminEmail" name="adminEmail" value="<?php echo $decodedAdminData['adminEmail']; ?>"/></td>
                     </tr>
                     </table>
                 </tbody>
-
 
                 <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onsubmit="  "> 
                 </from>

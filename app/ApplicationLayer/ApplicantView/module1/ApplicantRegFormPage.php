@@ -20,7 +20,7 @@
 
 <section>
         <div class="content-container">
-        <div class="container-registration">    
+        <div class="container-registration" style="width:950px; height: 580px;">    
         <form id="myform" action="../../../../public/Facade.php?action=registerApplicantAcc" method="POST" onsubmit = "return registerFormValidate();">
 
         <div id="error_message">
@@ -47,8 +47,8 @@
                     <td>
                         <select style="width:260px; height:40px;" name="appNationality" id="appNationality">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="nationality">WARGANEGARA</option>
-                            <option value="no nationality">BUKAN WARGANEGARA</option>
+                            <option value="WARGANEGARA">WARGANEGARA</option>
+                            <option value="BUKAN WARGANEGARA">BUKAN WARGANEGARA</option>
                         </select> 
                     </td>
                 </tr>
@@ -56,17 +56,17 @@
                     <td>KATEGORI AKSES :</td>
                     <td><select style="width:260px; height:40px;" name="userType" id="userType">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="Pemohon">PEMOHON</option>
+                            <option value="PEMOHON">PEMOHON</option>
                         </select>
                     </td>
                     <td>TARAF PENDIDIKAN  :</td>
                     <td> 
                         <select style="width:260px; height:40px;" name="appEduLevel" id="appEduLevel">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="primary school">SEKOLAH RENDAH</option>
-                            <option value="secondary school">SEKOLAH MENENGAH</option>
-                            <option value="pra-university">PRA-UNIVERSITI</option>
-                            <option value="university">UNIVERSITI</option>
+                            <option value="SEKOLAH RENDAH">SEKOLAH RENDAH</option>
+                            <option value="SEKOLAH MENENGAH">SEKOLAH MENENGAH</option>
+                            <option value="PRA-UNIVERSITI">PRA-UNIVERSITI</option>
+                            <option value="UNIVERSITI">UNIVERSITI</option>
                         </select>
                         </select>
                     </td>
@@ -76,16 +76,16 @@
                     <td>
                         <select style="width:260px; height:40px;" name="appGender" id="appGender">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="Lelaki">LELAKI</option>
-                            <option value="Perempuan">PEREMPUAN</option>
+                            <option value="LELAKI">LELAKI</option>
+                            <option value="PEREMPUAN">PEREMPUAN</option>
                         </select>
                     </td>
                     <td>OKU STATUS   :</td>
                     <td>
                         <select style="width:260px; height:40px;" name="appOKUStatus" id="appOKUStatus">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="Yes">YA</option>
-                            <option value="No">TIDAk</option>
+                            <option value="YA">YA</option>
+                            <option value="TIDAK">TIDAK</option>
                         </select> 
                     </td>
                 </tr>
@@ -96,8 +96,8 @@
                     <td> 
                         <select style="width:260px; height:40px;" name="appStatus" id="appStatus">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="Married">BERKAHWIN</option>
-                            <option value="Single">TIDAK BERKAHWIN</option>
+                            <option value="BERKAHWIN">BERKAHWIN</option>
+                            <option value="TIDAK BERKAHWIN">TIDAK BERKAHWIN</option>
                         </select>
                     </td>
                 </tr>
@@ -115,7 +115,7 @@
                 </tr>
             </table>
 
-            <input type="submit" id="submit" value="DAFTAR" onclick = "  ">  <!--submitForm(event, 'reg-form')-->
+            <input style="margin-left:700px;" type="submit" id="submit" value="DAFTAR" onclick = "  ">  <!--submitForm(event, 'reg-form')-->
             <a href="ApplicantLoginPage.php">[  KEMBALI  ]</a>
             <br>
         </form>

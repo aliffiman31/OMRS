@@ -66,10 +66,7 @@
                         <td scope="row">NAMA : </td>
                         <td><?php echo $decodedStaffData['staffName']; ?></td> 
                     </tr>
-                    <tr>
-                        <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedStaffData['staffAge']; ?></td>  
-                    </tr>
+                    
                     <tr>
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedStaffData['staffGender']; ?></td> 
