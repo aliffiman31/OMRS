@@ -13,6 +13,10 @@
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
 
+    //module 3
+    require_once '../app/OMRS.dataaccess/Module3Repository.php';
+    require_once '../app/Controller/MarriagecertController.php';
+    require_once '../app/Controller/MarriagetypeController.php';
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -41,6 +45,9 @@
     //  ----------------------------------------------------
     // | module 3 create object for repository & controller |
     //  ----------------------------------------------------
+    /*$Module3Repository = new Module3Repository($db);
+    $MarriagetypeController = new MarriagetypeController($Module3Repository);
+    $MarriagecertController = new MarriagecertController($Module3Repository);*/
 
     //  ----------------------------------------------------
     // | module 4 create object for repository & controller |

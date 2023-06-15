@@ -55,8 +55,7 @@
                 <td><input type="file" id="surat"></td>
             </tr>
         </table>
-        <button type="submit" id="button2" ><a href="StaffApplicantViewListPage.php">Kembali</button>
-        <button type="submit" id="button1" >Hantar</button>
+        <button type="submit" id="button2" ><a href="StaffApplicantInformationPage.php">Kembali</button>
         
             
 </div>

@@ -22,10 +22,11 @@
         </div>
 
         <div class="content-container">
-            <div class="content-StaffRegForm">
-                <div class="text-container">
-                  <p><b>PENDAFTARAN KAKITANGAN:</b></p>
-                </div>
+        <div class="content">
+        
+        <div class="container-StaffRegForm">
+
+                
             <form action="../../../public/Facade.php?action=registerStaffAcc" method="POST">
                 <table id="registrationTable">
                     <tr>
@@ -38,7 +39,7 @@
                     </tr>
                     <tr>
                         <td>JANTINA :</td>
-                        <td><select style="width:410px; height:30px;" name="staffGender" id="staffGender">
+                        <td><select style="width:400px; height:30px;" name="staffGender" id="staffGender">
                             <option disabled selected>SILA PILIH</option>
                             <option value="Lelaki">LELAKI</option>
                             <option value="Perempuan">PEREMPUAN</option>
@@ -47,7 +48,7 @@
                     </tr>
                     <tr>
                         <td>JABATAN :</td> 
-                        <td><select style="width:410px; height:30px;"name="staffDepartmentName" id="staffDepartmentName">
+                        <td><select style="width:400px; height:30px;"name="staffDepartmentName" id="staffDepartmentName">
                                 <option disabled selected>SILA PILIH</option>
                                 <option value="Jabatan Agama Islam Negeri Pahang">JABATAN AGAMA ISLAM NEGERI PAHANG</option>
                             </select>
@@ -55,7 +56,7 @@
                     </tr>
                     <tr>
                         <td>KATEGORI AKSES :</td>
-                        <td><select style="width:410px; height:30px;" name="userType" id="userType">
+                        <td><select style="width:400px; height:30px;" name="userType" id="userType">
                                 <option disabled selected>SILA PILIH</option>
                                 <option value="Kakitangan">KAKITANGAN</option>
                             </select>
@@ -71,14 +72,15 @@
                     </tr>
                     <tr>
                         <td>KATA LALUAN :</td>
-                        <td><input type="password" name="userPassword" id="userPassword"></td>
+                        <td><input type="password" name="userPassword" id="userPassword" style="width:400px; height:30px;"  ></td>
                     </tr>
                 </table>
 
                 <input type="submit" id="submit" value="DAFTAR" onclik="   ">
             </form>
 
-            </div>
+        </div>
+        </div>
         </div>
 </section>
     </div>

@@ -21,7 +21,7 @@
                     window.location = "../app/ApplicationLayer/ApplicantView/module1/homepage.php";
                 </script>
                 <?php 
-                header("../../../../public/Facade.php?action=viewProfile&from=view");
+                //header("../../../../public/Facade.php?action=viewProfile&from=view");
             } 
             else 
             {

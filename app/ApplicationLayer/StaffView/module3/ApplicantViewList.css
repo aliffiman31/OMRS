@@ -95,6 +95,9 @@ body{
         display: inline-block;
         
       }
+      #submit a{
+          color:white;
+      }
       .next-button:hover {
         background-color: #0056b3;
       }
