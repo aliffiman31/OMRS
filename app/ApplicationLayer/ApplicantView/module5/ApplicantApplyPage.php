@@ -13,7 +13,7 @@ $ic = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syarat Kelayakan</title>
+    <title>Apply Form Page</title>
     <link rel="stylesheet" href="ApplicantApplyPage.css">
 
     <style>
@@ -53,7 +53,7 @@ $ic = $_SESSION['username'];
             <div class="content-container">
                 <div class="content">
 
-                    <form action="../../../../public/Facade.php?action=apply-incentive" method="post" enctype="multipart/form-data">
+                    <form action="../../../../public/Facade.php?action=apply-incentive" method="POST" enctype="multipart/form-data">
 
                         <table class="incentive-form">
                             <tbody>
@@ -162,7 +162,7 @@ $ic = $_SESSION['username'];
 
 
                         <div class="button">
-                            <button type="submit">Submit</button>
+                            <button type="submit" onclick="resetForm()">Submit</button>
                         </div>
 
 
@@ -173,7 +173,13 @@ $ic = $_SESSION['username'];
         </section>
     </div>
 
-    <script src="mohon.js"></script>
+    <script>
+        function resetForm() {
+            document.getElementById("application-form").reset();
+            localStorage.removeItem('formData');
+        }
+    </script>
+
 
     <script>
         // Retrieve form input elements

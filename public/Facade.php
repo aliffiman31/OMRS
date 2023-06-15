@@ -12,7 +12,7 @@
     //Module2
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
-    require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
+
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
