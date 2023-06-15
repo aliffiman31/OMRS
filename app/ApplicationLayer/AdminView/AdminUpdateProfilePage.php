@@ -53,7 +53,7 @@
         <div class="content-container">
         <div class="content">  
             
-        <div class="AdminUpdateProfile">
+        <div class="container-AdminUpdateProfile">
 
         <form action="../../../public/Facade.php?action=updateAdminProfile" method="POST">
                 <table>

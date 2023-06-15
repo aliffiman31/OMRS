@@ -243,6 +243,10 @@
         margin-left: 5%;
         margin-top: 16%;
       }
+
+      .align-middle me-2 text-light{
+
+      }
     }
   </style>
 
@@ -414,10 +418,17 @@ if($route == 'viewProfile'){
               <li><a id="keputusan" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Keputusan</a></li>
             </ul>
           </div>
-        </li>
-      </ul>
-    </div>
+            <!-- Log Keluar -->
+            <li class="logKeluar">
+              <img style="width:15px; height:15px; margin-left:15px;"src="../../Common/LogOutIcon.png">
+              <a href="../../../../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php">
+                <label style="padding-left: 5px;">Log Keluar</label>
+              </a>
+            </li>
+          </ul>
+        </div>
 
+        
     <script>
       function redirectToURL(btnid) {
 
