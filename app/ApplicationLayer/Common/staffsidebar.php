@@ -340,7 +340,7 @@
           </button>
           <div class="collapse" id="module2.1-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="/app/ApplicationLayer/StaffView/Module2/StaffListOfMarriageCourseApplicantPage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Senarai Pemohon Kursus</a></li>
+              <li><a  href="/app/ApplicationLayer/StaffView/Module2/StaffListOfMarriageCourseApplicantPage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded" >Senarai Pemohon Kursus</a></li>
               <li><a href="/app/ApplicationLayer/StaffView/Module2/StaffApproveApplicantApplicationPage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Meluluskan Permohonan</a></li>
               <li><a href="/app/ApplicationLayer/StaffView/Module2/StaffUpdateMarriagePreparationPage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Kemaskini Maklumat Kursus Perkahwinan</a></li>
             </ul>
@@ -395,7 +395,7 @@
           </button>
           <div class="collapse" id="module5-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a id="urus-insentif" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Urus Insentif</a></li>
+              <li><a href="/app/ApplicationLayer/StaffView/Module5/UrusanIncenticePage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Urus Insentif</a></li>
             </ul>
           </div>
         </li>

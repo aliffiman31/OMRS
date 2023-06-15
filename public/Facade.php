@@ -25,13 +25,10 @@
     $db = (new Database())->connect();
 
 
-<<<<<<< HEAD
-=======
     //module 3
    /* require_once '../app/OMRS.dataaccess/Module3Repository.php';
     require_once '../app/Controller/MarriagecertController.php';
     require_once '../app/Controller/MarriagetypeController.php';*/
->>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
