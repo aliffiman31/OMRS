@@ -17,6 +17,7 @@
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
     require_once '../app/OMRS.dataaccess/Module5Repository.php';
+    require_once '../app/Controller/StaffIncentiveController.php';
 
     // Create a new database connection
     $db = (new Database())->connect();
@@ -50,6 +51,7 @@
     //  ----------------------------------------------------
     $Module5Repository = new Module5Repository($db);
     $ApplicantIncentiveController = new ApplicantIncentiveController($Module5Repository);
+    $StaffIncentiveController = new StaffIncentiveController($Module5Repository);
 
 
     $action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -235,10 +237,28 @@
 
             // Call the controller method to insert the form data
             $ApplicantIncentiveController->insertincentiveformdata(
-            $sjt,$sjn,$sja,$ss,$sb,$sna
-            ,$ijt,$ijn,$ija,$is,$ib,$ina
-            ,$crn,$cri,$cra,$crr,$crp
-            ,$file1,$file2,$file3,$file4);
+                $sjt,
+                $sjn,
+                $sja,
+                $ss,
+                $sb,
+                $sna,
+                $ijt,
+                $ijn,
+                $ija,
+                $is,
+                $ib,
+                $ina,
+                $crn,
+                $cri,
+                $cra,
+                $crr,
+                $crp,
+                $file1,
+                $file2,
+                $file3,
+                $file4
+            );
             break;
 
 

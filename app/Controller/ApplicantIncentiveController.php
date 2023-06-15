@@ -14,6 +14,7 @@
             $crn, $cri, $cra, $crr, $crp,
             $file1, $file2, $file3, $file4
         ) {
+            
             // Check if the file is uploaded and not empty
             if (!empty($file4) && $file4['error'] !== UPLOAD_ERR_NO_FILE) {
                 // Process $file4 here (e.g., move it to the desired location)
@@ -33,7 +34,10 @@
                     $file1, $file2, $file3
                 );
             }
-        }
-        
-        
+
+            // Redirect to the page
+        header('Location: ../app/ApplicationLayer/ApplicantView/module5/ApplicantApplyPage.php');
+        exit;
     }
+    
+}

@@ -1,9 +1,4 @@
-<?php
-session_start();
 
-$ic = $_SESSION['username'];
-
-?>
 
 
 <!DOCTYPE html>
@@ -162,7 +157,7 @@ $ic = $_SESSION['username'];
 
 
                         <div class="button">
-                            <button type="submit" onclick="resetForm()">Submit</button>
+                            <button type="submit">Submit</button>
                         </div>
 
 
@@ -172,48 +167,6 @@ $ic = $_SESSION['username'];
             </div>
         </section>
     </div>
-
-    <script>
-        function resetForm() {
-            document.getElementById("application-form").reset();
-            localStorage.removeItem('formData');
-        }
-    </script>
-
-
-    <script>
-        // Retrieve form input elements
-        const formInputs = document.querySelectorAll('input:not([type="file"])');
-
-        // Load saved form data from localStorage
-        window.addEventListener('load', () => {
-            const savedFormData = localStorage.getItem('formData');
-            if (savedFormData) {
-                const parsedData = JSON.parse(savedFormData);
-                for (const input of formInputs) {
-                    const inputName = input.name;
-                    if (parsedData.hasOwnProperty(inputName)) {
-                        input.value = parsedData[inputName];
-                    }
-                }
-            }
-        });
-
-        // Save form data to localStorage when inputs change
-        for (const input of formInputs) {
-            input.addEventListener('input', saveFormData);
-        }
-
-        function saveFormData() {
-            const formData = {};
-            for (const input of formInputs) {
-                const inputName = input.name;
-                const inputValue = input.value;
-                formData[inputName] = inputValue;
-            }
-            localStorage.setItem('formData', JSON.stringify(formData));
-        }
-    </script>
 
 </body>
 

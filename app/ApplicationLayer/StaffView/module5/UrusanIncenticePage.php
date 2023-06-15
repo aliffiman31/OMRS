@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-$ic=$_SESSION['currentUserIC'];
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,20 +12,32 @@ $ic=$_SESSION['currentUserIC'];
 <body>
     <div>
         <!-- Header -->
-        <?php
-        include_once('../../Common/header.html');
-        ?>
-
+        <?php include_once('../../Common/header.html'); ?>
 
         <section>
-
             <div>
-                <?php include_once('../../Common/staffsidebar.php');  ?>
+                <?php include_once('../../Common/staffsidebar.php'); ?>
             </div>
 
             <div class="content-container">
                 <div class="content">
                     <!-- Put Your Content Here  -->
+                    <h1>Special Incentives</h1>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Applicant ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($specialIncentives as $incentive) : ?>
+                                <tr>
+                                    <td><?php echo $incentive['GF_ID ']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
