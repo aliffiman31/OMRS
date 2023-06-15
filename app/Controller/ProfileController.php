@@ -35,7 +35,7 @@
 
                 if($from == 'view')
                 {
-                    header('Location: ../app/ApplicationLayer/StaffView/module1/StafftViewProfilePage.php?returnProfileInfo='. urlencode(serialize($staffProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/StaffView/module1/StaffViewProfilePage.php?returnProfileInfo='. urlencode(serialize($staffProfileInfo)));
                 }
                 else if($from == 'edit')
                 {

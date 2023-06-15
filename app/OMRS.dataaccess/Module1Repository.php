@@ -56,9 +56,9 @@
          }
 
          //table StaffInfo (register)
-         public function addStaffInfo($Staff_Id, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo)
+         public function addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo)
          {
-            $Staff_Id = uniqid();
+            //$Staff_Id = uniqid();
 
             // Check if the UserAcc_Id exists in UserAccount table
             $query = $this->connect->prepare("SELECT UserAcc_Id FROM UserAccount WHERE UserAcc_Id = ?");
@@ -71,7 +71,7 @@
             $query = $this->connect->prepare("INSERT INTO StaffInfo (Staff_Id, UserAcc_Id, staffName, staffGender, staffDepartmentName, staffEmail, staffPhoneNo) VALUES (?, ?, ?, ?, ?, ?, ?)");
            
             //return to registration controller
-            return $query->execute([$Staff_Id, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo]); 
+            return $query->execute([$userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo]); 
             }
          }          
 
@@ -182,7 +182,7 @@
          //view profile (table ApplicantInfo)
          public function getApplicantProfileInfo($Applicant_IC)
          {
-            $query = $this->connect->prepare("SELECT * FROM ApplicantInfo WHERE Applicant_IC = :userIC");
+            $query = $this->connect->prepare("SELECT * FROM ApplicantInfo WHERE Applicant_IC = :userIC" );
             $query->bindParam(':userIC', $Applicant_IC);
 
             $query->execute();
