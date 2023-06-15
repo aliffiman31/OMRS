@@ -33,11 +33,12 @@
             margin-left: 30px;
             margin-top: 40px;
         }
+
         .table-info2 {
             border-collapse: collapse;
             width: 96%;
             text-align: center;
-            
+
         }
 
         .table-info2 td {
@@ -109,6 +110,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border: none;
         }
+
         #ic-num {
             background: #FFFFFF;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -124,15 +126,15 @@
             background: #6D72F1;
             color: #FFFFFF;
             border: none;
-            width: 60px;
-            margin-right: 420px;
+            width: 70px;
+            float: right;
+            margin-right: 100px;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
-        .icon{
+
+        .icon {
             width: 15px;
         }
-        
-            
     </style>
 </head>
 
@@ -147,7 +149,7 @@
         <section>
 
             <div>
-                <?php include_once('../../Common/sidebar.php');  ?>
+                <?php include_once('../../Common/staffsidebar.php');  ?>
             </div>
 
             <div class="content-container">
@@ -236,7 +238,8 @@
                                     </td>
                                 </tr>
                             </table>
-                            <button type="submit">Simpan</button>
+                            <br>
+                            <button type="submit" id="button1">Simpan</button>
                         </form>
                     </div>
                 </div>

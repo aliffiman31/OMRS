@@ -18,7 +18,7 @@
                 ?>
                 <script>
                     alert("Berjaya Log Masuk");
-                    window.location = "../app/ApplicationLayer/ApplicantView/module1/homepage.php";
+                    window.location = "../../app/ApplicationLayer/ApplicantView/module2/ApplicantReligiousOfficeOptions.php";
                 </script>
                 <?php 
                 //header("../../../../public/Facade.php?action=viewProfile&from=view");

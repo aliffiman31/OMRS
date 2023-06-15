@@ -1,4 +1,5 @@
  <?php
+    session_start();
     //db file include
     require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
 
@@ -12,11 +13,25 @@
     //Module 2
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
+    require_once '../app/Controller/StaffManageMarriageRequestController.php';
 
+    //Module 3
+    require_once '../app/OMRS.dataaccess/Module3Repository.php';
+
+    require_once '../app/OMRS.dataaccess/Module1Repository.php';
+    require_once '../app/Controller/MarriagecertController.php';
+    require_once '../app/Controller/MarriagetypeController.php';
+    // Create a new database connection
+    $db = (new Database())->connect();
+
+
+<<<<<<< HEAD
+=======
     //module 3
    /* require_once '../app/OMRS.dataaccess/Module3Repository.php';
     require_once '../app/Controller/MarriagecertController.php';
     require_once '../app/Controller/MarriagetypeController.php';*/
+>>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -30,6 +45,19 @@
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
+<<<<<<< HEAD
+
+    //Module 2
+    //$Module2Repository = new Module2Repository($db);
+
+    //Module 2
+
+    //module 3
+    $Module3Repository = new Module3Repository($db);
+
+    //Module 1 (Create a new instance of the controller)
+=======
+>>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -39,8 +67,8 @@
     // | module 2 create object for repository & controller |
     //  ----------------------------------------------------
     $Module2Repository = new Module2Repository($db);
-    $Module2Repository = new Module2Repository($db);
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
+    $StaffManageMarriageRequestController = new StaffManageMarriageRequestController($Module2Repository);
 
     //  ----------------------------------------------------
     // | module 3 create object for repository & controller |
@@ -134,7 +162,7 @@
 
         case 'changePassword':
             $userIC = $_POST['userIC'];
-            $userPassord = $_POST['userPassword'];
+            $userPassword = $_POST['userPassword'];
             $newPassword = $_POST['newPassword'];
 
             $PasswordController->changePasswordFunction($userIC, $userPassword, $newPassword);
@@ -182,6 +210,14 @@
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
             break;
+
+        case 'PartnerInfo':
+
+            $icNum = $_POST["ic-num"];
+            $StaffManageMarriageRequestController = new StaffManageMarriageRequestController($Module2Repository);
+            $StaffManageMarriageRequestController->searchPartner($icNum);
+
+
 
             //Module 3
         case 'unauthorizedmarriage':
