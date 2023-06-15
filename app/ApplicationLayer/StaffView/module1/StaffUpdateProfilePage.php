@@ -53,7 +53,7 @@
         <div class="content-container">
         <div class="content">  
             
-        <div class="StaffUpdateProfile">
+        <div class="container-StaffUpdateProfile">
 
         <form action="../../../../public/Facade.php?action=updateStaffProfile" method="POST">
                 <table>
@@ -85,12 +85,10 @@
                     </table>
                 </tbody>
 
-
                 <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onsubmit="  "> 
                 </from>
-
-                    
-           
+                
+                
         </div> 
         </div>  
         </div>

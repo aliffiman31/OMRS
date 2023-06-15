@@ -70,7 +70,7 @@ function registerFormValidate(){
     return true;
   }
 
-  /*var ic = document.getElementById("userIC").value;
+  var ic = document.getElementById("userIC").value;
   var age = getAgeFromICNumber(ic);
 
   function getAgeFromICNumber(ic) {
@@ -81,5 +81,5 @@ function registerFormValidate(){
     }
   
     return age;
-  }*/
+  }
   

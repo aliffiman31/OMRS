@@ -21,7 +21,7 @@
                     window.location = "../../app/ApplicationLayer/ApplicantView/module2/ApplicantReligiousOfficeOptions.php";
                 </script>
                 <?php 
-                header("../../../../public/Facade.php?action=viewProfile&from=view");
+                //header("../../../../public/Facade.php?action=viewProfile&from=view");
             } 
             else 
             {

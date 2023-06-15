@@ -25,10 +25,18 @@
     $db = (new Database())->connect();
 
 
+<<<<<<< HEAD
+=======
+    //module 3
+   /* require_once '../app/OMRS.dataaccess/Module3Repository.php';
+    require_once '../app/Controller/MarriagecertController.php';
+    require_once '../app/Controller/MarriagetypeController.php';*/
+>>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
     require_once '../app/OMRS.dataaccess/Module5Repository.php';
+    require_once '../app/Controller/StaffIncentiveController.php';
 
     // Create a new database connection
     $db = (new Database())->connect();
@@ -37,6 +45,7 @@
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
+<<<<<<< HEAD
 
     //Module 2
     //$Module2Repository = new Module2Repository($db);
@@ -47,6 +56,8 @@
     $Module3Repository = new Module3Repository($db);
 
     //Module 1 (Create a new instance of the controller)
+=======
+>>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -62,6 +73,9 @@
     //  ----------------------------------------------------
     // | module 3 create object for repository & controller |
     //  ----------------------------------------------------
+    /*$Module3Repository = new Module3Repository($db);
+    $MarriagetypeController = new MarriagetypeController($Module3Repository);
+    $MarriagecertController = new MarriagecertController($Module3Repository);*/
 
     //  ----------------------------------------------------
     // | module 4 create object for repository & controller |
@@ -72,6 +86,7 @@
     //  ----------------------------------------------------
     $Module5Repository = new Module5Repository($db);
     $ApplicantIncentiveController = new ApplicantIncentiveController($Module5Repository);
+    $StaffIncentiveController = new StaffIncentiveController($Module5Repository);
 
 
     $action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -88,8 +103,13 @@
             $appAddress = $_POST['appAddress'];
             $appEmail = $_POST['appEmail'];
             $userPassword = $_POST['userPassword'];
+            $appRace = $_POST['appRace'];
+            $appNationality = $_POST['appNationality'];
+            $appEduLevel = $_POST['appEduLevel'];
+            $appOKUStatus = $_POST['appOKUStatus'];
+            $appStatus = $_POST['appStatus'];
 
-            $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
+            $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus);
             break;
 
         case 'registerStaffAcc':

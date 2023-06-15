@@ -34,7 +34,7 @@
          }
 
          // table ApplicantInfo (register)
-         public function addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail)
+         public function addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus)
          {
             // Check if the UserAcc_Id exists in UserAccount table
             $query = $this->connect->prepare("SELECT UserAcc_Id FROM UserAccount WHERE UserAcc_Id = ?");
@@ -44,9 +44,9 @@
             if ($query->rowCount() > 0) {
             
             // UserAcc_Id exists, proceed with insertion                                                                                 
-            $query = $this->connect->prepare("INSERT INTO ApplicantInfo (Applicant_IC, UserAcc_Id, appName, appGender, appPhoneNo, appAddress, appEmail) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $query = $this->connect->prepare("INSERT INTO ApplicantInfo (Applicant_IC, UserAcc_Id, appName, appGender, appPhoneNo, appAddress, appEmail, appRace, appNationality, appEduLevel, appOKUStatus, appStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
                                           
-            return $query->execute([$userIC, $UserAcc_Id,  $appName, $appGender, $appPhoneNo, $appAddress, $appEmail]); 
+            return $query->execute([$userIC, $UserAcc_Id,  $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus]); 
             }
 
             else

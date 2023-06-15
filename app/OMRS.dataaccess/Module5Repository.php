@@ -1,4 +1,5 @@
 <?php
+
 class Module5Repository
 {
 
@@ -11,17 +12,37 @@ class Module5Repository
   }
 
   function insertincentiveformdatawithresidencyletter(
-    $sjt, $sjn, $sja, $ss, $sb, $sna,
-    $ijt, $ijn, $ija, $is, $ib, $ina,
-    $crn, $cri, $cra, $crr, $crp,
-    $file1, $file2, $file3, $file4)
-  {
+    $sjt,
+    $sjn,
+    $sja,
+    $ss,
+    $sb,
+    $sna,
+    $ijt,
+    $ijn,
+    $ija,
+    $is,
+    $ib,
+    $ina,
+    $crn,
+    $cri,
+    $cra,
+    $crr,
+    $crp,
+    $file1,
+    $file2,
+    $file3,
+    $file4
+  ) {
+    session_start();
+
+    $ic = $_SESSION['currentUserIC'];
 
     $uniqid = uniqid();
 
     // Insert into special incentive table
-    //$query = $this->connect->prepare("INSERT INTO specialincentive(SI_ID ,SI_UserAccount ,SI_GFID, SI_BFID, SI_CRFID,SI_SDID) VALUES (?, ?, ?, ?, ?, ?)");
-    //$query->execute([$uniqid, $uniqid, $uniqid, $uniqid, $uniqid, $uniqid, $uniqid]);
+    $query = $this->connect->prepare("INSERT INTO specialincentive(SI_ID,SI_ApplicantID, SI_GFID, SI_BFID, SI_CRFID, SI_SDID,SI_Status) VALUES (?, ?, ?, ?, ?, ?,?)");
+    $query->execute([$uniqid, $ic, $uniqid, $uniqid, $uniqid, $uniqid, "Pending"]);
 
     // Insert into groom table for the suami data
     $query = $this->connect->prepare("INSERT INTO groomform(GF_ID ,GF_JobType ,GF_JobName, GF_JobAddress, GF_Salary,GF_Bank ,GF_AccNumber) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -49,12 +70,38 @@ class Module5Repository
 
 
   function insertincentiveformdata(
-    $sjt, $sjn, $sja, $ss, $sb, $sna,
-    $ijt, $ijn, $ija, $is, $ib, $ina,
-    $crn, $cri, $cra, $crr, $crp,
-    $file1, $file2, $file3)
-  {
+    $sjt,
+    $sjn,
+    $sja,
+    $ss,
+    $sb,
+    $sna,
+    $ijt,
+    $ijn,
+    $ija,
+    $is,
+    $ib,
+    $ina,
+    $crn,
+    $cri,
+    $cra,
+    $crr,
+    $crp,
+    $file1,
+    $file2,
+    $file3
+  ) {
+
+    session_start();
+
+    $ic = $_SESSION['currentUserIC'];
+
     $uniqid = uniqid();
+
+
+    // Insert into special incentive table
+    $query = $this->connect->prepare("INSERT INTO specialincentive(SI_ID,SI_ApplicantID, SI_GFID, SI_BFID, SI_CRFID, SI_SDID,SI_Status) VALUES (?, ?, ?, ?, ?, ?,?)");
+    $query->execute([$uniqid, $ic, $uniqid, $uniqid, $uniqid, $uniqid, "Pending"]);
 
     // Insert into groom table for the suami data
     $query = $this->connect->prepare("INSERT INTO groomform(GF_ID ,GF_JobType ,GF_JobName, GF_JobAddress, GF_Salary,GF_Bank ,GF_AccNumber) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -78,4 +125,15 @@ class Module5Repository
     $query = $this->connect->prepare("INSERT INTO supportingdocument (SD_ID, SD_PaySlip1, SD_PaySlip2, SD_PaySlip3) VALUES (?, ?, ?, ?)");
     $query->execute([$uniqid, $file1Data, $file2Data, $file3Data]);
   }
+
+
+  function fetchAllSpecialIncentives()
+  {
+    $query = $this->connect->prepare("SELECT * FROM groomform");
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+  }
+
+
 }

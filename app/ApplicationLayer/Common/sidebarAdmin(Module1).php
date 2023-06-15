@@ -219,11 +219,11 @@
 
       .content {
         border: 1px solid black;
-        height: 700px;
+        height: 600px;
         width: 830px;
         background-color: azure;
-        margin-top: 30%;
-        margin-left: 23%;
+        margin-top: 20%;
+        margin-left: 20%;
         overflow: auto;
       }
 
@@ -416,6 +416,13 @@ if($route == 'viewProfile'){
             </ul>
           </div>
         </li>
+        <!-- Log Keluar -->
+        <li class="logKeluar">
+              <img style="width:15px; height:15px; margin-left:15px;"src="../Common/LogOutIcon.png">
+              <a href="../../../app/ApplicationLayer/AdminView/AdminLoginPage.php">
+                <label style="padding-left: 5px;">Log Keluar</label>
+              </a>
+            </li>
       </ul>
     </div>
 

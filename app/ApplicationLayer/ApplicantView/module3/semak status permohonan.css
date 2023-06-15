@@ -59,7 +59,9 @@ body{
       color: #fff;
       cursor: pointer;
     }
-  
+  #submit a{
+    color:white;
+  }
     button:hover {
       background-color: #45a049;
     }
