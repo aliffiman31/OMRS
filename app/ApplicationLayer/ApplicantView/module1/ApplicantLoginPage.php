@@ -37,7 +37,6 @@
             </table>
             <input type="submit" id="submit" value="MASUK" onclik=""> <br> <br>
        
-                <a href="../../../ApplicationLayer/StaffView/module1/StaffLoginPage.php" >Log Masuk Kakitangan</a>
           
             <br><br>
             <div class="href-link">
@@ -46,6 +45,8 @@
                 <a href="ApplicantChangePasswordPage.php" >Tukar Kata Laluan </a>
                 <div class="verticle-line"></div>
                 <a href="ApplicantForgotPasswordPage.php" >Lupa Kata Laluan?</a> 
+                <div class="verticle-line"></div>
+                <a href="../../../ApplicationLayer/StaffView/module1/StaffLoginPage.php" >Log Masuk Kakitangan</a>
             </div>
             <br>
             </form>

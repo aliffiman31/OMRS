@@ -9,7 +9,7 @@
     require_once '../app/Controller/PasswordController.php';
     require_once '../app/Controller/ProfileController.php';
 
-    //Module2
+    //Module 2
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
 
@@ -125,7 +125,6 @@
 
             $PasswordController->changePasswordFunction($userIC, $userPassword, $newPassword);
             break;
-
 
         case 'viewProfile':
             $from = isset($_GET['from']) ? $_GET['from'] : '';

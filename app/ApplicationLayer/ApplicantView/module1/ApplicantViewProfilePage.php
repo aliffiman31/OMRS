@@ -56,7 +56,7 @@ if(!isset($_SESSION['currentUserIC'])) {
         <div class="content-container">
         <div class="content"> 
 
-        <div class="ApplicantViewProfile">
+        <div class="container-ApplicantViewProfile">
             <form>
                 <table>
                     <tr>

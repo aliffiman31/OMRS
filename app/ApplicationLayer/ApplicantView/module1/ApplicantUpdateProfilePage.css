@@ -11,9 +11,10 @@ body{
 
 .content{
    margin-top: 100px;
+   padding-left:50px;
 }
 
-.container-ApplicantViewProfile{
+.container-ApplicantUpdateProfile{
     border:5px solid;
     display: flex;
     align-items: flex-start;
@@ -28,7 +29,7 @@ body{
     padding-bottom: 30px;
  }
 
- .ApplicantViewProfile{
+ .ApplicantUpdateProfile{
     display: flex;
     padding:10px;
  }
@@ -38,7 +39,7 @@ body{
  }
 #kemaskiniBtn{
     margin-top: 20px;
-    margin-left:400px;
+    margin-left:100px;
     background-color: blue;
     border-radius: 5px;
     border:hidden;
