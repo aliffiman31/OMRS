@@ -132,6 +132,22 @@ $db = (new Database())->connect();
         $ProfileController->updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress);
             
         break;
+    
+        case 'updateStaffProfile':
+            $staffPhoneNo = $_POST['staffPhoneNo'];
+            $staffEmail = $_POST['staffEmail'];
+        
+            $ProfileController->updateStaffProfileFunction($staffPhoneNo, $staffEmail);
+                
+            break;
+
+        case 'updateAdminProfile':
+            $adminPhoneNo = $_POST['adminPhoneNo'];
+            $adminEmail = $_POST['adminEmail'];
+            
+            $ProfileController->updateAdminProfileFunction($adminPhoneNo, $adminEmail);
+                    
+            break;
 
         //module 2
         case 'ReligiousInfo':

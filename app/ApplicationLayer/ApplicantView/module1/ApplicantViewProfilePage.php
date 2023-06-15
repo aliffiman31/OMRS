@@ -59,10 +59,6 @@ if(!isset($_SESSION['currentUserIC'])) {
             <form>
                 <table>
                     <tr>
-                        <td scope="row">Kategori Akses  : </td>
-                        <td><?php echo $decodedApplicantData['userType']; ?></td>
-                    </tr>
-                    <tr>
                         <td scope="row">NO KAD PENGENALAN  : </td>
                         <td><?php echo $decodedApplicantData['Applicant_IC']; ?></td>
                     </tr>

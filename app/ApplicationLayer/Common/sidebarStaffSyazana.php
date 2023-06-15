@@ -17,7 +17,7 @@
 
   <style>
     body {
-      background-image: url('../../Asset/background.jpg');
+      background-image: url('../../Asset/backgroundStaff.jpg');
       min-height: 100vh;
       min-height: -webkit-fill-available;
     }

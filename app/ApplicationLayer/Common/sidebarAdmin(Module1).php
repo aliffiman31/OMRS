@@ -17,7 +17,7 @@
 
   <style>
     body {
-      background-image: url('../../Asset/background.jpg');
+      background-image: url('../Asset/backgroundStaff.jpg');
       min-height: 100vh;
       min-height: -webkit-fill-available;
     }
@@ -214,16 +214,16 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height:100vh;
       }
 
       .content {
         border: 1px solid black;
-        height: 600px;
+        height: 700px;
         width: 830px;
         background-color: azure;
-        margin-top: 20%;
-        margin-left: 20%;
+        margin-top: 30%;
+        margin-left: 23%;
         overflow: auto;
       }
 
@@ -312,7 +312,7 @@ if($route == 'viewProfile'){
 
     <!-- Profile -->
     <div class="Profile">
-      <img src="../../Asset/icon.png" alt="" class="profileicon">
+      <img src="../Asset/icon.png" alt="" class="profileicon">
 
       <div class="profile">
         <div class="profilename">
@@ -338,9 +338,10 @@ if($route == 'viewProfile'){
           </button>
           <div class="collapse" id="module1-collapse">                                                                                  
 
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                                                                                                                   <!-- onclick="redirectToURL(this.id) -->
-              <li><a id="profile-page"  class="link-body-emphasis d-inline-flex text-decoration-none rounded" href="../../../../public/Facade.php?action=viewProfile&from=view">Lihat Akaun Profil</a></li>
-              <li><a id="profile-page" class="link-body-emphasis d-inline-flex text-decoration-none rounded"   href="../../../../public/Facade.php?action=viewProfile&from=edit">Sunting Akaun Profil</a></li>
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">    
+            <li><a id="profile-page" class="link-body-emphasis d-inline-flex text-decoration-none rounded"   href="../../../app/ApplicationLayer/AdminView/StaffRegFormPage.php">Pendaftaran Kakitangan</a></li>                                                                                                               <!-- onclick="redirectToURL(this.id) -->
+              <li><a id="profile-page"  class="link-body-emphasis d-inline-flex text-decoration-none rounded" href="../../../public/Facade.php?action=viewProfile&from=view">Lihat Akaun Profil</a></li>
+              <li><a id="profile-page" class="link-body-emphasis d-inline-flex text-decoration-none rounded"   href="../../../public/Facade.php?action=viewProfile&from=edit">Sunting Akaun Profil</a></li>
             </ul>
           </div>
         </li>

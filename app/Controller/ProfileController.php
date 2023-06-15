@@ -49,11 +49,11 @@
 
                 if($from == 'view')
                 {
-                    header('Location: ../../../app/ApplicationLayer/AdminView/AdminViewProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/AdminView/AdminViewProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
                 }
                 else if($from == 'edit')
                 {
-                    header('Location: ../../../app/ApplicationLayer/AdminView/AdminUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
+                    header('Location: ../app/ApplicationLayer/AdminView/AdminUpdateProfilePage.php?returnProfileInfo='. urlencode(serialize($adminProfileInfo)));
                 }
             }
             else
@@ -69,23 +69,81 @@
             if($this->Module1Repository->updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress)){
                 ?>
                     <script>
-                        alert("Proses KEMASKINI anda telah berjaya.");
+                        alert("Proses KEMASKINI anda BERJAYA.");
                     </script>
                 <?php
                 
-                header("Location: ../../../public/Facade.php?action=viewProfile&from=view");
+                header("Location: ../public/Facade.php?action=viewProfile&from=view");
 
             }else{
                 ?>
                     <script>
-                        alert("Error updating record");
+                        alert("Maaf, proses KEMASKINI anda TIDAK BERJAYA.");
                     </script>
                 <?php
                                           
-                header("Location: ../../../public/Facade.php?action=viewProfile&from=view");
+                header("Location: ../public/Facade.php?action=viewProfile&from=view");
             }
-            
         }
+
+        //Update the staff profile data 
+        public function updateStaffProfileFunction($staffPhoneNo, $staffEmail) 
+        {
+            //Firstly, the updateApplicationProfileInfo will update the data in mySQL.
+            if($this->Module1Repository->updateStaffProfileInfo($staffPhoneNo, $staffEmail)){
+                ?>
+                    <script>
+                        alert("Proses KEMASKINI anda BERJAYA.");
+                    </script>
+                <?php
+                
+                header("Location: ../public/Facade.php?action=viewProfile&from=view");
+
+            }else{
+                ?>
+                    <script>
+                        alert("Maaf, proses KEMASKINI anda TIDAK BERJAYA.");
+                    </script>
+                <?php
+                                          
+                header("Location: ../public/Facade.php?action=viewProfile&from=view");
+            } 
+        }
+
+        //Update the admin profile data 
+        public function updateAdminProfileFunction($adminPhoneNo, $adminEmail) 
+        {
+            //Firstly, the updateApplicationProfileInfo will update the data in mySQL.
+            if($this->Module1Repository->updateAdminProfileInfo($adminPhoneNo, $adminEmail)){
+                ?>
+                    <script>
+                        alert("Proses KEMASKINI anda BERJAYA.");
+                    </script>
+                <?php
+                
+                header("Location: ../public/Facade.php?action=viewProfile&from=view");
+
+            }else{
+                ?>
+                    <script>
+                        alert("Maaf, proses KEMASKINI anda TIDAK BERJAYA.");
+                    </script>
+                <?php
+                                          
+                header("Location: ../public/Facade.php?action=viewProfile&from=view");
+            } 
+        }
+
+
+
+
+
+
+
+
+
+
+
 
        /* public function viewProfileFunction($from)
         {

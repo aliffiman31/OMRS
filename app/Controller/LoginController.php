@@ -1,4 +1,3 @@
-
 <?php
     class LoginController
     {
@@ -70,7 +69,7 @@
             ?>
                 <script>
                     alert("Berjaya Masuk");
-                    window.location = "../app/ApplicationLayer/AdminView/StaffRegFormPage.php";
+                    window.location = "../app/ApplicationLayer/AdminView/homepage.php";
                 </script>
             <?php 
                 //header("Location: Facade.php?action=viewProfile&from=view");
