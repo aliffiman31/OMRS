@@ -13,7 +13,7 @@
         ?>
             <script>
                 alert("Access denied !!!")
-                window.location = "../ManageLogin/userLoginView.php";
+                window.location = "../../../../app/ApplicationLayer/StaffView/module1/StaffLoginPage.php";
             </script>
         <?php
 
@@ -28,7 +28,6 @@
         //Sidebar Active path
         $_SESSION['route'] = 'viewProfile';
     }
- 
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +36,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicant View Profile</title>
-    <link rel="stylesheet" href="ApplicantViewProfilePage.css">
+    <title>Staff View Profile</title>
+    <link rel="stylesheet" href="StaffViewProfilePage.css">
 </head>
 <body>
     <div>
@@ -50,51 +49,48 @@
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebarSyazana.php');  ?>
+            <?php include_once('../../Common/sidebarStaffSyazana.php');  ?>
         </div>
 
         <div class="content-container">
         <div class="content"> 
-            <form action="../../../../app/ApplicationLayer/StaffView/module1/StaffUpdateProfilePage.php">
+
+        <div class="StaffViewProfile">
+            <form>
                 <table>
-                    
                     <tr>
                         <td scope="row">NO KAD PENGENALAN : </td>
-                        <td><?php echo $decodedApplicantData['userIC']; ?></td>
+                        <td><?php echo $decodedStaffData['Staff_Id']; ?></td>
                     </tr>
                     <tr>
                         <td scope="row">NAMA : </td>
-                        <td><?php echo $decodedApplicantData['staffName']; ?></td> 
+                        <td><?php echo $decodedStaffData['staffName']; ?></td> 
                     </tr>
                     <tr>
                         <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedApplicantData['staffAge']; ?></td>  
+                        <td><?php echo $decodedStaffData['staffAge']; ?></td>  
                     </tr>
                     <tr>
                         <td scope="row">JANTINA : </td>
-                        <td><?php echo $decodedApplicantData['staffGender']; ?></td> 
+                        <td><?php echo $decodedStaffData['staffGender']; ?></td> 
                     </tr>
-                    <td scope="row">KATEGORI AKSES : </td>
-                        <td><?php echo $decodedApplicantData['userType']; ?></td> 
                     <tr>
                         <td scope="row">JABATAN: </td>
-                        <td><?php echo $decodedApplicantData['staffDepartmentName']; ?></td> 
+                        <td><?php echo $decodedStaffData['staffDepartmentName']; ?></td> 
                     </tr>
                     <tr>
                         <td scope="row">NO. TELEFON: </td>
-                        <td><?php echo $decodedApplicantData['staffPhoneNo']; ?></td> 
+                        <td><?php echo $decodedStaffData['staffPhoneNo']; ?></td> 
                     </tr>
                     <tr>
                         <td scope="row">EMAIL : </td>
-                        <td><?php echo $decodedApplicantData['staffEmail']; ?></td> 
+                        <td><?php echo $decodedStaffData['staffEmail']; ?></td> 
                     </tr>
                     <tr>
                 </table>
-
-                    <input type="submit" id="kemaskiniBtn" value="BATAL" onclick="  ">
-                    <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onclick="  "> 
             </form>      
         </div> 
+        </div>
         </div>  
                  
 </section>

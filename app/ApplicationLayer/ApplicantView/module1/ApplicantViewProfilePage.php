@@ -1,4 +1,5 @@
 <?php
+
 // Start up your PHP Session
 session_start();
 
@@ -56,7 +57,6 @@ if(!isset($_SESSION['currentUserIC'])) {
         <div class="content"> 
 
         <div class="ApplicantViewProfile">
-
             <form>
                 <table>
                     <tr>

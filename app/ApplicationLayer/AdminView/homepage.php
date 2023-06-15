@@ -11,14 +11,14 @@
     <div>
         <!-- Header -->
         <?php 
-        include_once('../../Common/header.html'); 
+        include_once('../Common/headerAdminView(Module1).html'); 
         ?>
 
 
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebarSyazana.php');  ?>
+            <?php include_once('../Common/sidebarAdmin(Module1).php');  ?>
         </div>
 
         <div class="content-container">

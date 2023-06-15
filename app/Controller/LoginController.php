@@ -1,4 +1,3 @@
-
 <?php
     class LoginController
     {
@@ -22,6 +21,7 @@
                     window.location = "../app/ApplicationLayer/ApplicantView/module1/homepage.php";
                 </script>
                 <?php 
+                header("../../../../public/Facade.php?action=viewProfile&from=view");
             } 
             else 
             {
@@ -43,10 +43,10 @@
                 ?>
                 <script>
                     alert("Berjaya Log Masuk");
-                    window.location = "../app/ApplicationLayer/ApplicantView/ApplicantPartnerInformationPage.php";
+                    window.location = "../app/ApplicationLayer/StaffView/module1/homepage.php";
                 </script>
                 <?php 
-                //header("Location: index.php?action=viewProfile&from=view");
+                header("../../../../public/Facade.php?action=viewProfile&from=view");
             }
             else
             {
@@ -69,7 +69,7 @@
             ?>
                 <script>
                     alert("Berjaya Masuk");
-                    window.location = "../app/ApplicationLayer/AdminView/StaffRegFormPage.php";
+                    window.location = "../app/ApplicationLayer/AdminView/homepage.php";
                 </script>
             <?php 
                 //header("Location: Facade.php?action=viewProfile&from=view");

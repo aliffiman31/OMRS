@@ -34,8 +34,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicant View Profile</title>
-    <link rel="stylesheet" href="ApplicantViewProfilePage.css">
+    <title>Applicant Update Profile</title>
+    <link rel="stylesheet" href="ApplicantUpdateProfilePage.css">
 </head>
 <body>
     <div>
@@ -51,7 +51,9 @@
         </div>
 
         <div class="content-container">
-        <div class="content">   
+        <div class="content">  
+            
+        <div class="ApplicantUpdateProfile">  
         <form action="../../../../public/Facade.php?action=updateAppProfile" method="POST">
                 <table>
                     <tbody>
@@ -73,15 +75,16 @@
                     </tr>
                     <tr>
                         <td scope="row">NO. TELEFON: </td>
-                        <input type="text" id="appPhoneNo" name="appPhoneNo" value="<?php echo $decodedApplicantData['appPhoneNo']; ?>"/>
+                        <td><input type="text" id="appPhoneNo" name="appPhoneNo" value="<?php echo $decodedApplicantData['appPhoneNo']; ?>"/></td>
                     </tr>
                     <tr>
                         <td scope="row">EMAIL : </td>
-                        <input type="text" id="appEmail" name="appEmail" value="<?php echo $decodedApplicantData['appEmail']; ?>"/> 
+                        <td><input type="text" id="appEmail" name="appEmail" value="<?php echo $decodedApplicantData['appEmail']; ?>"/></td>
                     </tr>
                     <tr>
                         <td scope="row">ALAMAT : </td>
-                        <input type="text" id="appAddress" name="appAddress" value="<?php echo $decodedApplicantData['appAddress']; ?>"/>
+                        <td><textarea rows="4" cols="36" id="appAddress" name="appAddress"><?php echo $decodedApplicantData['appAddress']; ?></textarea></td>
+
                     </tr>
                     </table>
                 </tbody>
@@ -94,6 +97,7 @@
            
         </div> 
         </div>  
+        </div>
                  
 </section>
     </div>
