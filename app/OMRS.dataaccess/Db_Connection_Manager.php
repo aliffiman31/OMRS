@@ -2,7 +2,7 @@
 
 class Database{
     private $host = "localhost";
-    private $db_name = "test";
+    private $db_name = "omrs_db";
     private $username = "root";
     private $password = "";
 

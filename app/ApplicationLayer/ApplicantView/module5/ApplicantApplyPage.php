@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$ic=$_SESSION['username'];
+$ic = $_SESSION['username'];
 
 ?>
 
@@ -53,7 +53,7 @@ $ic=$_SESSION['username'];
             <div class="content-container">
                 <div class="content">
 
-                    <form action="../../../../public/Facade.php?action=ApplyForm" method="post">
+                    <form action="../../../../public/Facade.php?action=ApplyForm" method="post" enctype="multipart/form-data">
 
                         <table class="incentive-form">
                             <tbody>
@@ -129,7 +129,7 @@ $ic=$_SESSION['username'];
                                     <th>Alamat Rumah : </th>
                                     <td><input type="text" name="cr-address" id="cr-address" required></td>
                                     <th>Hubungan dengan Pemohon : </th>
-                                    <td><input type="number" name="cr-relation" id="cr-relation" required></td>
+                                    <td><input type="text" name="cr-relation" id="cr-relation" required></td>
                                     <th>Nombor Telefon : </th>
                                     <td><input type="number" name="cr-phone" id="cr-phone" required></td>
                                 </tr>
@@ -149,13 +149,13 @@ $ic=$_SESSION['username'];
 
                                 <tr>
                                     <th>Slip Gaji 1: </th>
-                                    <td><input type="file" name="file1"  required></td>
+                                    <td><input type="file" name="file1" required></td>
                                     <th>Slip Gaji 2: </th>
-                                    <td><input type="file" name="file2"  required></td>
+                                    <td><input type="file" name="file2" required></td>
                                     <th>Slip Gaji 3: </th>
-                                    <td><input type="file" name="file3"  required></td>
+                                    <td><input type="file" name="file3" required></td>
                                     <th>Surat Pengesahan Bermastautin(Jika Berkaitan) : </th>
-                                    <td><input type="file" name="file4" ></td>
+                                    <td><input type="file" name="file4"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -177,32 +177,34 @@ $ic=$_SESSION['username'];
 
     <script>
         // Retrieve form input elements
-        const nameInput = document.getElementById('suami-jobtype');
-        const emailInput = document.getElementById('suami-jobname');
-        // Add more variables for other form fields
+        const formInputs = document.querySelectorAll('input:not([type="file"])');
 
         // Load saved form data from localStorage
         window.addEventListener('load', () => {
             const savedFormData = localStorage.getItem('formData');
             if (savedFormData) {
                 const parsedData = JSON.parse(savedFormData);
-                nameInput.value = parsedData.name;
-                emailInput.value = parsedData.email;
-                // Set values for other form fields
+                for (const input of formInputs) {
+                    const inputName = input.name;
+                    if (parsedData.hasOwnProperty(inputName)) {
+                        input.value = parsedData[inputName];
+                    }
+                }
             }
         });
 
         // Save form data to localStorage when inputs change
-        nameInput.addEventListener('input', saveFormData);
-        emailInput.addEventListener('input', saveFormData);
-        // Add event listeners for other form fields
+        for (const input of formInputs) {
+            input.addEventListener('input', saveFormData);
+        }
 
         function saveFormData() {
-            const formData = {
-                name: nameInput.value,
-                email: emailInput.value,
-                // Add properties for other form fields
-            };
+            const formData = {};
+            for (const input of formInputs) {
+                const inputName = input.name;
+                const inputValue = input.value;
+                formData[inputName] = inputValue;
+            }
             localStorage.setItem('formData', JSON.stringify(formData));
         }
     </script>

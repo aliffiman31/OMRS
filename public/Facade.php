@@ -234,7 +234,7 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             $file1 = isset($_POST['file1']) ? $_POST['file1'] : '';
             $file2 = isset($_POST['file2']) ? $_POST['file2'] : '';
             $file3 = isset($_POST['file3']) ? $_POST['file3'] : '';
-            $file4 = isset($_POST['file4']) ? $_POST['file4'] : '';
+            $file4 = isset($_POST['file4']);
 
             // Call the controller method to insert the form data
             $ApplicantIncentiveController->insertincentiveformdata(
