@@ -14,12 +14,12 @@ body{
    margin-top: 100px;
 }
 
-.container-ApplicantUpdateProfile{
+.container-ApplicantViewProfile{
     border:5px solid;
     display: flex;
     align-items: flex-start;
     background-color: white;
-    padding: 10px;
+    padding: 100px;
     border: 1px solid black;
     width: 530px;
     padding-left: 30px;
@@ -29,7 +29,7 @@ body{
     padding-bottom: 30px;
  }
 
- .ApplicantUpdateProfile{
+ .ApplicantViewProfile{
     display: flex;
     padding:10px;
  }
