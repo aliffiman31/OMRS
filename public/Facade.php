@@ -1,4 +1,5 @@
  <?php
+    session_start();
     //db file include
     require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
 
@@ -12,15 +13,18 @@
     //Module 2
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
+    require_once '../app/Controller/StaffManageMarriageRequestController.php';
 
-<<<<<<< Updated upstream
-=======
-require_once '../app/OMRS.dataaccess/Module1Repository.php';
-require_once '../app/Controller/MarriagecertController.php';
-require_once '../app/Controller/MarriagetypeController.php';
-// Create a new database connection
-$db = (new Database())->connect();
->>>>>>> Stashed changes
+    //Module 3
+    require_once '../app/OMRS.dataaccess/Module3Repository.php';
+
+    require_once '../app/OMRS.dataaccess/Module1Repository.php';
+    require_once '../app/Controller/MarriagecertController.php';
+    require_once '../app/Controller/MarriagetypeController.php';
+    // Create a new database connection
+    $db = (new Database())->connect();
+
+
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -33,22 +37,16 @@ $db = (new Database())->connect();
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-<<<<<<< Updated upstream
-=======
 
     //Module 2
     //$Module2Repository = new Module2Repository($db);
 
     //Module 2
-    $Module2Repository = new Module2Repository($db);
-    $Module2Repository = new Module2Repository($db);
-    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
 
     //module 3
     $Module3Repository = new Module3Repository($db);
 
     //Module 1 (Create a new instance of the controller)
->>>>>>> Stashed changes
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -58,8 +56,8 @@ $db = (new Database())->connect();
     // | module 2 create object for repository & controller |
     //  ----------------------------------------------------
     $Module2Repository = new Module2Repository($db);
-    $Module2Repository = new Module2Repository($db);
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
+    $StaffManageMarriageRequestController = new StaffManageMarriageRequestController($Module2Repository);
 
     //  ----------------------------------------------------
     // | module 3 create object for repository & controller |
@@ -144,7 +142,7 @@ $db = (new Database())->connect();
 
         case 'changePassword':
             $userIC = $_POST['userIC'];
-            $userPassord = $_POST['userPassword'];
+            $userPassword = $_POST['userPassword'];
             $newPassword = $_POST['newPassword'];
 
             $PasswordController->changePasswordFunction($userIC, $userPassword, $newPassword);
@@ -192,6 +190,14 @@ $db = (new Database())->connect();
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
             break;
+
+        case 'PartnerInfo':
+
+            $icNum = $_POST["ic-num"];
+            $StaffManageMarriageRequestController = new StaffManageMarriageRequestController($Module2Repository);
+            $StaffManageMarriageRequestController->searchPartner($icNum);
+
+
 
             //Module 3
         case 'unauthorizedmarriage':
@@ -259,10 +265,28 @@ $db = (new Database())->connect();
 
             // Call the controller method to insert the form data
             $ApplicantIncentiveController->insertincentiveformdata(
-            $sjt,$sjn,$sja,$ss,$sb,$sna
-            ,$ijt,$ijn,$ija,$is,$ib,$ina
-            ,$crn,$cri,$cra,$crr,$crp
-            ,$file1,$file2,$file3,$file4);
+                $sjt,
+                $sjn,
+                $sja,
+                $ss,
+                $sb,
+                $sna,
+                $ijt,
+                $ijn,
+                $ija,
+                $is,
+                $ib,
+                $ina,
+                $crn,
+                $cri,
+                $cra,
+                $crr,
+                $crp,
+                $file1,
+                $file2,
+                $file3,
+                $file4
+            );
             break;
 
 

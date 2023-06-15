@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +17,6 @@
         }
 
         .price {
-
             color: red;
             font-style: italic;
         }
@@ -44,11 +44,9 @@
         include_once('../../Common/header.html');
         ?>
 
-
         <section>
-
             <div>
-                <?php include_once('../../Common/sidebar.php');  ?>
+                <?php include_once('../../Common/sidebar.php'); ?>
             </div>
 
             <div class="content-container">
@@ -58,17 +56,10 @@
                         <table>
                             <tr>
                                 <td>
-                                    <p>USER ID</p>
-                                </td>
-                                <td class="data-user">
-                                    <p id="#">&nbsp;&nbsp;&nbsp;&nbsp;: A020917</p>
-                                </td>
-                            <tr>
-                                <td>
                                     <p>NAME</p>
                                 </td>
                                 <td class="data-user">
-                                    <p id="#">&nbsp;&nbsp;&nbsp;&nbsp;: RAMZAN BIN MOHD RUSHDI</p>
+                                    <p id="user-name">&nbsp;&nbsp;&nbsp;&nbsp;: </p>
                                 </td>
                             </tr>
                             <tr>
@@ -76,9 +67,8 @@
                                     <p>IC NUMBER</p>
                                 </td>
                                 <td class="data-user">
-                                    <p id="#">&nbsp;&nbsp;&nbsp;&nbsp;: 890312-06-1139</p>
+                                    <p id="user-ic">&nbsp;&nbsp;&nbsp;&nbsp;: </p>
                                 </td>
-                            </tr>
                             </tr>
                         </table>
                         <hr>
@@ -87,10 +77,10 @@
                         <p>2. Jika pemohon didapati lewat menjelaskan yuran,pemohon akan dikenakan denda sebanyak <span class="price">RM 60.00</span></p>
                         <p>3. Yuran tidak akan dikembalikan kepada pemohon jika pemohon tidak hadir ke kursus tanpa maklum</p>
                         <h3>ANJURAN :</h3>
-                        <p id="#">office</p>
+                        <p id="office"></p>
                         <h3>TEMPAT DAN TARIKH :</h3>
-                        <P id="#">Venue</P>
-                        <P id="#">Tarikh</P>
+                        <p id="venue"></p>
+                        <p id="date"></p>
                         <div id="proofPayment">
                             <label for="file-upload-3" class="upload-label">
                                 <img class="icon" src="../../Common/uploadIcon.png" alt="Upload Icon">
@@ -103,9 +93,9 @@
                     </div>
                 </div>
             </div>
-
         </section>
     </div>
+
     <script>
         document.getElementById("file-upload-3").addEventListener("change", function(event) {
             var file = event.target.files[0];
@@ -113,8 +103,12 @@
             console.log("Uploaded file:", file.name);
             document.getElementById("file-name-3").textContent = file.name;
         });
-    </script>
 
+        // Assign the values to the corresponding HTML elements using PHP variables
+        document.getElementById("office").textContent = '<?php echo $_GET["office"]; ?>';
+        document.getElementById("venue").textContent = '<?php echo $_GET["venue"]; ?>';
+        document.getElementById("date").textContent = '<?php echo $_GET["date"]; ?>';
+    </script>
 </body>
 
 </html>
