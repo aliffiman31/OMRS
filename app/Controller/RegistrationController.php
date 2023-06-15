@@ -9,7 +9,7 @@
         }
         
         //applicant register function   
-        public function registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword)
+        public function registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus)
         {
             //security purpose (Admin pon tak blh tgk password user kat mysql)
             //$hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
@@ -18,14 +18,14 @@
             $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $userPassword, $userType);
 
             //(dlm table ApplicantInfo)
-            $this->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
+            $this->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus);
         }
 
         
-        public function addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail)
+        public function addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus)
         {
             //call addApplicantInfo function in Module1Repository (table ApplicantInfo)
-            $this->Module1Repository->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail);
+            $this->Module1Repository->addApplicantInfo($userIC, $UserAcc_Id, $appName, $appGender, $appPhoneNo, $appAddress, $appEmail, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus);
         
             ?>
                 <script>

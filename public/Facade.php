@@ -14,9 +14,9 @@
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
 
     //module 3
-    require_once '../app/OMRS.dataaccess/Module3Repository.php';
+   /* require_once '../app/OMRS.dataaccess/Module3Repository.php';
     require_once '../app/Controller/MarriagecertController.php';
-    require_once '../app/Controller/MarriagetypeController.php';
+    require_once '../app/Controller/MarriagetypeController.php';*/
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -73,8 +73,13 @@
             $appAddress = $_POST['appAddress'];
             $appEmail = $_POST['appEmail'];
             $userPassword = $_POST['userPassword'];
+            $appRace = $_POST['appRace'];
+            $appNationality = $_POST['appNationality'];
+            $appEduLevel = $_POST['appEduLevel'];
+            $appOKUStatus = $_POST['appOKUStatus'];
+            $appStatus = $_POST['appStatus'];
 
-            $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword);
+            $RegistrationController->registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus);
             break;
 
         case 'registerStaffAcc':

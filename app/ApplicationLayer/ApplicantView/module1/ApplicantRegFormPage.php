@@ -35,16 +35,39 @@
                 <tr>
                     <td>NO. KAD PENGENALAN   :</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="userIC" id="userIC"></td>
+
+                    <td>BANGSA   :</td>
+                    <td> <input style="height:30px; width:250px;" type = "text" name="appRace" id="appRace"></td>
                 </tr>
                 <tr>
                     <td>NAMA:</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="appName" id="appName"></td>
+
+                    <td>WARGANEGARA   :</td>
+                    <td>
+                        <select style="width:260px; height:40px;" name="appNationality" id="appNationality">
+                            <option disabled selected>SILA PILIH</option>
+                            <option value="nationality">WARGANEGARA</option>
+                            <option value="no nationality">BUKAN WARGANEGARA</option>
+                        </select> 
+                    </td>
                 </tr>
                 <tr>
                     <td>KATEGORI AKSES :</td>
                     <td><select style="width:260px; height:40px;" name="userType" id="userType">
                             <option disabled selected>SILA PILIH</option>
                             <option value="Pemohon">PEMOHON</option>
+                        </select>
+                    </td>
+                    <td>TARAF PENDIDIKAN  :</td>
+                    <td> 
+                        <select style="width:260px; height:40px;" name="appEduLevel" id="appEduLevel">
+                            <option disabled selected>SILA PILIH</option>
+                            <option value="primary school">SEKOLAH RENDAH</option>
+                            <option value="secondary school">SEKOLAH MENENGAH</option>
+                            <option value="pra-university">PRA-UNIVERSITI</option>
+                            <option value="university">UNIVERSITI</option>
+                        </select>
                         </select>
                     </td>
                 </tr>
@@ -57,10 +80,26 @@
                             <option value="Perempuan">PEREMPUAN</option>
                         </select>
                     </td>
+                    <td>OKU STATUS   :</td>
+                    <td>
+                        <select style="width:260px; height:40px;" name="appOKUStatus" id="appOKUStatus">
+                            <option disabled selected>SILA PILIH</option>
+                            <option value="Yes">YA</option>
+                            <option value="No">TIDAk</option>
+                        </select> 
+                    </td>
                 </tr>
                 <tr>
                     <td>NO. TELEFON:</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="appPhoneNo" id="appPhoneNo"></td>
+                    <td>STATUS  :</td>
+                    <td> 
+                        <select style="width:260px; height:40px;" name="appStatus" id="appStatus">
+                            <option disabled selected>SILA PILIH</option>
+                            <option value="Married">BERKAHWIN</option>
+                            <option value="Single">TIDAK BERKAHWIN</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td>ALAMAT:</td>
