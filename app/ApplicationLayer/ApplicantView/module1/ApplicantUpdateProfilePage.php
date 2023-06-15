@@ -53,10 +53,10 @@
         <div class="content-container">
         <div class="content">  
             
-        <div class="ApplicantUpdateProfile">  
+        <div class="container-ApplicantUpdateProfile">  
         <form action="../../../../public/Facade.php?action=updateAppProfile" method="POST">
                 <table>
-                    <tbody>
+                    
                     <tr>
                         <td scope="row">NO KAD PENGENALAN : </td>
                         <td><?php echo $decodedApplicantData['Applicant_IC']; ?></td>
@@ -87,13 +87,9 @@
 
                     </tr>
                     </table>
-                </tbody>
-
-
+                
                 <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onsubmit="  "> 
-                </from>
-
-                    
+                </from>         
            
         </div> 
         </div>  
