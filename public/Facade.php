@@ -49,7 +49,7 @@
     //Module 2
 
     //module 3
-    $Module3Repository = new Module3Repository($db);
+    //$Module3Repository = new Module3Repository($db);
 
     //Module 1 (Create a new instance of the controller)
     $RegistrationController = new RegistrationController($Module1Repository);
