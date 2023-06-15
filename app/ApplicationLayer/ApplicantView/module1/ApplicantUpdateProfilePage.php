@@ -65,13 +65,18 @@
                         <td scope="row">NAMA : </td>
                         <td><?php echo $decodedApplicantData['appName']; ?></td> 
                     </tr>
-                    <tr>
-                        <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedApplicantData['appAge']; ?></td>  
-                    </tr>
+                    
                     <tr>
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedApplicantData['appGender']; ?></td> 
+                    </tr>
+                    <tr>
+                        <td scope="row">BANGSA : </td>
+                        <td><?php echo $decodedApplicantData['appRace']; ?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">WARGANEGARA : </td>
+                        <td><?php echo $decodedApplicantData['appNationality']; ?></td>
                     </tr>
                     <tr>
                         <td scope="row">NO. TELEFON: </td>
@@ -85,6 +90,20 @@
                         <td scope="row">ALAMAT : </td>
                         <td><textarea rows="4" cols="36" id="appAddress" name="appAddress"><?php echo $decodedApplicantData['appAddress']; ?></textarea></td>
 
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td scope="row">TARAF PENDIDIKAN : </td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appEduLevel" name="appEduLevel" value="<?php echo $decodedApplicantData['appEduLevel']; ?>"/></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">OKU Status : </td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appOKUStatus" name="appOKUStatus" value="<?php echo $decodedApplicantData['appOKUStatus']; ?>"/></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Status : </td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appStatus" name="appStatus" value="<?php echo $decodedApplicantData['appStatus']; ?>"/></td>
                     </tr>
                     </table>
                 

@@ -28,7 +28,8 @@
 
                 
             <form action="../../../public/Facade.php?action=registerStaffAcc" method="POST">
-                <table id="registrationTable">
+                <table>
+                <tbody>
                     <tr>
                         <td>NO. KAD PENGENALAN  :</td>
                         <td><input type="text" name="userIC" id="userIC"></td>
@@ -75,6 +76,7 @@
                         <td><input type="password" name="userPassword" id="userPassword" style="width:400px; height:30px;"  ></td>
                     </tr>
                 </table>
+                </tbody>
 
                 <input type="submit" id="submit" value="DAFTAR" onclik="   ">
             </form>

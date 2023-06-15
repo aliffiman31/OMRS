@@ -31,15 +31,16 @@ if (isset($_POST['office'])) {
     <style>
         table,
         th,
-        .table-data-title{
+        .table-data-title {
             border: 2px solid black;
             text-align: center;
         }
-        .header-title{
+
+        .header-title {
             background-color: aqua;
         }
 
-        #button1{
+        #button1 {
             border-radius: 9px;
             height: 28px;
             background-color: blue;
@@ -48,7 +49,8 @@ if (isset($_POST['office'])) {
             width: 50px;
             margin-left: 20px;
         }
-        #office{
+
+        #office {
             width: 200px;
         }
     </style>
@@ -104,8 +106,9 @@ if (isset($_POST['office'])) {
                                     <td class="table-data"><?php echo $course['Capacity']; ?></td>
                                     <td class="table-data"><?php echo $course['Vacancy']; ?></td>
                                     <td class="table-data">
-                                        <p><a href="../module2/ApplicantSubmitProofOfPayment.php">Daftar Sekarang</a></p>
+                                        <p><a href="../module2/ApplicantSubmitProofOfPayment.php?office=<?php echo urlencode($course['office']); ?>&venue=<?php echo urlencode($course['Venue']); ?>&date=<?php echo urlencode($course['Date']); ?>">Daftar Sekarang</a></p>
                                     </td>
+
                                 </tr>
                                 <?php
                                 $rowNumber++; // Increment the row number

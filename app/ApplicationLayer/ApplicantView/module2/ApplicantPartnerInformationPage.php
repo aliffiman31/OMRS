@@ -1,3 +1,9 @@
+<?php
+
+include '../../../OMRS.dataaccess/Module2Repository.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,13 +46,16 @@
             margin-left: 20px;
             width: 50px;
         }
-        #line{
+
+        #line {
             margin-right: 30px;
         }
-        #form1{
+
+        #form1 {
             margin-left: 20px;
         }
-        #button2{
+
+        #button2 {
             background: #6D72F1;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 5px;
@@ -79,7 +88,7 @@
                     <div class="inner-content">
                         <h3>Permohonan Berkahwin</h3>
                         <hr id="line">
-                        <form action="" id="form1">
+                        <form action="../../../../public/Facade.php?action=PartnerInfo" id="form1">
                             <label for="ic-num">No kad pengenalan pasangan :</label>
                             <input type="text" id="ic-num" name="ic-num">
                             <button type="submit" id="button1"><b>Cari</b></button>
@@ -89,42 +98,38 @@
                         <br>
                         <table class="table-info">
                             <tr>
-                                <td><strong> kad pengenalan </strong></td>
-                                <td id="#">:990611-06-2254</td>
-                                <td><strong>Alamat tempat tinggal </strong></td>
-                                <td id="#">:Lot A2,Kg Semerah Kuning</td>
+                                <td><strong>Kad Pengenalan</strong></td>
+                                <td id="PartnerIC">:<?php echo $partnerData['Applicant_IC']; ?></td>
+                                <td><strong>Alamat Tempat Tinggal</strong></td>
+                                <td id="PartnerAddress">:<?php echo $partnerData['address']; ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Nama </strong></td>
-                                <td id="#">:Nur Safeha binti Amir</td>
-                                <td><strong>Poskod </strong></td>
-                                <td id="#">:26000</td>
+                                <td><strong>Nama</strong></td>
+                                <td id="PartnerName">:<?php echo $partnerData['name']; ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Tarikh lahir </strong></td>
-                                <td id="#">:11 Jun 1999</td>
-                                <td><strong>Daerah </strong></td>
-                                <td id="#">:Indera Mahkota</td>
+                                <td><strong>Tarikh Lahir</strong></td>
+                                <td id="PartnerBirthDate">:</td>
                             </tr>
                             <tr>
-                                <td><strong>Email </strong></td>
-                                <td id="#">:Safeha99@gmail.com</td>
-                                <td><strong>Pekerjaan </strong></td>
-                                <td id="#">:Pengawal Bank</td>
+                                <td><strong>Email</strong></td>
+                                <td id="PartnerEmail">:<?php echo $partnerData['email']; ?></td>
+                                <td><strong>Pekerjaan</strong></td>
+                                <td id="PartnerJob">:</td>
                             </tr>
                             <tr>
-                                <td><strong>Jantina </strong></td>
-                                <td id="#">:Perempuan</td>
-                                <td><strong>No telefon(bimbit) </strong></td>
-                                <td id="#">:012-23271632</td>
+                                <td><strong>Jantina</strong></td>
+                                <td id="PartnerSex">:</td>
+                                <td><strong>No Telefon (Bimbit)</strong></td>
+                                <td id="PartnerPhoneNo">:<?php echo $partnerData['phoneNumber']; ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Bangsa </strong></td>
-                                <td id="#">:Melayu</td>
+                                <td><strong>Bangsa</strong></td>
+                                <td id="PartnerRace">:<?php echo $partnerData['ecthnicity']; ?></td>
                             </tr>
                             <tr>
-                                <td><strong>Umur </strong></td>
-                                <td id="#">:24</td>
+                                <td><strong>Umur</strong></td>
+                                <td id="PartnerAge">:<?php echo $partnerData['age']; ?></td>
                             </tr>
                         </table>
                         <br><br>

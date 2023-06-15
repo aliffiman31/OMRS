@@ -340,9 +340,9 @@
           </button>
           <div class="collapse" id="module2.1-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Pendaftaran Tempat Kahwin</a></li>
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Pembayaran Kursus Kahwin</a></li>
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Status Permohonan</a></li>
+              <li><a href="/app/ApplicationLayer/ApplicantView/module2/ApplicantReligiousOfficeOptions.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Pendaftaran Tempat Kahwin</a></li>
+              <li><a href="/app/ApplicationLayer/ApplicantView/module2/ApplicantSubmitProofOfPayment.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Pembayaran Kursus Kahwin</a></li>
+              <li><a href="/app/ApplicationLayer/ApplicantView/module2/ApplicantStatusPage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Status Permohonan</a></li>
             </ul>
           </div>
         </li>
@@ -354,10 +354,8 @@
           </button>
           <div class="collapse" id="module2.2-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option1</a></li>
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option2</a></li>
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option3</a></li>
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">option4</a></li>
+              <li><a href="/app/ApplicationLayer/ApplicantView/module2/ApplicantPartnerInformationPage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Informasi Pasangan</a></li>
+              <li><a href="/app/ApplicationLayer/ApplicantView/module2/ApplicantSupportingDocumentpage.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Dokumen Sokongan</a></li>
             </ul>
           </div>
         </li>

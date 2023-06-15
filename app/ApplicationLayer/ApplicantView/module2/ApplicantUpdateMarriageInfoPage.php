@@ -85,15 +85,11 @@
                                     </tr>
                                     <tr>
                                         <td>Nama Pemohon:</td>
-                                        <td>retrieve from database</td>
-                                        <td><label for="negara">Negara:</label></td>
-                                        <td><input type="text" id="negara" name="negara"></td>
+                                        <td>NURUL SYAZANA</td>
                                     </tr>
                                     <tr>
                                         <td>Nama Pasangan:</td>
                                         <td>retrieve from database</td>
-                                        <td><label for="negeri">Negeri:</label></td>
-                                        <td><input type="text" id="negeri" name="negeri"></td>
                                     </tr>
                                     <div class="header-title">
                                         <tr>

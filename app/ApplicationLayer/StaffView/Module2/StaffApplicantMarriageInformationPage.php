@@ -61,7 +61,7 @@
         <section>
 
             <div>
-                <?php include_once('../../Common/sidebar.php');  ?>
+            <?php include_once('../../Common/staffsidebar.php');  ?>
             </div>
 
             <div class="content-container">
