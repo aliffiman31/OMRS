@@ -1,5 +1,4 @@
  <?php
-
     require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
     
     //Module 1 
