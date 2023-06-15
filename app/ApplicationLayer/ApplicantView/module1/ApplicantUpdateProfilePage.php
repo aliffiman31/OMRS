@@ -75,11 +75,11 @@
                     </tr>
                     <tr>
                         <td scope="row">NO. TELEFON: </td>
-                        <td><input type="text" id="appPhoneNo" name="appPhoneNo" value="<?php echo $decodedApplicantData['appPhoneNo']; ?>"/></td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appPhoneNo" name="appPhoneNo" value="<?php echo $decodedApplicantData['appPhoneNo']; ?>"/></td>
                     </tr>
                     <tr>
                         <td scope="row">EMAIL : </td>
-                        <td><input type="text" id="appEmail" name="appEmail" value="<?php echo $decodedApplicantData['appEmail']; ?>"/></td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appEmail" name="appEmail" value="<?php echo $decodedApplicantData['appEmail']; ?>"/></td>
                     </tr>
                     <tr>
                         <td scope="row">ALAMAT : </td>

@@ -12,24 +12,21 @@ body{
 
 .content{
    margin-top: 100px;
+   padding-left:50px;
 }
 
-.container-StaffViewProfile{
-    border:5px solid;
-    display: flex;
-    align-items: flex-start;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid black;
-    width: 530px;
-    padding-left: 30px;
-    padding-right: 10px;
-    margin: auto;
-    margin-top: 200px;
-    padding-bottom: 30px;
+.container-StaffUpdateProfile{
+   display: flex;
+   align-items: flex-start;
+   width: 550px;
+   padding-right: 10px;
+   margin: auto;
+   margin-top: 30px;
+   margin-left: 10px;
+   padding-bottom: 30px;
  }
 
- .StaffViewProfile{
+ .StaffUpdateProfile{
     display: flex;
     padding:10px;
  }
@@ -37,9 +34,10 @@ body{
  table td{
     padding-bottom:10px;
  }
+
 #kemaskiniBtn{
     margin-top: 20px;
-    margin-left:400px;
+    margin-left:350px;
     background-color: blue;
     border-radius: 5px;
     border:hidden;

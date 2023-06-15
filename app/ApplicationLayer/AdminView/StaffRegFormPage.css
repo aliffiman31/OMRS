@@ -9,21 +9,26 @@ body{
     height: 100vh;
 }
 
-.content-StaffRegForm{
-    border: 1px solid black;
-    height: 700px;
-    width: 830px;
-    background-color: azure;
-    padding: 10px;
-    margin-top: 310px;
-    margin-left: 290px;
-    overflow: auto;
+.content{
+  margin-top: 100px; 
+}
+
+.container-StaffRegForm{
+   display: flex;
+   align-items: flex-start;
+   width: 700px;
+   padding-right: 10px;
+   margin: auto;
+   margin-top: 30px;
+   margin-left: 10px;
+   padding-bottom: 30px;
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 40px;
+    padding-top: 40px;
   }
 
   #registrationTable, td, tr{
@@ -32,13 +37,13 @@ body{
 
   input[type=text]
   {
-    width:400px;
+    width:405px;
     height:30px;
   }
 
   #submit{
     margin-top: 10px;
-    margin-left:230px;
+    margin-left:50px;
     background-color: blue;
     border-radius: 5px;
     border:hidden;
