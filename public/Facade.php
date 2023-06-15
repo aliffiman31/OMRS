@@ -13,14 +13,10 @@
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
 
-<<<<<<< Updated upstream
-=======
-require_once '../app/OMRS.dataaccess/Module1Repository.php';
-require_once '../app/Controller/MarriagecertController.php';
-require_once '../app/Controller/MarriagetypeController.php';
-// Create a new database connection
-$db = (new Database())->connect();
->>>>>>> Stashed changes
+    //module 3
+    require_once '../app/OMRS.dataaccess/Module3Repository.php';
+    require_once '../app/Controller/MarriagecertController.php';
+    require_once '../app/Controller/MarriagetypeController.php';
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -33,22 +29,6 @@ $db = (new Database())->connect();
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-<<<<<<< Updated upstream
-=======
-
-    //Module 2
-    //$Module2Repository = new Module2Repository($db);
-
-    //Module 2
-    $Module2Repository = new Module2Repository($db);
-    $Module2Repository = new Module2Repository($db);
-    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
-
-    //module 3
-    $Module3Repository = new Module3Repository($db);
-
-    //Module 1 (Create a new instance of the controller)
->>>>>>> Stashed changes
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -64,6 +44,9 @@ $db = (new Database())->connect();
     //  ----------------------------------------------------
     // | module 3 create object for repository & controller |
     //  ----------------------------------------------------
+    $Module3Repository = new Module3Repository($db);
+    $MarriagetypeController = new MarriagetypeController($Module3Repository);
+    $MarriagecertController = new MarriagecertController($Module3Repository);
 
     //  ----------------------------------------------------
     // | module 4 create object for repository & controller |
