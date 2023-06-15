@@ -28,7 +28,6 @@
         //Sidebar Active path
         $_SESSION['route'] = 'viewProfile';
     }
- 
 ?>
 
 <!DOCTYPE html>
