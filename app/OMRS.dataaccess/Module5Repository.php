@@ -21,8 +21,8 @@ class Module5Repository
     $uniqid = uniqid();
 
     // Insert into special incentive table
-    $query = $this->connect->prepare("INSERT INTO specialincentive(SI_ID ,SI_UserAccount ,SI_GFID, SI_BFID, SI_CRFID,SI_SDID) VALUES (?, ?, ?, ?, ?, ?)");
-    $query->execute([$uniqid, $uniqid, $uniqid, $uniqid, $uniqid, $uniqid, $uniqid]);
+    //$query = $this->connect->prepare("INSERT INTO specialincentive(SI_ID ,SI_UserAccount ,SI_GFID, SI_BFID, SI_CRFID,SI_SDID) VALUES (?, ?, ?, ?, ?, ?)");
+    //$query->execute([$uniqid, $uniqid, $uniqid, $uniqid, $uniqid, $uniqid, $uniqid]);
 
     // Insert into groom table for the suami data
     $query = $this->connect->prepare("INSERT INTO groomform(GF_ID ,GF_JobType ,GF_JobName, GF_JobAddress, GF_Salary,GF_Bank ,GF_AccNumber) VALUES (?, ?, ?, ?, ?, ?, ?)");

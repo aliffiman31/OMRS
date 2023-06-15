@@ -53,7 +53,7 @@ $ic = $_SESSION['username'];
             <div class="content-container">
                 <div class="content">
 
-                    <form action="../../../../public/Facade.php?action=ApplyForm" method="post" enctype="multipart/form-data">
+                    <form action="../../../../public/Facade.php?action=apply-incentive" method="post" enctype="multipart/form-data">
 
                         <table class="incentive-form">
                             <tbody>
