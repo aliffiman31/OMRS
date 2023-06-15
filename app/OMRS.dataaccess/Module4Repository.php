@@ -7,16 +7,20 @@ class Module4Repository
 
     public function __construct()
     {
-        $db = new Database();
-        $this->conn = $db->connect();
+        try {
+            $db = new Database();
+            $this->conn = $db->connect();
+        } catch (PDOException $e) {
+            die('Error connecting to the database: ' . $e->getMessage());
+        }
     }
 
     public function checkRequestExistence($applicantIC, $partnerId)
     {
         $query = "SELECT Request_Id FROM Marriage_Request_Info WHERE Applicant_IC = :applicantIC AND Partner_Id = :partnerId";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':applicantIC', $applicantIC);
-        $stmt->bindParam(':partnerId', $partnerId);
+        $stmt->bindParam(':applicantIC', $applicantIC, PDO::PARAM_STR);
+        $stmt->bindParam(':partnerId', $partnerId, PDO::PARAM_INT);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
@@ -31,7 +35,7 @@ class Module4Repository
     {
         $query = "SELECT Partner_Id FROM PartnerInfo WHERE PartnerIC = :partnerIC";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':partnerIC', $partnerIC);
+        $stmt->bindParam(':partnerIC', $partnerIC, PDO::PARAM_STR);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
@@ -53,7 +57,7 @@ class Module4Repository
                 ORDER BY ConsultationApplication.CAdate $sortOrder";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':requestId', $requestId);
+        $stmt->bindParam(':requestId', $requestId, PDO::PARAM_INT);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
@@ -75,7 +79,7 @@ class Module4Repository
         // Retrieve existing values from the database
         $query = "SELECT CAdetails FROM ConsultationApplication WHERE CA_Id = :CA_Id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':CA_Id', $CA_Id);
+        $stmt->bindParam(':CA_Id', $CA_Id, PDO::PARAM_INT);
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
@@ -105,8 +109,8 @@ class Module4Repository
 
                     $updateQuery = "UPDATE ConsultationApplication SET Staff_Id = :staffId WHERE CA_Id = :CA_Id";
                     $updateStmt = $this->conn->prepare($updateQuery);
-                    $updateStmt->bindParam(':staffId', $staffId);
-                    $updateStmt->bindParam(':CA_Id', $row['CA_Id']);
+                    $updateStmt->bindParam(':staffId', $staffId, PDO::PARAM_INT);
+                    $updateStmt->bindParam(':CA_Id', $row['CA_Id'], PDO::PARAM_INT);
                     $updateResult = $updateStmt->execute();
 
                     if ($updateResult) {
@@ -129,7 +133,7 @@ class Module4Repository
     {
         $query = "DELETE FROM ConsultationApplication WHERE CA_Id = :CA_Id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':CA_Id', $CA_Id);
+        $stmt->bindParam(':CA_Id', $CA_Id, PDO::PARAM_INT);
         $result = $stmt->execute();
 
         if ($result) {
@@ -144,7 +148,7 @@ class Module4Repository
     {
         $query = "DELETE FROM ConsultationSession WHERE CS_Id = :CS_Id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':CS_Id', $CS_Id);
+        $stmt->bindParam(':CS_Id', $CS_Id, PDO::PARAM_INT);
         $result = $stmt->execute();
 
         if ($result) {
@@ -158,51 +162,37 @@ class Module4Repository
     public function getSessionData($requestId, $CS_Id)
     {
         $query = "SELECT CSdate, CSplace, Staff.staff
+        FROM ConsultationSession
         LEFT JOIN Staff ON ConsultationSession.Staff_Id = Staff.Staff_Id
         WHERE ConsultationSession.CS_Id = :CS_Id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':CS_Id', $CS_Id);
+        $stmt->bindParam(':CS_Id', $CS_Id, PDO::PARAM_INT);
         $stmt->execute();
-    
+
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             return $row;
         }
-    
+
         return null;
     }
-    
+
     public function updateConsultationSession($CS_Id, $date, $place)
     {
         $query = "UPDATE ConsultationSession SET CSdate = :date, CSplace = :place WHERE CS_Id = :CS_Id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':CS_Id', $CS_Id);
-        $stmt->bindParam(':date', $date);
-        $stmt->bindParam(':place', $place);
+        $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+        $stmt->bindParam(':place', $place, PDO::PARAM_STR);
+        $stmt->bindParam(':CS_Id', $CS_Id, PDO::PARAM_INT);
         $result = $stmt->execute();
-    
+
         if ($result) {
-            header('location: ApplicantConsultMainPage.php?requestId=' . $_GET['requestId']);
-            exit();
-        } else {
-            die('Error connecting to the database: ' . print_r($stmt->errorInfo(), true));
-        }
-    }
-    
-    public function updateConsultationApplication($CA_Id, $CAdetails)
-    {
-        $query = "UPDATE ConsultationApplication SET CAdetails = :CAdetails WHERE CA_Id = :CA_Id";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':CA_Id', $CA_Id);
-        $stmt->bindParam(':CAdetails', $CAdetails);
-        $result = $stmt->execute();
-    
-        if ($result) {
-            header('location: ApplicantConsultMainPage.php?requestId=' . $_GET['requestId']);
+            header('location: ApplicantConsultMainPage.php?CS_Id=' . $CS_Id);
             exit();
         } else {
             die('Error connecting to the database: ' . print_r($stmt->errorInfo(), true));
         }
     }
 }
-?>    
+
+?>

@@ -9,6 +9,12 @@
     require_once '../app/Controller/PasswordController.php';
     require_once '../app/Controller/ProfileController.php';
 
+    //Module 4
+    require_once '../app/OMRS.dataaccess/Module4Repository.php';
+    require_once '../app/Controller/ConsultationMainController.php';
+    require_once '../app/Controller/ConsultationSessionController.php';
+    require_once '../app/Controller/ConsultationApplicationController.php';
+
     //Module 2
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
@@ -44,7 +50,10 @@
     //  ----------------------------------------------------
     // | module 4 create object for repository & controller |
     //  ----------------------------------------------------
-
+    $ConsultationMainController = new ConsultationMainController();
+    $ConsultationSessionController = new ConsultationSessionController();
+    $ConsultationApplicationController = new ConsultationApplicationController();
+    
     //  ----------------------------------------------------
     // | module 5 create object for repository & controller |
     //  ----------------------------------------------------
@@ -240,6 +249,44 @@
             ,$crn,$cri,$cra,$crr,$crp
             ,$file1,$file2,$file3,$file4);
             break;
+
+            // Module 4
+        case 'createConsultationSession':
+            $date = $_POST['date'];
+            $place = $_POST['place'];
+            $CS_Id = $_GET['CS_Id'];
+
+            $ConsultationSessionController->createConsultationSession($date, $place, $CS_Id);
+            break;
+
+        case 'updateConsultationSession':
+            $sessionId = $_POST['sessionId'];
+            $date = $_POST['date'];
+            $place = $_POST['place'];
+
+            $ConsultationSessionController->updateConsultationSession($sessionId, $date, $place);
+            break;
+
+        case 'deleteConsultationSession':
+            $sessionId = $_GET['sessionId'];
+
+            $ConsultationSessionController->deleteConsultationSession($sessionId);
+            break;
+
+        case 'submitConsultationApplication':
+            $applicationId = $_POST['applicationId'];
+            $sessionId = $_POST['sessionId'];
+            $userId = $_POST['userId'];
+
+            $ConsultationApplicationController->submitConsultationApplication($applicationId, $sessionId, $userId);
+            break;
+
+        case 'cancelConsultationApplication':
+            $applicationId = $_GET['applicationId'];
+
+            $ConsultationApplicationController->cancelConsultationApplication($applicationId);
+            break;
+
 
 
         default:
