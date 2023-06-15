@@ -15,17 +15,13 @@ body{
 }
 
 .container-ApplicantViewProfile{
-    border:5px solid;
     display: flex;
     align-items: flex-start;
-    background-color: white;
-    padding: 100px;
-    border: 1px solid black;
-    width: 530px;
+    width: 800px;
     padding-left: 30px;
     padding-right: 10px;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 30px;
     padding-bottom: 30px;
  }
 

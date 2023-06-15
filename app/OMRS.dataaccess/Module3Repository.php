@@ -1,6 +1,6 @@
 <?php
 
-class Module3Repository
+/*class Module3Repository
 {
     private $connect;
 
@@ -39,7 +39,7 @@ class Module3Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
        //Add marriage type info
-      public function insertForm( $Fee_ID, $ApplicantPartner_IC,  $ApplicantPartner_Passport,  $Surat_Perakuan, $Akuan_Sumpah_Berkanun, $Surat_Pemastautinan)
+      /*public function insertForm( $Fee_ID, $ApplicantPartner_IC,  $ApplicantPartner_Passport,  $Surat_Perakuan, $Akuan_Sumpah_Berkanun, $Surat_Pemastautinan)
       {
       $stmt = $this->db->prepare("INSERT INTO unauthorizedmarriage (Fee_ID, ApplicantPartner_IC, ApplicantPartner_Passport, Surat_Perakuan, Akuan_Sumpah_Berkanun, Surat_Pemastautinan) VALUES (:fee_ID, :applicantPartner_IC, :applicantPartner_Passport,:surat_Perakuan, :akuan_Sumpah_Berkanun, :surat_Pemastautinan)");
       $stmt->bindParam(':fee_ID', $Fee_ID);
@@ -97,6 +97,6 @@ class Module3Repository
        
                return $stmt->fetchAll(PDO::FETCH_ASSOC);
            }
-        }
+        }*/
    
 ?>

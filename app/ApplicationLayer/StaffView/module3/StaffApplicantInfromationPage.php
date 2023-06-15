@@ -73,5 +73,20 @@
 </div>
 </section>
 </div>
+<script>
+    // Function to handle file upload
+    document.getElementById('MarriageCert').addEventListener('change', function(event) {
+        var file = event.target.files[0]; // Get the uploaded file
+
+        // Code to upload the file to the server (you can customize this based on your requirements)
+        // For example, you can use AJAX to send the file to the server
+
+        // Assuming the file is uploaded successfully, display the download link
+        var downloadLink = document.querySelector('.print-link');
+        downloadLink.style.display = 'inline-block';
+        downloadLink.href = URL.createObjectURL(file);
+        downloadLink.download = file.name;
+    });
+</script>
 </body>
 </html>

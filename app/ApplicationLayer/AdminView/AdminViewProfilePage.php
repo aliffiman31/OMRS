@@ -54,10 +54,10 @@
 
         <div class="content-container">
         <div class="content"> 
-
-        <div class="AdminViewProfile">
+       
+        <div class="container-AdminViewProfile">
             <form>
-                <table class = "AdminViewProfile">
+                <table>
                     <tr>
                         <td scope="row">NO KAD PENGENALAN : </td>
                         <td><?php echo $decodedAdminData['Admin_Id']; ?></td>
@@ -66,10 +66,7 @@
                         <td scope="row">NAMA : </td>
                         <td><?php echo $decodedAdminData['adminName']; ?></td> 
                     </tr>
-                    <tr>
-                        <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedAdminData['adminAge']; ?></td>  
-                    </tr>
+                    
                     <tr>
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedAdminData['adminGender']; ?></td> 

@@ -53,7 +53,7 @@
         <div class="content-container">
         <div class="content">  
             
-        <div class="StaffUpdateProfile">
+        <div class="container-StaffUpdateProfile">
 
         <form action="../../../../public/Facade.php?action=updateStaffProfile" method="POST">
                 <table>
@@ -66,10 +66,7 @@
                         <td scope="row">NAMA : </td>
                         <td><?php echo $decodedStaffData['staffName']; ?></td> 
                     </tr>
-                    <tr>
-                        <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedStaffData['staffAge']; ?></td>  
-                    </tr>
+                    
                     <tr>
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedStaffData['staffGender']; ?></td> 
@@ -85,12 +82,10 @@
                     </table>
                 </tbody>
 
-
                 <input type="submit" id="kemaskiniBtn" value="KEMASKINI" onsubmit="  "> 
                 </from>
-
-                    
-           
+                
+                
         </div> 
         </div>  
         </div>

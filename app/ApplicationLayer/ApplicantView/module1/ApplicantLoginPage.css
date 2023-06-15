@@ -1,6 +1,5 @@
 body{
     background-image: url('../../Asset/background.jpg');
-
 }
 
 .content-container {
@@ -16,7 +15,8 @@ body{
     background-color: white;
     padding: 10px;
     border: 1px solid black;
-    width: 400px;
+    width: 650px;
+    /*width: 450px;*/
     padding-left: 30px;
     padding-right: 10px;
     margin: auto;

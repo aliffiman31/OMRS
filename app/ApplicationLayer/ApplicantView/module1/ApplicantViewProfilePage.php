@@ -60,17 +60,14 @@ if(!isset($_SESSION['currentUserIC'])) {
             <form>
                 <table>
                     <tr>
-                        <td scope="row">NO KAD PENGENALAN  : </td>
+                        <td scope="row">NO KAD PENGENALAN: </td>
                         <td><?php echo $decodedApplicantData['Applicant_IC']; ?></td>
                     </tr>
                     <tr>
                         <td scope="row">NAMA  : </td>
                         <td><?php echo $decodedApplicantData['appName']; ?></td> 
                     </tr>
-                    <tr>
-                        <td scope="row">UMUR : </td>
-                        <td><?php echo $decodedApplicantData['appAge']; ?></td>  
-                    </tr>
+                    
                     <tr>
                         <td scope="row">JANTINA : </td>
                         <td><?php echo $decodedApplicantData['appGender']; ?></td> 
@@ -87,6 +84,27 @@ if(!isset($_SESSION['currentUserIC'])) {
                     <tr>
                         <td scope="row">ALAMAT : </td>
                         <td><?php echo $decodedApplicantData['appAddress']; ?></td> 
+                    </tr>
+
+                    <tr>
+                        <td scope="row">BANGSA : </td>
+                        <td><?php echo $decodedApplicantData['appRace']; ?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">WARGANEGARA : </td>
+                        <td><?php echo $decodedApplicantData['appNationality']; ?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">TARAF PENDIDIKAN : </td>
+                        <td><?php echo $decodedApplicantData['appEduLevel']; ?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">OKU Status : </td>
+                        <td><?php echo $decodedApplicantData['appOKUStatus']; ?></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">Status : </td>
+                        <td><?php echo $decodedApplicantData['appStatus']; ?></td>
                     </tr>
                     </table>     
             </form>      
