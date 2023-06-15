@@ -9,7 +9,7 @@ require_once '../../../OMRS.dataaccess/DB_Connection_Manager.php';
 
 ?>
 <style>
-    
+
 </style>
 
 <!DOCTYPE html>
@@ -22,27 +22,59 @@ require_once '../../../OMRS.dataaccess/DB_Connection_Manager.php';
     <link rel="stylesheet" href="StaffManageReligiousInfo.css">
     <title>Syarat Kelayakan</title>
     <style>
+        body {
+            background-image: url("../../Asset/backgroundStaff.jpg");
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .content {
+            border: 1px solid black;
+            height: 700px;
+            width: 830px;
+            background-color: azure;
+            margin-top: 310px;
+            margin-left: 290px;
+            overflow: auto;
+        }
+
+        .table-info {
+            width: 770px;
+            margin-left: 30px;
+            border-color: #ffffff;
+        }
+
+        #button1 {
+            float: right;
+            margin-right: 100px;
+        }
+
         table,
         th,
         td {
             border: 1px solid black;
         }
 
-        .table-info{
+        .table-info {
             margin-top: 40px;
             border: none;
             margin-left: 220px;
-            
+
         }
-        .table-header{
+
+        .table-header {
             text-align: left;
         }
-        .kemaskini{
+
+        .kemaskini {
             margin-left: 520px;
             margin-top: 40px;
         }
-        
-        
     </style>
 </head>
 
@@ -60,7 +92,7 @@ require_once '../../../OMRS.dataaccess/DB_Connection_Manager.php';
             <div class="content-container">
                 <div class="content">
                     <form id="religious-form" action="../../../../public/Facade.php?action=ReligiousInfo" method="POST" enctype="multipart/form-data">
-                    <table class="table-info"> 
+                        <table class="table-info">
                             <tr>
                                 <td class="table-header">
                                     <label for="office">Religious Office</label>
@@ -131,7 +163,7 @@ require_once '../../../OMRS.dataaccess/DB_Connection_Manager.php';
         </section>
     </div>
     <script>
-        
+
     </script>
 
 </body>
