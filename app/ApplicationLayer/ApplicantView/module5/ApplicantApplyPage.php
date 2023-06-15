@@ -148,10 +148,14 @@ $ic=$_SESSION['username'];
                                 </tr>
 
                                 <tr>
-                                    <th>Slip Gaji : </th>
-                                    <td><input type="file" name="file[]" multiple required></td>
+                                    <th>Slip Gaji 1: </th>
+                                    <td><input type="file" name="file1"  required></td>
+                                    <th>Slip Gaji 2: </th>
+                                    <td><input type="file" name="file2"  required></td>
+                                    <th>Slip Gaji 3: </th>
+                                    <td><input type="file" name="file3"  required></td>
                                     <th>Surat Pengesahan Bermastautin(Jika Berkaitan) : </th>
-                                    <td><input type="file" name="file2[]" multiple></td>
+                                    <td><input type="file" name="file4" ></td>
                                 </tr>
                             </tbody>
                         </table>
