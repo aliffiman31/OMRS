@@ -18,7 +18,7 @@
 <section>
 
         <div>
-            <?php include_once('../Common/sidebar.php');  ?>
+            <?php include_once('../Common/sidebarAdmin(Module1).php');?>
         </div>
 
         <div class="content-container">

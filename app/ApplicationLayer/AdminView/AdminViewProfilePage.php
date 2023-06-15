@@ -13,7 +13,7 @@
         ?>
             <script>
                 alert("Access denied !!!")
-                window.location = "../ManageLogin/adminLoginView.php";
+                window.location = "../../../../app/ApplicationLayer/AdminView/AdminLoginPage.php";
             </script>
         <?php
 
@@ -36,20 +36,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicant View Profile</title>
-    <link rel="stylesheet" href="StaffViewProfilePage.css">
+    <title>Admin View Profile</title>
+    <link rel="stylesheet" href="AdminViewProfilePage.css">
 </head>
 <body>
     <div>
         <!-- Header -->
         <?php 
-        include_once('../../Common/header.html'); 
+        include_once('../Common/headerAdminView(Module1).html'); 
         ?>
 
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebarSyazana.php');  ?>
+            <?php include_once('../Common/sidebarAdmin(Module1).php');  ?>
         </div>
 
         <div class="content-container">
@@ -57,7 +57,7 @@
 
         <div class="AdminViewProfile">
             <form>
-                <table>
+                <table class = "AdminViewProfile">
                     <tr>
                         <td scope="row">NO KAD PENGENALAN : </td>
                         <td><?php echo $decodedAdminData['Admin_Id']; ?></td>

@@ -13,7 +13,7 @@
         ?>
             <script>
                 alert("Access denied !!!")
-                window.location = "../ManageLogin/userLoginView.php";
+                window.location = "../../../../app/ApplicationLayer/StaffView/module1/StaffLoginPage.php";
             </script>
         <?php
 
@@ -36,7 +36,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicant View Profile</title>
+    <title>Staff View Profile</title>
     <link rel="stylesheet" href="StaffViewProfilePage.css">
 </head>
 <body>
@@ -49,7 +49,7 @@
 <section>
 
         <div>
-            <?php include_once('../../Common/sidebarSyazana.php');  ?>
+            <?php include_once('../../Common/sidebarStaffSyazana.php');  ?>
         </div>
 
         <div class="content-container">

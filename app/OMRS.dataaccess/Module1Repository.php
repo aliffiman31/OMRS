@@ -208,7 +208,7 @@
          //view profile (table AdminInfo)
          public function getAdminProfileInfo($Admin_Id)
          {
-            $query = $this->connect->prepare("SELECT * FROM AdminInfo WHERE userIC = :adminId");
+            $query = $this->connect->prepare("SELECT * FROM AdminInfo WHERE Admin_Id = :adminId");
             $query->bindParam(':adminId', $Admin_Id);
 
             $query->execute();
@@ -218,7 +218,7 @@
             return $profileInfo;
          }
 
-         //Update applicant data using user ic 
+         //Update applicant data using user IC number
          public function updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress) 
          {
                //session_start();
@@ -245,5 +245,61 @@
                return false;
             }
          }  
+
+          //Update staff data using IC number
+          public function updateStaffProfileInfo($staffPhoneNo, $staffEmail) 
+          {
+                //session_start();
+                $Staff_Id= $_SESSION['currentUserIC'];
+ 
+                 // Prepare your update statement
+                 $sql = "UPDATE StaffInfo SET staffPhoneNo = :staffPhoneNo, staffEmail = :staffEmail WHERE Staff_Id = :Staff_IC";
+ 
+                // Prepare the statement
+                $stmt = $this->connect->prepare($sql);
+ 
+                // Bind parameters
+                $stmt->bindParam(':staffPhoneNo', $staffPhoneNo);
+                $stmt->bindParam(':staffEmail', $staffEmail);
+                $stmt->bindParam(':Staff_IC', $Staff_Id);
+ 
+                // Execute the statement
+                if ($stmt->execute() === TRUE) {
+                   return true;  //return back to ProfileController
+ 
+                } else {
+       
+                return false;
+             }
+          }  
+
+          //Update staff data using IC number
+          public function updateAdminProfileInfo($adminPhoneNo, $adminEmail) 
+          {
+                //session_start();
+                $Admin_Id= $_SESSION['currentUserIC'];
+ 
+                 // Prepare your update statement
+                 $sql = "UPDATE AdminInfo SET adminPhoneNo = :adminPhoneNo, adminEmail = :adminEmail WHERE Admin_Id = :Admin_IC";
+ 
+                // Prepare the statement
+                $stmt = $this->connect->prepare($sql);
+ 
+                // Bind parameters
+                $stmt->bindParam(':adminPhoneNo', $adminPhoneNo);
+                $stmt->bindParam(':adminEmail', $adminEmail);
+                $stmt->bindParam(':Admin_IC', $Admin_Id);
+ 
+                // Execute the statement
+                if ($stmt->execute() === TRUE) {
+                   return true;  //return back to ProfileController
+ 
+                } else {
+       
+                return false;
+             }
+          }  
+
+
     }
 ?>

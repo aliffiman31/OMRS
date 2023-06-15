@@ -1,10 +1,6 @@
  <?php
-
     require_once '../app/OMRS.dataaccess/DB_Connection_Manager.php';
-    /*require_once '../app/OMRS.dataaccess/Module5Repository.php';
-require_once '../app/Controller/ApplicantController.php';
-require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
-require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
+    
     //Module 1 
     require_once '../app/OMRS.dataaccess/Module1Repository.php';
     require_once '../app/Controller/RegistrationController.php';
@@ -12,9 +8,10 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
     require_once '../app/Controller/PasswordController.php';
     require_once '../app/Controller/ProfileController.php';
 
+    //Module2
     require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
-
+    require_once '../app/ApplicationLayer/StaffView/Module2/StaffManageReligiousInfo.php';
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -23,39 +20,42 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
     // Create a new database connection
     $db = (new Database())->connect();
 
-    //Module 1
+    //  ----------------------------------------------------
+    // | module 1 create object for repository & controller |
+    //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-
-    //Module 2
-    //$Module2Repository = new Module2Repository($db);
-
-    //Module 2
-    $Module2Repository = new Module2Repository($db);
-    $Module2Repository = new Module2Repository($db);
-    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
-
-
-    //Module 1 (Create a new instance of the controller)
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
     $ProfileController = new ProfileController($Module1Repository);
 
-    //$ApplicantController = new MarriageCourseRequestController($Module2Repository);
+    //  ----------------------------------------------------
+    // | module 2 create object for repository & controller |
+    //  ----------------------------------------------------
+    $Module2Repository = new Module2Repository($db);
+    $Module2Repository = new Module2Repository($db);
+    $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
+    
+    //  ----------------------------------------------------
+    // | module 3 create object for repository & controller |
+    //  ----------------------------------------------------
 
-    //$FormController = new ApplicantController($FormModel1);
-
+    //  ----------------------------------------------------
+    // | module 4 create object for repository & controller |
+    //  ----------------------------------------------------
+    
     //  ----------------------------------------------------
     // | module 5 create object for repository & controller |
     //  ----------------------------------------------------
     $Module5Repository=new Module5Repository($db);
     $ApplicantIncentiveController = new ApplicantIncentiveController($Module5Repository);
 
+    
     $action = isset($_GET['action']) ? $_GET['action'] : '';
 
     switch ($action) {
 
-            //Module 1 (form from ApplicantRegFormPage.php)
+        //Module 1 (form from ApplicantRegFormPage.php)
         case 'registerApplicantAcc':
             $userIC = $_POST['userIC'];
             $appName = $_POST['appName'];
@@ -108,7 +108,6 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             $appEmail = $_POST['appEmail'];
 
             $PasswordController->passwordFunctionApplicant($userIC, $appEmail);
-
             break;
 
         case 'forgotPasswordAdmin':
@@ -116,7 +115,6 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             $staffEmail = $_POST['adminEmail'];
 
             $PasswordController->passwordFunctionAdmin($userIC, $adminEmail);
-
             break;
 
         case 'changePassword':
@@ -125,7 +123,6 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             $newPassword = $_POST['newPassword'];
 
             $PasswordController->changePasswordFunction($userIC, $userPassword, $newPassword);
-
             break;
 
 
@@ -134,17 +131,30 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
 
             $ProfileController->viewProfileFunction($from);
             break;
-
+    
         case 'updateAppProfile':
             $appPhoneNo = $_POST['appPhoneNo'];
             $appEmail = $_POST['appEmail'];
             $appAddress = $_POST['appAddress'];
-
+    
             $ProfileController->updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress);
-
+            break;
+    
+        case 'updateStaffProfile':
+            $staffPhoneNo = $_POST['staffPhoneNo'];
+            $staffEmail = $_POST['staffEmail'];
+        
+            $ProfileController->updateStaffProfileFunction($staffPhoneNo, $staffEmail);    
             break;
 
-            //module 2
+        case 'updateAdminProfile':
+            $adminPhoneNo = $_POST['adminPhoneNo'];
+            $adminEmail = $_POST['adminEmail'];
+            
+            $ProfileController->updateAdminProfileFunction($adminPhoneNo, $adminEmail);       
+            break;
+
+        //module 2
         case 'ReligiousInfo':
             // Retrieve form data
             $office = $_POST['office'];
@@ -157,22 +167,7 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             // Call the controller method to insert the form data
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
             $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
-
             break;
-
-            //form from syaratpage.php
-            /* case 'ReligiousInfo':
-        //input from form
-         $office = $_POST['office'];
-         $Venue = $_POST['Venue'];
-         $Date = $_POST['Date'];
-         $Capacity = $_POST['Capacity'];
-         $Vacancy = $_POST['Vacancy'];
-
-        //passing to controller with the function FormRegister(include parameter)
-        $ApplicantController->formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy);       
-        break;
-
 
         //Module 3
         case 'unauthorizedmarriage':
@@ -202,9 +197,11 @@ require_once '../app/OMRS.dataaccess/Module2Repository.php';*/
             $Desc = $_POST['Description'];
     
             $marriagecertController->applystatus($ic, $date, $status, $Desc);
-            break;*/
+            break;
 
-            //module 5
+
+        
+        //module 5
         case 'ApplyForm':
 
             // Retrieve Suami data
