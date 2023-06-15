@@ -54,5 +54,6 @@ class ConsultationMainController
     {
         $this->repository->updateConsultationSession($CS_Id, $date, $place);
     }
+    
 }
 ?>

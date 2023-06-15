@@ -1,7 +1,7 @@
 <?php
 
 include 'DB_Connection_Manager.php';
-include 'ConsultationSessionController.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -14,8 +14,39 @@ include 'ConsultationSessionController.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="public/css/styles.css">
-</head>
+    <link rel="stylesheet" href="maintemplate.css">
+    <title>Khidmat Nasihat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
+    <style>
+        /* Add this CSS style within the <style> tags in your HTML file or in a separate CSS file */
+
+        #mycontainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- Header -->
+        <?php 
+        include_once('../../Common/header.html'); 
+        ?>
+
+
+<section>
+
+        <div>
+            <?php include_once('../../Common/sidebar.php');  ?>
+        </div>
+
+        
+        <div class="content-container">
+            <div class="content">
+                <!-- Put Your Content Here  -->
 <body>
 
 <?php
@@ -27,7 +58,7 @@ include 'ConsultationSessionController.php';
 
 
     <?php include "App/Component/header.php"; ?>
-
+<div class="mycontainer">
     <div class="container-fluid">
         <div class="row">
             <?php include "App/Component/sidebar.php"; ?>
@@ -70,7 +101,15 @@ include 'ConsultationSessionController.php';
             </div>
         </div>
     </div>
-    
+</div>
+</body>
+</div>
+        </div>
+</section>
+    </div>
+        
+
+
 </body>
 
 </html>
