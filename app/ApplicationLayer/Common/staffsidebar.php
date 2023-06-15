@@ -326,7 +326,7 @@
             Profil
           </button>
           <div class="collapse" id="module1-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                    
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li><a id="profile-page" href="../../../../public/Facade.php?action=viewProfile$from=view" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Lihat Akaun Profil</a></li>
               <li><a id="profile-page" href="../../../../public/Facade.php?action=updateProfile$from=edit" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sunting Akaun Profil</a></li>
             </ul>
@@ -336,7 +336,7 @@
         <!-- MODULE 2.1 MENU -->
         <li class="mb-1">
           <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module2.1-collapse" aria-expanded="false">
-            Permohonan Kursus Kahwin
+            KURSUS PRA PERKAHWINAN
           </button>
           <div class="collapse" id="module2.1-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
@@ -395,9 +395,7 @@
           </button>
           <div class="collapse" id="module5-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a id="syarat-kelayakan" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Syarat Kelayakan</a></li>
-              <li><a id="mohon" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Mohon</a></li>
-              <li><a id="keputusan" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Keputusan</a></li>
+              <li><a id="urus-insentif" href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded" onclick="redirectToURL(this.id)">Urus Insentif</a></li>
             </ul>
           </div>
         </li>
@@ -408,7 +406,8 @@
       function redirectToURL(btnid) {
 
         //Module 1 route
-
+         if (btnid == "urus-insentif")
+         window.location.replace("");
 
         //modul 2 route
 
@@ -420,7 +419,8 @@
 
 
         //module 5 route
-
+        else if (btnid == "urus-insentif")
+          window.location.replace("../StaffView/module5/UrusanIncenticePage.php");
       }
     </script>
 
@@ -431,13 +431,12 @@
 
   <script>
     (() => {
-  'use strict'
-  const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  tooltipTriggerList.forEach(tooltipTriggerEl => {
-    new bootstrap.Tooltip(tooltipTriggerEl)
-  })
-})()
-
+      'use strict'
+      const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      tooltipTriggerList.forEach(tooltipTriggerEl => {
+        new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+    })()
   </script>
 </body>
 
