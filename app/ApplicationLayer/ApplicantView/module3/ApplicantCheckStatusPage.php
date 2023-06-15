@@ -28,7 +28,7 @@
                 <label for="icNumber" class="">No K/P Pemohon:</label>
                 <input type="text" id="icNumber" placeholder="xxxxxx-xx-xxxx" required>
                 
-                <button type="submit">Semak</button>
+                <button type="submit" id="submit"><a href="ApplicantMarriageCertPage.php">Semak</a></button>
 
             </div>
         </form>
