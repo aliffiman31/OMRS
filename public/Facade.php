@@ -11,7 +11,7 @@
     require_once '../app/Controller/ProfileController.php';
 
     //Module 2
-    require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
+    /*require_once '../app/Controller/StaffManageMarriageCourseRequestController.php';
     require_once '../app/OMRS.dataaccess/Module2Repository.php';
     require_once '../app/Controller/StaffManageMarriageRequestController.php';
 
@@ -42,19 +42,6 @@
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-<<<<<<< HEAD
-=======
-
-    //Module 2
-    //$Module2Repository = new Module2Repository($db);
-
-    //Module 2
-
-    //module 3
-    //$Module3Repository = new Module3Repository($db);
-
-    //Module 1 (Create a new instance of the controller)
->>>>>>> 7a551feaaca6aaf7609d405d89c7b4933f9d3491
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -63,7 +50,7 @@
     //  ----------------------------------------------------
     // | module 2 create object for repository & controller |
     //  ----------------------------------------------------
-    $Module2Repository = new Module2Repository($db);
+    /*$Module2Repository = new Module2Repository($db);
     $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
     $StaffManageMarriageRequestController = new StaffManageMarriageRequestController($Module2Repository);
 

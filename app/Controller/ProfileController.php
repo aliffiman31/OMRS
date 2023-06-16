@@ -11,7 +11,7 @@
         //view profile function 
         public function viewProfileFunction($from)
         {
-            session_start();
+            //session_start();
             $userType = $_SESSION['currentUserType'];
 
             if($userType == "Pemohon")
