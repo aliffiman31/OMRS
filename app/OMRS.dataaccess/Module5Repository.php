@@ -152,6 +152,14 @@ class Module5Repository
     return $result;
   }
   
-
+  public function updateStatus($applicantID, $status)
+    {
+        // Update the status in the database for the specified applicant ID
+        $query = "UPDATE specialincentive SET SI_Status = :status WHERE SI_ApplicantID = :applicantID";
+        $stmt = $this->connect->prepare($query);
+        $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':applicantID', $applicantID);
+        $stmt->execute();
+    }
 
 }

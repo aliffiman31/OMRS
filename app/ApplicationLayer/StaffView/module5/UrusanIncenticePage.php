@@ -8,6 +8,22 @@ $repository = new Module5Repository($db);
 
 // Retrieve all rows for SI_ApplicantID
 $applicantIDs = $repository->getAllApplicantIDs();
+
+// Handle accept or reject actions
+if (isset($_GET['action']) && isset($_GET['applicantID'])) {
+    $action = $_GET['action'];
+    $applicantID = $_GET['applicantID'];
+
+    if ($action === 'accept') {
+        $repository->updateStatus($applicantID, 'accepted');
+    } elseif ($action === 'reject') {
+        $repository->updateStatus($applicantID, 'rejected');
+    }
+
+    // Redirect back to the main page
+    header('Location: UrusanIncenticePage.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +64,8 @@ $applicantIDs = $repository->getAllApplicantIDs();
                             echo $applicantID . '<br>';
                             echo '<div style="margin-bottom: 20px;">';
                             echo '<a href="ViewApplicant.php?applicantID=' . $applicantID . '">View</a> ';
-                            echo '<a href="reject.php?applicantID=' . $applicantID . '">Reject</a> ';
-                            echo '<a href="accept.php?applicantID=' . $applicantID . '">Accept</a> ';
+                            echo '<a href="UrusanIncenticePage.php?action=reject&applicantID=' . $applicantID . '">Reject</a> ';
+                            echo '<a href="UrusanIncenticePage.php?action=accept&applicantID=' . $applicantID . '">Accept</a> ';
                             echo '<a href="delete.php?applicantID=' . $applicantID . '">Delete</a>';
                             echo '</div>';
                         }
