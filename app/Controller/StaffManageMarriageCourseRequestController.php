@@ -10,11 +10,11 @@ class StaffManageMarriageCourseRequestController
         $this->module2Repository = $module2Repository;
     }
 
-    public function insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate)
+    public function insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate, $applicantID)
     {
-        $this->module2Repository->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
-
+        $this->module2Repository->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate, $applicantID);
     }
+    
     public function getMarriageCourseData()
     {
         return $this->module2Repository->getMarriageCourseData();
@@ -25,5 +25,6 @@ class StaffManageMarriageCourseRequestController
         return $this->module2Repository->getMarriageCourseData($office);
     }
 }
+
 
 ?>

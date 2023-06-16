@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syarat Kelayakan</title>
     <link rel="stylesheet" href="">
+    <script>
+        function A(){
+            alert("Permohon telah lulus");
+        }
+        function B(){
+            alert("Permohon telah gagal");
+        }
+    </script>
     <style>
         table,
         th,
@@ -23,12 +31,14 @@
             border: none;
             background: #FEF5FF;
             border-radius: 10px;
+            width: 98%;
         }
 
         .header-title {
             background: #FFE0F6;
             border-radius: 10px;
             padding-left: 10px;
+            
 
         }
 
@@ -45,7 +55,17 @@
             color: #FFFFFF;
             width: 70px;
             float: right;
-            margin-right: 80px;
+            margin-right: 30px;
+        }
+        #button2 {
+            background: #6D72F1;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            border: none;
+            color: #FFFFFF;
+            width: 70px;
+            float: right;
+            margin-right: 30px;
         }
     </style>
 </head>
@@ -74,126 +94,112 @@
                                 <table class="table-info">
                                     <div class="header-title">
                                         <tr>
-                                            <td colspan="4" class="header-title">MAKLUMAT PERKAHWINAN</td>
+                                            <td colspan="4" class="header-title">MAKLUMAT PEMOHON</td>
                                         </tr>
                                     </div>
                                     <tr>
-                                        <td><label for="date">Tarikh Mohon:</label></td>
-                                        <td><input type="date" id="date" name="date"></td>
-                                        <td>Tempat Kahwin:</td>
-                                        <td>Retrieve data from database</td>
+                                        <td><p>Nama</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Tarikh Lahir</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>Nama Pemohon:</td>
-                                        <td>retrieve from database</td>
-                                        <td><label for="negara">Negara:</label></td>
-                                        <td><input type="text" id="negara" name="negara"></td>
+                                        <td><p>Umur</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>No Kad Pengenalan</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>Nama Pasangan:</td>
-                                        <td>retrieve from database</td>
-                                        <td><label for="negeri">Negeri:</label></td>
-                                        <td><input type="text" id="negeri" name="negeri"></td>
+                                        <td><p>Jantina</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Email</p></td>
+                                        <td><p>:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Bangsa</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Alamat</p></td>
+                                        <td><p>:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>No.Telefon(Bimbit)</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>No.Telefon(Rumah)</p></td>
+                                        <td><p>:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Taraf Pendidikan</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Jawatan/Pekerjaan</p></td>
+                                        <td><p>:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Pendapatan</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Alamat Tempat Kerja</p></td>
+                                        <td><p>:</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>No.Telefon(Pejabat)</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>No.Sijil Pra-Perkahwinan</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <div class="header-title">
                                         <tr>
-                                            <td colspan="4" class="header-title">MAKLUMAT CADANGAN MAJLIS AKAD NIKAH</td>
+                                            <td colspan="4" class="header-title">MAKLUMAT PASANGAN</td>
                                         </tr>
                                     </div>
                                     <tr>
-                                        <td>
-                                            <label for="TarAkadNikah">Tarikh Akad Nikah:</label>
-                                        </td>
-                                        <td><input type="date" id="TarAkadNikah" name="TarAkadNikah"></td>
-                                        <td>
-                                            <label for="MasKahwin">Mas Kahwin:</label>
-                                        </td>
-                                        <td><input type="text" id="MasKahwin" name="MasKahwin"></td>
+                                        <td><p>Nama</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Tarikh Lahir</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="AlamatTempatKahwin">Alamat tempat perkahwinan:</label>
-                                        </td>
-                                        <td><input type="text" id="AlamatTempatKahwin" name="AlamatTempatKahwin"></td>
-                                        <td>
-                                            <label for="Hantaran">Hantaran:</label>
-                                        </td>
-                                        <td><input type="text" id="Hantaran" name="Hantaran"></td>
+                                        <td><p>Umur</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>No Kad Pengenalan</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="JenisMasKahwin">Jenis Mas Kahwin:</label>
-                                        </td>
-                                        <td><input type="text" id="JenisMasKahwin" name="JenisMasKahwin"></td>
+                                        <td><p>Jantina</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Email</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="wali">Nama Wali:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="wali" name="wali">
-                                        </td>
-                                        <td>
-                                            <label for="hubungan">Hubungan:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="hubungan" name="hubungan">
-                                        </td>
+                                        <td><p>Bangsa</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Alamat</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="ic-wali">No kad pengenalan wali:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="ic-wali" name="ic-wali">
-                                        </td>
-                                        <td>
-                                            <label for="tarikhNikParent">Tarikh Nikah Ibu Bapa:</label>
-                                        </td>
-                                        <td>
-                                            <input type="date" id="tarikhNikParent" name="tarikhNikParent">
-                                        </td>
+                                        <td><p>No.Telefon(Bimbit)</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>No.Telefon(Rumah)</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="Alamat-wali">Alamat Wali:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="Alamat-wali" name="Alamat-wali">
-                                        </td>
-                                        <td>
-                                            <label for="NoSijil">No.Sijil Nikah Ibu Bapa:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="NoSijil" name="NoSijil">
-                                        </td>
+                                        <td><p>Taraf Pendidikan</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Jawatan/Pekerjaan</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="tarikhLahirWali">Tarikh Lahir Wali</label>
-                                        </td>
-                                        <td>
-                                            <input type="date" id="tarikhLahirWali" name="tarikhLahirWali">
-                                        </td>
+                                        <td><p>Pendapatan</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>Alamat Tempat Kerja</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <label for="UmurWali">Umur Wali:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="UmurWali" name="UmurWali">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label for="NoTelWali">No. Telefon Wali:</label>
-                                        </td>
-                                        <td>
-                                            <input type="text" id="NoTelWali" name="NoTelWali">
-                                        </td>
+                                        <td><p>No.Telefon(Pejabat)</p></td>
+                                        <td><p>:</p></td>
+                                        <td><p>No.Sijil Pra-Perkahwinan</p></td>
+                                        <td><p>:</p></td>
                                     </tr>
                                 </table>
-                                <button type="submit" id="button1"><b>Simpan</b></button>
+                                <button type="submit" id="button1" onclick="A()"><b>Terima</b></button> <button type="submit" id="button2" onclick="B()"><b>Tolak</b></button>
                             </form>
                         </div>
                     </div>

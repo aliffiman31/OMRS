@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syarat Kelayakan</title>
     <link rel="stylesheet" href="ApplicantReligiousOfficeOptions.css">
+    <script>
+        function showAlert() {
+            alert("Payment sucessfull!");
+        }
+        
+    </script>
     <style>
         table,
         th,
@@ -33,6 +38,18 @@
 
         .icon {
             width: 70px;
+        }
+
+        #button1 {
+            background: #6D72F1;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            border: none;
+            color: #FFFFFF;
+            width: 70px;
+            float: right;
+            margin-top: 20px;
+
         }
     </style>
 </head>
@@ -82,13 +99,16 @@
                         <p id="venue"></p>
                         <p id="date"></p>
                         <div id="proofPayment">
-                            <label for="file-upload-3" class="upload-label">
-                                <img class="icon" src="../../Common/uploadIcon.png" alt="Upload Icon">
-                            </label>
-                            <div>
-                                <input id="file-upload-3" type="file" style="display: none;">
-                                <span id="file-name-3"></span>
-                            </div>
+                            <form action="">
+                                <label for="file-upload-3" class="upload-label">
+                                    <img class="icon" src="../../Common/uploadIcon.png" alt="Upload Icon">
+                                </label>
+                                <div>
+                                    <input id="file-upload-3" type="file" style="display: none;">
+                                    <span id="file-name-3"></span>
+                                </div>
+                                <button type="submit" id="button1" onclick="showAlert()"><b>Simpan</b></button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -103,7 +123,6 @@
             console.log("Uploaded file:", file.name);
             document.getElementById("file-name-3").textContent = file.name;
         });
-
         // Assign the values to the corresponding HTML elements using PHP variables
         document.getElementById("office").textContent = '<?php echo $_GET["office"]; ?>';
         document.getElementById("venue").textContent = '<?php echo $_GET["venue"]; ?>';

@@ -25,13 +25,10 @@
     $db = (new Database())->connect();
 
 
-<<<<<<< HEAD
-=======
     //module 3
-   /* require_once '../app/OMRS.dataaccess/Module3Repository.php';
+    /* require_once '../app/OMRS.dataaccess/Module3Repository.php';
     require_once '../app/Controller/MarriagecertController.php';
     require_once '../app/Controller/MarriagetypeController.php';*/
->>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
 
     //Module 5 Controller & Repository include file
     require_once '../app/Controller/ApplicantIncentiveController.php';
@@ -45,19 +42,6 @@
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-<<<<<<< HEAD
-
-    //Module 2
-    //$Module2Repository = new Module2Repository($db);
-
-    //Module 2
-
-    //module 3
-    $Module3Repository = new Module3Repository($db);
-
-    //Module 1 (Create a new instance of the controller)
-=======
->>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -206,10 +190,18 @@
             $vacancy = $_POST['Vacancy'];
             $speakerName = $_POST['speakerName'];
             $MCcertificate = $_FILES['MCcertificate'];
+
+            // Extract file information
+            $tmpFilePath = $MCcertificate['tmp_name'];
+            $fileName = $MCcertificate['name'];
+
             // Call the controller method to insert the form data
             $StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($Module2Repository);
-            $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $MCcertificate);
+            $applicantID = 1; // Replace with the actual applicant ID
+            $StaffManageMarriageCourseRequestController->insertForm($office, $venue, $date, $capacity, $vacancy, $speakerName, $tmpFilePath, $fileName, $applicantID);
             break;
+
+
 
         case 'PartnerInfo':
 

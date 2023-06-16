@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syarat Kelayakan</title>
     <link rel="stylesheet" href="StaffManageReligiousInfo.css">
+    <script>
+        function showAlert() {
+            alert("Succesfull edited!");
+        }
+    </script>
     <style>
         table,
         th,
         td {
             border: 1px solid black;
         }
+
 
         .table-info {
             width: 770px;
@@ -239,7 +245,7 @@
                                 </tr>
                             </table>
                             <br>
-                            <button type="submit" id="button1">Simpan</button>
+                            <button type="submit" id="button1" onclick="showAlert()">Simpan</button>
                         </form>
                     </div>
                 </div>

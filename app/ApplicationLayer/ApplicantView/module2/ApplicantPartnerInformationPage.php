@@ -99,13 +99,13 @@ include '../../../OMRS.dataaccess/Module2Repository.php';
                         <table class="table-info">
                             <tr>
                                 <td><strong>Kad Pengenalan</strong></td>
-                                <td id="PartnerIC">:<?php echo $partnerData['Applicant_IC']; ?></td>
+                                <td id="PartnerIC">:</td>
                                 <td><strong>Alamat Tempat Tinggal</strong></td>
-                                <td id="PartnerAddress">:<?php echo $partnerData['address']; ?></td>
+                                <td id="PartnerAddress">:</td>
                             </tr>
                             <tr>
                                 <td><strong>Nama</strong></td>
-                                <td id="PartnerName">:<?php echo $partnerData['name']; ?></td>
+                                <td id="PartnerName">:</td>
                             </tr>
                             <tr>
                                 <td><strong>Tarikh Lahir</strong></td>
@@ -113,7 +113,7 @@ include '../../../OMRS.dataaccess/Module2Repository.php';
                             </tr>
                             <tr>
                                 <td><strong>Email</strong></td>
-                                <td id="PartnerEmail">:<?php echo $partnerData['email']; ?></td>
+                                <td id="PartnerEmail">:</td>
                                 <td><strong>Pekerjaan</strong></td>
                                 <td id="PartnerJob">:</td>
                             </tr>
@@ -121,15 +121,15 @@ include '../../../OMRS.dataaccess/Module2Repository.php';
                                 <td><strong>Jantina</strong></td>
                                 <td id="PartnerSex">:</td>
                                 <td><strong>No Telefon (Bimbit)</strong></td>
-                                <td id="PartnerPhoneNo">:<?php echo $partnerData['phoneNumber']; ?></td>
+                                <td id="PartnerPhoneNo">:</td>
                             </tr>
                             <tr>
                                 <td><strong>Bangsa</strong></td>
-                                <td id="PartnerRace">:<?php echo $partnerData['ecthnicity']; ?></td>
+                                <td id="PartnerRace">:</td>
                             </tr>
                             <tr>
                                 <td><strong>Umur</strong></td>
-                                <td id="PartnerAge">:<?php echo $partnerData['age']; ?></td>
+                                <td id="PartnerAge">:</td>
                             </tr>
                         </table>
                         <br><br>

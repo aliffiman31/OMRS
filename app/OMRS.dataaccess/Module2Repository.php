@@ -52,7 +52,7 @@ class Module2Repository
     }
     public function getApplicantData($applicantID)
     {
-        $query = "SELECT appName, ApplicantIC FROM applicantinfo WHERE applicantID = :applicantID";
+        $query = "SELECT appName, applicantIC FROM applicantinfo WHERE applicantID = :applicantID";
 
         // Prepare the statement
         $statement = $this->db->prepare($query);
@@ -66,13 +66,14 @@ class Module2Repository
         // Fetch the result
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-        // Retrieve the appName and ApplicantIC values
+        // Retrieve the appName and applicantIC values
         $appName = $result['appName'];
-        $applicantIC = $result['ApplicantIC'];
+        $applicantIC = $result['applicantIC'];
 
         // Return the retrieved data
         return array('appName' => $appName, 'applicantIC' => $applicantIC);
     }
+
 
     public function searchPartner($icNum)
     {

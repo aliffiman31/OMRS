@@ -102,7 +102,7 @@
                                     <p id="#"></p>
                                 </td>
                                 <td>
-                                    <p><a href="">BUAT KELULUSAN</a></p>
+                                    <p><a href="../Module2/StaffManageCourseRequestApplicantStatusPage.php">BUAT KELULUSAN</a></p>
 
                                 </td>
                             </tr>

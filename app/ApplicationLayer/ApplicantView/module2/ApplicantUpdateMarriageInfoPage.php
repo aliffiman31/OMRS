@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syarat Kelayakan</title>
     <link rel="stylesheet" href="">
+    <script>
+        function showAlert() {
+            alert("Succesfully updated!");
+        }
+        
+    </script>
     <style>
         table,
         th,
@@ -81,7 +87,7 @@
                                         <td><label for="date">Tarikh Mohon:</label></td>
                                         <td><input type="date" id="date" name="date"></td>
                                         <td>Tempat Kahwin:</td>
-                                        <td>Retrieve data from database</td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>Nama Pemohon:</td>
@@ -89,7 +95,7 @@
                                     </tr>
                                     <tr>
                                         <td>Nama Pasangan:</td>
-                                        <td>retrieve from database</td>
+                                        <td></td>
                                     </tr>
                                     <div class="header-title">
                                         <tr>
@@ -189,7 +195,7 @@
                                         </td>
                                     </tr>
                                 </table>
-                                <button type="submit" id="button1"><b>Simpan</b></button>
+                                <button type="submit" id="button1" onclick="showAlert()"><b>Simpan</b></button>
                             </form>
                         </div>
                     </div>

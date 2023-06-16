@@ -336,7 +336,7 @@
         <!-- MODULE 2.1 MENU -->
         <li class="mb-1">
           <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#module2.1-collapse" aria-expanded="false">
-            KURSUS PRA PERKAHWINAN
+            Kursus Perkahwinan
           </button>
           <div class="collapse" id="module2.1-collapse">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">

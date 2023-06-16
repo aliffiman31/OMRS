@@ -1,3 +1,24 @@
+<?php
+
+require_once '../../../OMRS.dataaccess/Db_Connection_Manager.php';
+require_once '../../../Controller/StaffManageMarriageCourseRequestController.php';
+require_once '../../../OMRS.dataaccess/Module2Repository.php';
+
+$db = (new Database())->connect();
+
+$module2Repository = new Module2Repository($db);
+$StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($module2Repository);
+
+// Check if the form is submitted
+if (isset($_POST['office'])) {
+    $selectedOffice = $_POST['office'];
+    $marriageCourseData = $StaffManageMarriageCourseRequestController->getMarriageCourseDataByOffice($selectedOffice);
+} else {
+    // Retrieve all marriage course data
+    $marriageCourseData = $StaffManageMarriageCourseRequestController->getMarriageCourseData();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,6 +72,17 @@
         margin-top: 40px;
     }
 
+    .table-data-title {
+        border: 2px solid black;
+        text-align: center;
+    }
+
+    .header-title {
+        background-color: aqua;
+    }
+    #office{
+        width: 160px;
+    }
     #paid {
         width: 260px;
         background: #FFE0F6;
@@ -131,7 +163,7 @@
         background: #6D72F1;
         color: #FFFFFF;
         border: none;
-        width: 80px;
+        width: 90px;
         margin-left: 630px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         margin-top: 20px;
@@ -160,8 +192,11 @@
         color: #FFFFFF;
         border: none;
         width: 60px;
-        margin-right: 420px;
+        margin-right: 320px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .icon{
+        width: 20px;
     }
 </style>
 
@@ -189,7 +224,7 @@
                                         <label for="office">Religious Office</label>
                                     </td>
                                     <td>
-                                        :<select id="office" name="office" required>
+                                        :&nbsp;&nbsp;<select id="office" name="office" required>
                                             <option value="">Select an office</option>
                                             <option value="JAIPTermerloh">JAIP Termerloh</option>
                                             <option value="JAIPPekan">JAIP Pekan</option>
@@ -203,7 +238,7 @@
                                         <label for="Venue">Place</label>
                                     </td>
                                     <td>
-                                        :<input type="text" id="Venue" name="Venue" required>
+                                        :&nbsp;&nbsp;<input type="text" id="Venue" name="Venue" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -211,7 +246,7 @@
                                         <label for="Date">Tarikh Mula</label>
                                     </td>
                                     <td>
-                                        :<input type="Date" id="Date" name="Date" required>
+                                        :&nbsp;&nbsp;<input type="Date" id="Date" name="Date" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -219,7 +254,7 @@
                                         <label for="Capacity">Capacity</label>
                                     </td>
                                     <td>
-                                        :<input type="number" id="Capacity" name="Capacity" required>
+                                        :&nbsp;&nbsp;<input type="number" id="Capacity" name="Capacity" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -227,7 +262,7 @@
                                         <label for="Vacancy">Vacancy</label>
                                     </td>
                                     <td>
-                                        :<input type="number" id="Vacancy" name="Vacancy" required>
+                                        :&nbsp;&nbsp;<input type="number" id="Vacancy" name="Vacancy" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -235,7 +270,7 @@
                                         <label for="speakerName">Speaker Name</label>
                                     </td>
                                     <td>
-                                        :<input type="text" id="speakerName" name="speakerName" required>
+                                        :&nbsp;&nbsp;<input type="text" id="speakerName" name="speakerName" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -243,12 +278,63 @@
                                         <label for="MCcertificate">Marriage Course Certificate</label>
                                     </td>
                                     <td>
-                                        :<input type="file" id="MCcertificate" name="MCcertificate" required>
+                                        :&nbsp;&nbsp;<input type="file" id="MCcertificate" name="MCcertificate" required>
                                     </td>
                                 </tr>
+                                <input type="hidden" name="applicantID" value="12345">
                             </table>
                             <button type="submit" id="button1" onclick="submitForm('religious-form')">Kemaskini</button>
                         </form>
+                        <br>
+                        <br>
+                        <div>
+                            <div id="search-box">
+                                <form action="" method="post">
+                                    <label for="office">Pilih tempat:</label><br>
+                                    <select id="office" name="office" required>
+                                        <option value="">Select an office</option>
+                                        <option value="JAIPTermerloh">JAIP Termerloh</option>
+                                        <option value="JAIPPekan">JAIP Pekan</option>
+                                        <option value="JAIPKuantan">JAIP Kuantan</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                    <button type="submit" id="button2">Cari</button>
+                                </form>
+                            </div>
+                            <br><br>
+                            <table class="table-info">
+                                <tr class="header-title">
+                                    <td class="table-data-title">Bil</td>
+                                    <td class="table-data-title">Anjuran</td>
+                                    <td class="table-data-title">Tempat</td>
+                                    <td class="table-data-title">Tarikh</td>
+                                    <td class="table-data-title">Kapasiti Peserta</td>
+                                    <td class="table-data-title">Kekosongan</td>
+                                    <td class="table-data-title">Operasi</td>
+                                </tr>
+                                <?php
+                                $rowNumber = 1;
+                                foreach ($marriageCourseData as $course) : ?>
+                                    <tr>
+                                        <td class="table-data"><?php echo $rowNumber ?></td>
+                                        <td class="table-data"><?php echo $course['office']; ?></td>
+                                        <td class="table-data"><?php echo $course['Venue']; ?></td>
+                                        <td class="table-data"><?php echo $course['Date']; ?></td>
+                                        <td class="table-data"><?php echo $course['Capacity']; ?></td>
+                                        <td class="table-data"><?php echo $course['Vacancy']; ?></td>
+                                        <td class="table-data">
+                                            <p><a href=""><img class="icon" src="../../Common/delete-icon.png" alt=""></a>&nbsp;&nbsp;&nbsp;<a href="../Module2/StaffEditMarriagePreparationPage.php"><img class="icon" src="../../Common/edit-icon.png" alt=""></a></p>
+                                        </td>
+
+                                    </tr>
+                                    <?php
+                                    $rowNumber++; // Increment the row number
+                                    ?>
+                                <?php endforeach; ?>
+                            </table>
+
+                        </div>
+                        </table>
                     </div>
                 </div>
             </div>

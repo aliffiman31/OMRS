@@ -102,7 +102,7 @@
                                     <p id="#"></p>
                                 </td>
                                 <td>
-                                    <p><a href="#">View</a>/<a href="#">Print</a></p>
+                                    <p><a href="../Module2/StaffApplicantInformationPage.php">View</a>/<a href="#">Print</a></p>
                                 </td>
                             </tr>
                         </table>

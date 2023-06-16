@@ -1,3 +1,20 @@
+<?php
+
+require_once '../../../OMRS.dataaccess/Db_Connection_Manager.php';
+require_once '../../../Controller/StaffManageMarriageCourseRequestController.php';
+require_once '../../../OMRS.dataaccess/Module2Repository.php';
+
+$db = (new Database())->connect();
+
+$module2Repository = new Module2Repository($db);
+$StaffManageMarriageCourseRequestController = new StaffManageMarriageCourseRequestController($module2Repository);
+
+
+$applicantData = $module2Repository->getApplicantData($applicantID);
+$appName = $applicantData['appName'];
+$applicantIC = $applicantData['applicantIC'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,10 +102,10 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p></p>
+                                    <p id="AppName"><?php echo $appName; ?></p>
                                 </td>
                                 <td>
-                                    <p></p>
+                                    <p id="Applicant_IC"><?php echo $applicantIC; ?></p>
                                 </td>
                                 <td>
                                     <p></p>
