@@ -18,7 +18,8 @@
                 ?>
                 <script>
                     alert("Berjaya Log Masuk");
-                    window.location = "../app/ApplicationLayer/ApplicantView/module1/homepage.php";
+                    //window.location = "../app/ApplicationLayer/ApplicantView/module1/homepage.php";
+                    window.location = "../app/ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php";
                 </script>
                 <?php 
                 //header("../../../../public/Facade.php?action=viewProfile&from=view");
@@ -43,7 +44,8 @@
                 ?>
                 <script>
                     alert("Berjaya Log Masuk");
-                    window.location = "../app/ApplicationLayer/StaffView/module1/homepage.php";
+                    //window.location = "../app/ApplicationLayer/StaffView/module1/homepage.php";
+                    window.location = "../app/ApplicationLayer/StaffView/module1/StaffViewProfilePage.php";
                 </script>
                 <?php 
                 header("../../../../public/Facade.php?action=viewProfile&from=view");
@@ -69,7 +71,8 @@
             ?>
                 <script>
                     alert("Berjaya Masuk");
-                    window.location = "../app/ApplicationLayer/AdminView/homepage.php";
+                    //window.location = "../app/ApplicationLayer/AdminView/homepage.php";
+                    window.location = "../app/ApplicationLayer/AdminView/StaffRegFormPage.php";
                 </script>
             <?php 
                 //header("Location: Facade.php?action=viewProfile&from=view");
