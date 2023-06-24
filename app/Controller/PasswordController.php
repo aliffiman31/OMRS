@@ -158,10 +158,10 @@
         }  
 
 
-        function changePasswordFunction($userIC, $newPassword)
+        function changePasswordFunction($userIC, $userPassword, $newPassword)
         {
              //Send the input to Module1Repository to verify the user 
-             if($this->Module1Repository->changePassword($userIC, $newPassword))
+             if($this->Module1Repository->changePassword($userIC, $userPassword, $newPassword))
              {
                  ?>
                  <script>

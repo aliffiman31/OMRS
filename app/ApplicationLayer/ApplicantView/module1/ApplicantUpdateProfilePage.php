@@ -71,14 +71,6 @@
                         <td><?php echo $decodedApplicantData['appGender']; ?></td> 
                     </tr>
                     <tr>
-                        <td scope="row">BANGSA : </td>
-                        <td><?php echo $decodedApplicantData['appRace']; ?></td>
-                    </tr>
-                    <tr>
-                        <td scope="row">WARGANEGARA : </td>
-                        <td><?php echo $decodedApplicantData['appNationality']; ?></td>
-                    </tr>
-                    <tr>
                         <td scope="row">NO. TELEFON: </td>
                         <td><input style="height:30px; width:290px;" type="text" id="appPhoneNo" name="appPhoneNo" value="<?php echo $decodedApplicantData['appPhoneNo']; ?>"/></td>
                     </tr>
@@ -91,8 +83,14 @@
                         <td><textarea rows="4" cols="36" id="appAddress" name="appAddress"><?php echo $decodedApplicantData['appAddress']; ?></textarea></td>
 
                     </tr>
-                    
-                    
+                    <tr>
+                        <td scope="row">BANGSA: </td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appRace" name="appRace" value="<?php echo $decodedApplicantData['appRace']; ?>"/></td>
+                    </tr>
+                    <tr>
+                        <td scope="row">WARGANEGARA: </td>
+                        <td><input style="height:30px; width:290px;" type="text" id="appNationality" name="appNationality" value="<?php echo $decodedApplicantData['appNationality']; ?>"/></td>
+                    </tr>
                     <tr>
                         <td scope="row">TARAF PENDIDIKAN : </td>
                         <td><input style="height:30px; width:290px;" type="text" id="appEduLevel" name="appEduLevel" value="<?php echo $decodedApplicantData['appEduLevel']; ?>"/></td>

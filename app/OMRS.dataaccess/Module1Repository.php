@@ -58,8 +58,6 @@
          //table StaffInfo (register)
          public function addStaffInfo($userIC, $UserAcc_Id, $staffName, $staffGender, $staffDepartmentName, $staffEmail, $staffPhoneNo)
          {
-            //$Staff_Id = uniqid();
-
             // Check if the UserAcc_Id exists in UserAccount table
             $query = $this->connect->prepare("SELECT UserAcc_Id FROM UserAccount WHERE UserAcc_Id = ?");
             $query->execute([$UserAcc_Id]);
@@ -167,17 +165,17 @@
             $query->bindParam(':userIC', $userIC);
             $query->bindParam(':userPassword', $userPassword);
             $query->execute();
-     
+
             // Check if the update was successful
-            if ($query->rowCount() > 0) 
-            {
-               $_SESSION['passwordUpdateSuccess'] = true;
-            } 
-            else 
-            {
-               $_SESSION['passwordUpdateError'] = true;
+            if ($query->rowCount() > 0) {
+            $_SESSION['passwordUpdateSuccess'] = true;
+            return true; // Return true if the update was successful
+            } else {
+            $_SESSION['passwordUpdateError'] = true;
+            return false; // Return false if the update failed
             }
          }
+
 
          //view profile (table ApplicantInfo)
          public function getApplicantProfileInfo($Applicant_IC)
@@ -219,13 +217,13 @@
          }
 
          //Update applicant data using user IC number
-         public function updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress) 
+         public function updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus) 
          {
                //session_start();
                $Applicant_IC = $_SESSION['currentUserIC'];
 
                 // Prepare your update statement
-                $sql = "UPDATE ApplicantInfo SET appPhoneNo = :appPhoneNo, appEmail = :appEmail, appAddress = :appAddress WHERE Applicant_IC = :ic";
+                $sql = "UPDATE ApplicantInfo SET appPhoneNo = :appPhoneNo, appEmail = :appEmail, appAddress = :appAddress, appRace = :appRace, appNationality = :appNationality, appEduLevel = :appEduLevel, appOKUStatus = :appOKUStatus, appStatus = :appStatus  WHERE Applicant_IC = :ic";
 
                // Prepare the statement
                $stmt = $this->connect->prepare($sql);
@@ -234,6 +232,11 @@
                $stmt->bindParam(':appPhoneNo', $appPhoneNo);
                $stmt->bindParam(':appEmail', $appEmail);
                $stmt->bindParam(':appAddress', $appAddress);
+               $stmt->bindParam(':appRace', $appRace);
+               $stmt->bindParam(':appNationality', $appNationality);
+               $stmt->bindParam(':appEduLevel', $appEduLevel);
+               $stmt->bindParam(':appOKUStatus', $appOKUStatus);
+               $stmt->bindParam(':appStatus', $appStatus);
                $stmt->bindParam(':ic', $Applicant_IC);
 
                // Execute the statement
