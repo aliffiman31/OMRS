@@ -42,8 +42,6 @@
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-<<<<<<< HEAD
-=======
 
     //Module 2
     //$Module2Repository = new Module2Repository($db);
@@ -54,7 +52,6 @@
     //$Module3Repository = new Module3Repository($db);
 
     //Module 1 (Create a new instance of the controller)
->>>>>>> 7a551feaaca6aaf7609d405d89c7b4933f9d3491
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
