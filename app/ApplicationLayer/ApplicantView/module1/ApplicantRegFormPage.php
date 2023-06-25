@@ -51,61 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <img style="height:50px;" src="../../Asset/Registration.png">
                             <h2><b>Daftar Pengguna</b></h2>
                         </div>
-                        <table>
-                            <tr>
-                                <td>NO. KAD PENGENALAN :</td>
-                                <td> <input style="height:30px; width:250px;" type="text" name="userIC" id="userIC"></td>
-                            </tr>
-                            <tr>
-                                <td>NAMA:</td>
-                                <td> <input style="height:30px; width:250px;" type="text" name="appName" id="appName"></td>
-                            </tr>
-                            <tr>
-                                <td>KATEGORI AKSES :</td>
-                                <td><select style="width:260px; height:40px;" name="userType" id="userType">
-                                        <option disabled selected>SILA PILIH</option>
-                                        <option value="Pemohon">PEMOHON</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>JANTINA:</td>
-                                <td>
-                                    <select style="width:260px; height:40px;" name="appGender" id="appGender">
-                                        <option disabled selected>SILA PILIH</option>
-                                        <option value="Lelaki">LELAKI</option>
-                                        <option value="Perempuan">PEREMPUAN</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>NO. TELEFON:</td>
-                                <td> <input style="height:30px; width:250px;" type="text" name="appPhoneNo" id="appPhoneNo"></td>
-                            </tr>
-                            <tr>
-                                <td>ALAMAT:</td>
-                                <td> <textarea name="appAddress" id="appAddress" rows="5" cols="32"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>E-MEL:</td>
-                                <td> <input style="height:30px; width:250px;" type="text" name="appEmail" id="appEmail"></td>
-                            </tr>
-                            <tr>
-                                <td>KATA LALUAN:</td>
-                                <td> <input style="height:30px; width:250px;" type="password" name="userPassword" id="userPassword"></td>
-                            </tr>
-                        </table>
 
-                        <input type="submit" id="submit" value="DAFTAR" onclick="  "> <!--submitForm(event, 'reg-form')-->
-                        <a href="ApplicantLoginPage.php">[ KEMBALI ]</a>
-                        <br>
-                    </form>
-                </div>
-            </div>
-<<<<<<< HEAD
-        </section>
-=======
-            <table>
+                        <table>
                 <tr>
                     <td>NO. KAD PENGENALAN   :</td>
                     <td> <input style="height:30px; width:250px;" type = "text" name="userIC" id="userIC"></td>
@@ -130,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <td>KATEGORI AKSES :</td>
                     <td><select style="width:260px; height:40px;" name="userType" id="userType">
                             <option disabled selected>SILA PILIH</option>
-                            <option value="PEMOHON">PEMOHON</option>
+                            <option value="Pemohon">PEMOHON</option>
                         </select>
                     </td>
                     <td>TARAF PENDIDIKAN  :</td>
@@ -195,8 +142,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
         </div>   
         </div>
-</section>
->>>>>>> a9be7f1b782c04ccaba5d222d5c2eef9324c0d12
+                       
+        </section>
     </div>
 
 

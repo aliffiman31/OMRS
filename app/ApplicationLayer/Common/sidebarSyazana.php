@@ -342,7 +342,7 @@ if($route == 'viewProfile'){
           </button>
           <div class="collapse" id="module1-collapse">                                                                                  
 
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                                                                                                                   <!-- onclick="redirectToURL(this.id) -->
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">                                                                                              <!-- onclick="redirectToURL(this.id) -->
               <li><a id="profile-page"  class="link-body-emphasis d-inline-flex text-decoration-none rounded" href="../../../../public/Facade.php?action=viewProfile&from=view">Lihat Akaun Profil</a></li>
               <li><a id="profile-page" class="link-body-emphasis d-inline-flex text-decoration-none rounded"   href="../../../../public/Facade.php?action=viewProfile&from=edit">Sunting Akaun Profil</a></li>
             </ul>

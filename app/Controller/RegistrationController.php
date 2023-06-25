@@ -11,9 +11,6 @@
         //applicant register function   
         public function registerApplicantFunction($userIC, $appName, $userType, $appGender, $appPhoneNo, $appAddress, $appEmail, $userPassword, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus)
         {
-            //security purpose (Admin pon tak blh tgk password user kat mysql)
-            //$hashed_password = password_hash($userPassword, PASSWORD_DEFAULT);
-
             //call createUserAcc function in Module1Repository (table UserAccount)  
             $UserAcc_Id = $this->Module1Repository->createUserAcc($userIC, $userPassword, $userType);
 

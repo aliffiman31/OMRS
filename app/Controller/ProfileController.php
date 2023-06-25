@@ -11,7 +11,7 @@
         //view profile function 
         public function viewProfileFunction($from)
         {
-            session_start();
+            //session_start();
             $userType = $_SESSION['currentUserType'];
 
             if($userType == "Pemohon")
@@ -63,10 +63,10 @@
         }
 
         //Update the applicant profile data 
-        public function updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress) 
+        public function updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus) 
         {
             //Firstly, the updateApplicationProfileInfo will update the data in mySQL.
-            if($this->Module1Repository->updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress)){
+            if($this->Module1Repository->updateAppProfileInfo($appPhoneNo, $appEmail, $appAddress, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus)){
                 ?>
                     <script>
                         alert("Proses KEMASKINI anda BERJAYA.");
