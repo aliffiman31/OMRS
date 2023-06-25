@@ -11,7 +11,6 @@
         //view profile function 
         public function viewProfileFunction($from)
         {
-            //session_start();
             $userType = $_SESSION['currentUserType'];
 
             if($userType == "Pemohon")
@@ -72,7 +71,6 @@
                         alert("Proses KEMASKINI anda BERJAYA.");
                     </script>
                 <?php
-                
                 header("Location: ../public/Facade.php?action=viewProfile&from=view");
 
             }else{
@@ -80,8 +78,7 @@
                     <script>
                         alert("Maaf, proses KEMASKINI anda TIDAK BERJAYA.");
                     </script>
-                <?php
-                                          
+                <?php                        
                 header("Location: ../public/Facade.php?action=viewProfile&from=view");
             }
         }
@@ -104,8 +101,7 @@
                     <script>
                         alert("Maaf, proses KEMASKINI anda TIDAK BERJAYA.");
                     </script>
-                <?php
-                                          
+                <?php                        
                 header("Location: ../public/Facade.php?action=viewProfile&from=view");
             } 
         }
@@ -133,40 +129,5 @@
                 header("Location: ../public/Facade.php?action=viewProfile&from=view");
             } 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-       /* public function viewProfileFunction($from)
-        {
-            session_start();
-            $userType = $_SESSION['currentUserType'];
-
-     if ($userType == "Pemohon") {
-        $Applicant_IC = $_SESSION['currentUserIC'];
-        $appProfileInfo = $this->Module1Repository->getApplicantProfileInfo($Applicant_IC); //returnProfileInfo
-
-        if ($from == 'view') {
-            header('Location: ../app/ApplicationLayer/ApplicantView/module1/ApplicantViewProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));  //GET Method
-            
-        } else if ($from == 'edit') {
-            header('Location: ../app/ApplicationLayer/ApplicantView/module1/ApplicantUpdateProfilePage.php?returnProfileInfo=' . urlencode(serialize($appProfileInfo)));
-        
-        }
-
-    } else {
-        echo "Maaf, sistem tidak dapat meneruskan aktiviti anda.";
-        exit;
-    }
-}*/
-
     }
 ?>

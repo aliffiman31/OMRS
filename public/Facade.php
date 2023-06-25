@@ -42,19 +42,6 @@
     // | module 1 create object for repository & controller |
     //  ----------------------------------------------------
     $Module1Repository = new Module1Repository($db);
-<<<<<<< HEAD
-
-    //Module 2
-    //$Module2Repository = new Module2Repository($db);
-
-    //Module 2
-
-    //module 3
-    //$Module3Repository = new Module3Repository($db);
-
-    //Module 1 (Create a new instance of the controller)
-=======
->>>>>>> 04c3a3fb3292fbbd98e073798e2e55a91a652849
     $RegistrationController = new RegistrationController($Module1Repository);
     $LoginController = new LoginController($Module1Repository);
     $PasswordController = new PasswordController($Module1Repository, $db);
@@ -175,8 +162,13 @@
             $appPhoneNo = $_POST['appPhoneNo'];
             $appEmail = $_POST['appEmail'];
             $appAddress = $_POST['appAddress'];
+            $appRace = $_POST['appRace'];
+            $appNationality = $_POST['appNationality'];
+            $appEduLevel = $_POST['appEduLevel'];
+            $appOKUStatus = $_POST['appOKUStatus'];
+            $appStatus = $_POST['appStatus'];
 
-            $ProfileController->updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress);
+            $ProfileController->updateAppProfileFunction($appPhoneNo, $appEmail, $appAddress, $appRace, $appNationality, $appEduLevel, $appOKUStatus, $appStatus);
             break;
 
         case 'updateStaffProfile':

@@ -10,6 +10,7 @@
             $this->connect = $db;
         }
 
+        //Lupa Kata Laluan
         function passwordFunctionApplicant($userIC, $appEmail)
         {
             $query = "SELECT * FROM UserAccount WHERE userIC = :ic";
@@ -22,12 +23,11 @@
             $newPassword = $this->generateRandomPassword();
 
             //Update applicant password in the database
-            $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
             $updateQuery = "UPDATE UserAccount SET userPassword = :password WHERE userIC = :ic";
             $stmt = $this->connect->prepare($updateQuery);
-            $stmt->bindParam(':password', $hashedPassword);
+            $stmt->bindParam(':password', $newPassword);
             $stmt->bindParam(':ic', $userIC);
-            $stmt->execute();
+            $stmt->execute();            
 
             // Set SMTP and smtp_port settings
             ini_set('SMTP', 'localhost');
@@ -67,10 +67,9 @@
                 $newPassword = $this->generateRandomPassword();
         
                 // Update applicant password in the database
-                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
                 $updateQuery = "UPDATE UserAccount SET userPassword = :password WHERE userIC = :ic";
                 $stmt = $this->connect->prepare($updateQuery);
-                $stmt->bindParam(':password', $hashedPassword);
+                $stmt->bindParam(':password', $newPassword);
                 $stmt->bindParam(':ic', $userIC);
                 $stmt->execute();
         
@@ -112,10 +111,9 @@
                 $newPassword = $this->generateRandomPassword();
         
                 // Update applicant password in the database
-                $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
                 $updateQuery = "UPDATE UserAccount SET userPassword = :password WHERE userIC = :ic";
                 $stmt = $this->connect->prepare($updateQuery);
-                $stmt->bindParam(':password', $hashedPassword);
+                $stmt->bindParam(':password', $newPassword);
                 $stmt->bindParam(':ic', $userIC);
                 $stmt->execute();
         
@@ -147,103 +145,83 @@
         function generateRandomPassword()
          {
             $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            $password = ' ';
+            $randomPassword = ' ';
             $length = 20;
 
             for ($i = 0; $i < $length; $i++) 
             {
-                $password .= $characters[rand(0, strlen($characters) - 1)];
+                $randomPassword .= $characters[rand(0, strlen($characters) - 1)];
             }
-                return $password;
+                return $randomPassword;
         }  
+        //end Lupa Kata Laluan
 
-
+        //tukar kata laluan
         function changePasswordFunction($userIC, $userPassword, $newPassword)
         {
-             //Send the input to Module1Repository to verify the user 
+            $userType = $_SESSION['currentUserType'];
+
              if($this->Module1Repository->changePassword($userIC, $userPassword, $newPassword))
              {
+                if($userType == "Pemohon")
+                {
                  ?>
                  <script>
                      alert("Kata Laluan anda telah ditukar");
                      window.location = "../app/ApplicationLayer/ApplicantView/module1/ApplicantLoginPage.php";
                  </script>
                  <?php 
-                 //header("Location: index.php?action=viewProfile&from=view");
+                }
+                else if($userType == "Kakitangan")
+                {
+                 ?>
+                 <script>
+                     alert("Kata Laluan anda telah ditukar");
+                     window.location = "../app/ApplicationLayer/StaffView/module1/StaffLoginPage.php";
+                 </script>
+                 <?php
+                }
+                else if($userType == "Admin")
+                {
+                 ?>
+                 <script>
+                     alert("Kata Laluan anda telah ditukar");
+                     window.location = "../app/ApplicationLayer/AdminView/AdminLoginPage.php";
+                 </script>
+                 <?php
+                }
              }
              else
              {
-                 //If the user not exists, it will show error message 
-             ?>
+                if($userType == "Pemohon")
+                {
+                 ?>
                  <script>
-                     alert("No Kad Pengenalan anda TIDAK SAH");
-                     window.location = "../app/ApplicationLayer/StaffView/module1/StaffLoginPage.php";
+                     alert("Kata Laluan anda tidak berjaya ditukar");
+                     window.location = "../app/ApplicationLayer/ApplicantView/module1/ApplicantChangePasswordPage.php";
                  </script>
-             <?php
+                 <?php 
+                }
+                else if($userType == "Kakitangan")
+                {
+                 ?>
+                 <script>
+                     alert("Kata Laluan anda tidak berjaya ditukar");
+                     window.location = "../app/ApplicationLayer/StaffView/module1/StaffChangePasswordPage.php";
+                 </script>
+                 <?php
+                }
+                else if($userType == "Admin")
+                {
+                 ?>
+                 <script>
+                     alert("Kata Laluan anda tidak berjaya ditukar");
+                     window.location = "../app/ApplicationLayer/AdminView/AdminChangePasswordPage.php";
+                 </script>
+                 <?php
+                }   
              }
-
         }
-
-        //Retrieve data to view
-        public function viewProfileFunction($from) {
-            
-            session_start();
-            $usertype = $_SESSION['currentUserType'] ;
-            
-            if($usertype == "Pemohon"){
-
-                $ic = $_SESSION['currentUserIC'];
-                $user = $this->Module1Repository->getApplicantProfileInfo($ic);
-
-                if($from == 'view'){
-                    header('Location: ../app/View/ManageUserProfile/viewApplicantProfileDetailsView.php?returnInfo='.  urlencode(serialize($user)));
-
-                }else if($from == 'edit'){
-                    header('Location: ../app/View/ManageUserProfile/editApplicantProfileDetailsView.php?returnInfo='.  urlencode(serialize($user)));
-                    
-                }
-                
-
-            }elseif($usertype == "Kakitangan"){
-
-                $id = $_SESSION['accountId'];
-                $user = $this->Module1Repository->getStaffProfileInfo($id);
-                echo $user['StaffName'];
-
-                if($from == 'view'){
-                    header('Location: ../app/View/ManageUserProfile/viewStaffProfileDetailsView.php?returnInfo='.  urlencode(serialize($user)));
-
-                }else if($from == 'edit'){
-                    header('Location: ../app/View/ManageUserProfile/editStaffProfileDetailsView.php?returnInfo='.  urlencode(serialize($user)));
-                    
-                }
-
-            }elseif($usertype == "Admin"){
-
-                $id = $_SESSION['accountId'];
-
-                //Get the data from admin model
-                $adminInfo = $this->Module1Repository->getAdminProfileInfo($id);
-
-                if($from == 'view'){
-                    //Redirect the user to the admin view profile
-                    header('Location: ../app/View/ManageUserProfile/viewAdminProfileDetailsView.php?returnInfo='.  urlencode(serialize($adminInfo)));
-
-                }else if($from == 'edit'){
-                    //Redirect the user to the admin edit profile
-                    header('Location: ../app/View/ManageUserProfile/editAdminProfileDetailsView.php?returnInfo='.  urlencode(serialize($adminInfo)));
-                }
-                
-            }else{
-
-                echo "Problem";
-            }
-            
-        }
-
-
-
-
     }
 ?>
 
