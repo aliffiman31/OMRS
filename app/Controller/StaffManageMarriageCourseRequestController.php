@@ -4,6 +4,8 @@
 class StaffManageMarriageCourseRequestController
 {
     private $module2Repository;
+
+    
     
     public function __construct($module2Repository)
     {

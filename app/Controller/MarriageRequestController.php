@@ -15,4 +15,3 @@ public function formReligiousInfo($office,$Venue,$Date,$Capacity,$Vacancy){
 
 }
 }
-?>
