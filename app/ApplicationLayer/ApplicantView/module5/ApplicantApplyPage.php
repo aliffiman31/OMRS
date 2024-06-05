@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,13 +33,11 @@
 <body>
     <div>
         <!-- Header -->
-        <?php
-        include_once('../../Common/header.html');
-        ?>
+        <?php include_once('../../Common/header.html'); ?>
 
         <section>
             <div>
-                <?php include_once('../../Common/sidebar.php');  ?>
+                <?php include_once('../../Common/sidebar.php'); ?>
             </div>
 
             <div class="content-container">
@@ -62,7 +57,13 @@
 
                                 <tr>
                                     <th>Jenis Pekerjaan : </th>
-                                    <td><input type="text" name="suami-jobtype" id="suami-jobtype" required></td>
+                                    <td>
+                                        <select name="suami-jobtype" id="suami-jobtype" required>
+                                            <option value="kerajaan">Kerajaan</option>
+                                            <option value="swasta">Swasta</option>
+                                            <option value="sendiri">Sendiri</option>
+                                        </select>
+                                    </td>
                                     <th>Nama Pekerjaan : </th>
                                     <td><input type="text" name="suami-jobname" id="suami-jobname" required></td>
                                     <th>Alamat Tempat Bekerja : </th>
@@ -70,7 +71,14 @@
                                     <th>Pendapatan : </th>
                                     <td><input type="number" name="suami-salary" id="suami-salary" required></td>
                                     <th>Jenis Bank : </th>
-                                    <td><input type="text" name="suami-bank" id="suami-bank" required></td>
+                                    <td>
+                                        <select name="suami-bank" id="suami-bank" required>
+                                            <option value="maybank">Maybank</option>
+                                            <option value="cimb">CIMB</option>
+                                            <option value="publicbank">Public Bank</option>
+                                            <option value="rhb">RHB</option>
+                                        </select>
+                                    </td>
                                     <th>Nombor Akaun Bank : </th>
                                     <td><input type="number" name="suami-noacc" id="suami-noacc" required></td>
                                 </tr>
@@ -90,17 +98,30 @@
 
                                 <tr>
                                     <th>Jenis Pekerjaan : </th>
-                                    <td><input type="text" name="isteri-jobtype" id="suami-jobtype" required></td>
+                                    <td>
+                                        <select name="isteri-jobtype" id="isteri-jobtype" required>
+                                            <option value="kerajaan">Kerajaan</option>
+                                            <option value="swasta">Swasta</option>
+                                            <option value="sendiri">Sendiri</option>
+                                        </select>
+                                    </td>
                                     <th>Nama Pekerjaan : </th>
-                                    <td><input type="text" name="isteri-jobname" id="suami-jobname" required></td>
+                                    <td><input type="text" name="isteri-jobname" id="isteri-jobname" required></td>
                                     <th>Alamat Tempat Bekerja : </th>
-                                    <td><input type="text" name="isteri-jobaddress" id="suami-jobaddress" required></td>
+                                    <td><input type="text" name="isteri-jobaddress" id="isteri-jobaddress" required></td>
                                     <th>Pendapatan : </th>
-                                    <td><input type="number" name="isteri-salary" id="suami-salary" required></td>
+                                    <td><input type="number" name="isteri-salary" id="isteri-salary" required></td>
                                     <th>Jenis Bank : </th>
-                                    <td><input type="text" name="isteri-bank" id="suami-bank" required></td>
+                                    <td>
+                                        <select name="isteri-bank" id="isteri-bank" required>
+                                            <option value="maybank">Maybank</option>
+                                            <option value="cimb">CIMB</option>
+                                            <option value="publicbank">Public Bank</option>
+                                            <option value="rhb">RHB</option>
+                                        </select>
+                                    </td>
                                     <th>Nombor Akaun Bank : </th>
-                                    <td><input type="number" name="isteri-noacc" id="suami-noacc" required></td>
+                                    <td><input type="number" name="isteri-noacc" id="isteri-noacc" required></td>
                                 </tr>
 
                                 <!-- Gap between form sections -->
@@ -155,11 +176,9 @@
                             </tbody>
                         </table>
 
-
                         <div class="button">
                             <button type="submit">Submit</button>
                         </div>
-
 
                     </form>
 
