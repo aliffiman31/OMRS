@@ -15,9 +15,11 @@
         include_once('../../Common/header.html');
         ?>
 
+
         <section>
+
             <div>
-                <?php include_once('../../Common/sidebar.php'); ?>
+                <?php include_once('../../Common/sidebar.php');  ?>
             </div>
             <div class="content-container">
                 <div class="content">
@@ -48,7 +50,7 @@
                                         <select id="jantina" required>
                                             <option value="choose">-Pilih-</option>
                                             <option value="male">Lelaki</option>
-                                            <option value="female">Perempuan</option>
+                                            <option value="male">Perempuan</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -60,9 +62,8 @@
                                     <td class="required">Anak yang ke:</td>
                                     <td><input type="text" id="siblings" required></td>
                                 </tr>
-                                <tr>
-                                    <td class="required">Alamat:</td>
-                                    <td><input type="text" id="address" required></td>
+                                <td class="required">Alamat:</td>
+                                <td><input type="text" id="address" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">Poskod:</td>
@@ -99,7 +100,7 @@
                                 <tr>
                                     <td class="required">Negeri Pemastautinan :</td>
                                     <td>
-                                        <select id="negeriPemastautinan" required>
+                                        <select id="negeri" required>
                                             <option value="" disabled selected>-Pilih Negeri-</option>
                                             <option value="Johor">Johor</option>
                                             <option value="Kedah">Kedah</option>
@@ -158,12 +159,15 @@
                                 </tr>
                                 <tr>
                                     <td class="required" class="form-row">Tandatangan:</td>
-                                    <td>
-                                        <canvas id="signatureCanvas" class="form-row" width="200" height="50" style="border:1px solid #000;"></canvas>
-                                        <button type="button" class="form-row" onclick="clearSignature()">Clear Signature</button>
-                                        <input type="file" id="uploadSignature" accept="image/*" onchange="uploadSignatureImage(event)">
-                                    </td>
                                 </tr>
+                                <table>
+                                    <tr>
+                                        <canvas id="signatureCanvas" class="form-row" width="200" height="50"></canvas>
+                                        <button type="button" class="form-row" onclick="clearSignature()">Clear Signature</button>
+
+                                    </tr>
+                                </table>
+
                             </table>
                         </article>
                         <article>
@@ -173,40 +177,38 @@
                             <table id="sliponline">
                                 <tr>
                                     <td class="required">Nama:</td>
-                                    <td><input type="text" id="partnerNama" required></td>
+                                    <td><input type="text" id="nama" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">No.K/P / No.Passport:</td>
-                                    <td><input type="text" id="partnerIc" required></td>
+                                    <td><input type="text" id="ic" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">Warganegara:</td>
-                                    <td><input type="text" id="partnerNationality" required></td>
+                                    <td><input type="text" id="nationality" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">Jantina:</td>
                                     <td>
-                                        <select id="partnerJantina
-
-" required>
+                                        <select id="jantina" required>
                                             <option value="choose">-Pilih-</option>
                                             <option value="male">Lelaki</option>
-                                            <option value="female">Perempuan</option>
+                                            <option value="male">Perempuan</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="required">Tarikh Lahir:</td>
-                                    <td><input type="text" id="partnerDof" required></td>
+                                    <td><input type="text" id="dof" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">Anak yang ke:</td>
-                                    <td><input type="text" id="partnerSiblings" required></td>
+                                    <td><input type="text" id="siblings" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">Negeri Pemastautinan :</td>
                                     <td>
-                                        <select id="partnerNegeriPemastautinan" required>
+                                        <select id="negeri" required>
                                             <option value="" disabled selected>-Pilih Negeri-</option>
                                             <option value="Johor">Johor</option>
                                             <option value="Kedah">Kedah</option>
@@ -228,12 +230,15 @@
                                     </td>
                                 </tr>
                                 <tr>
+
                                     <td class="required" class="form-row">Tandatangan:</td>
-                                    <td>
-                                        <canvas id="partnerSignatureCanvas" class="form-row" width="200" height="50" style="border:1px solid #000;"></canvas>
-                                        <button type="button" class="form-row" onclick="clearPartnerSignature()">Clear Signature</button>
-                                        <input type="file" id="uploadPartnerSignature" accept="image/*" onchange="uploadPartnerSignatureImage(event)">
-                                    </td>
+
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <canvas id="signatureCanvas" class="form-row" width="200" height="50"></canvas>
+                                    <button type="button" class="form-row" onclick="clearSignature()">Clear Signature</button>
                                 </tr>
                             </table>
                         </article>
@@ -244,19 +249,24 @@
                             <table id="sliponline">
                                 <tr>
                                     <td class="required">Nama:</td>
-                                    <td><input type="text" id="waliNama" required></td>
+                                    <td><input type="text" id="nama" required></td>
                                 </tr>
                                 <tr>
                                     <td class="required">No.K/P / No.Passport:</td>
-                                    <td><input type="text" id="waliIc" required></td>
+                                    <td><input type="text" id="ic" required></td>
                                 </tr>
+
+                            </table>
+                            <table>
                                 <tr>
+
                                     <td class="required" class="form-row">Tandatangan:</td>
-                                    <td>
-                                        <canvas id="waliSignatureCanvas" class="form-row" width="200" height="50" style="border:1px solid #000;"></canvas>
-                                        <button type="button" class="form-row" onclick="clearWaliSignature()">Clear Signature</button>
-                                        <input type="file" id="uploadWaliSignature" accept="image/*" onchange="uploadWaliSignatureImage(event)">
-                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <canvas id="signatureCanvas" class="form-row" width="200" height="50"></canvas>
+                                    <button type="button" class="form-row" onclick="clearSignature()">Clear Signature</button>
                                 </tr>
                             </table>
                         </article>
@@ -278,7 +288,6 @@
                 otherInput.style.display = "none";
             }
         }
-
         var canvas = document.getElementById("signatureCanvas");
         var ctx = canvas.getContext("2d");
         var isDrawing = false;
@@ -305,125 +314,10 @@
 
         function stopDrawing() {
             isDrawing = false;
-            ctx.beginPath();
         }
 
         function clearSignature() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-
-        function uploadSignatureImage(event) {
-            var file = event.target.files[0];
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                var img = new Image();
-                img.onload = function() {
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                };
-                img.src = e.target.result;
-            };
-
-            reader.readAsDataURL(file);
-        }
-
-        var partnerCanvas = document.getElementById("partnerSignatureCanvas");
-        var partnerCtx = partnerCanvas.getContext("2d");
-        var isPartnerDrawing = false;
-
-        partnerCanvas.addEventListener("mousedown", startPartnerDrawing);
-        partnerCanvas.addEventListener("mousemove", drawPartner);
-        partnerCanvas.addEventListener("mouseup", stopPartnerDrawing);
-
-        function startPartnerDrawing(e) {
-            isPartnerDrawing = true;
-            drawPartner(e);
-        }
-
-        function drawPartner(e) {
-            if (!isPartnerDrawing) return;
-
-            var rect = partnerCanvas.getBoundingClientRect();
-            var x = e.clientX - rect.left;
-            var y = e.clientY - rect.top;
-
-            partnerCtx.lineTo(x, y);
-            partnerCtx.stroke();
-        }
-
-        function stopPartnerDrawing() {
-            isPartnerDrawing = false;
-            partnerCtx.beginPath();
-        }
-
-        function clearPartnerSignature() {
-            partnerCtx.clearRect(0, 0, partnerCanvas.width, partnerCanvas.height);
-        }
-
-        function uploadPartnerSignatureImage(event) {
-            var file = event.target.files[0];
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                var img = new Image();
-                img.onload = function() {
-                    partnerCtx.clearRect(0, 0, partnerCanvas.width, partnerCanvas.height);
-                    partnerCtx.drawImage(img, 0, 0, partnerCanvas.width, partnerCanvas.height);
-                };
-                img.src = e.target.result;
-            };
-
-            reader.readAsDataURL(file);
-        }
-
-        var waliCanvas = document.getElementById("waliSignatureCanvas");
-        var waliCtx = waliCanvas.getContext("2d");
-        var isWaliDrawing = false;
-
-        waliCanvas.addEventListener("mousedown", startWaliDrawing);
-        waliCanvas.addEventListener("mousemove", drawWali);
-        waliCanvas.addEventListener("mouseup", stopWaliDrawing);
-
-        function startWaliDrawing(e) {
-            isWaliDrawing = true;
-            drawWali(e);
-        }
-
-        function drawWali(e) {
-            if (!isWaliDrawing) return;
-
-            var rect = waliCanvas.getBoundingClientRect();
-            var x = e.clientX - rect.left;
-            var y = e.clientY - rect.top;
-
-            waliCtx.lineTo(x, y);
-            waliCtx.stroke();
-        }
-
-        function stopWaliDrawing() {
-            isWaliDrawing = false;
-            waliCtx.beginPath();
-        }
-
-        function clearWaliSignature() {
-            waliCtx.clearRect(0, 0, waliCanvas.width, waliCanvas.height);
-        }
-
-        function uploadWaliSignatureImage(event) {
-            var file = event.target.files[0];
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                var img = new Image();
-                img.onload = function() {
-                    waliCtx.clearRect(0, 0, waliCanvas.width, waliCanvas.height);
-                    waliCtx.drawImage(img, 0, 0, waliCanvas.width, waliCanvas.height);
-                };
-                img.src = e.target.result;
-            };
-
-            reader.readAsDataURL(file);
         }
 
         function downloadForm(event) {
