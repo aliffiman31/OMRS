@@ -67,7 +67,7 @@
                                     <th>Nama Pekerjaan : </th>
                                     <td><input type="text" name="suami-jobname" id="suami-jobname" required></td>
                                     <th>Alamat Tempat Bekerja : </th>
-                                    <td><input type="text" name="suami-jobaddress" id="suami-jobaddress" required></td>
+                                    <td><textarea name="suami-jobaddress" id="suami-jobaddress" required></textarea></td>
                                     <th>Pendapatan : </th>
                                     <td><input type="number" name="suami-salary" id="suami-salary" required></td>
                                     <th>Jenis Bank : </th>
@@ -108,7 +108,7 @@
                                     <th>Nama Pekerjaan : </th>
                                     <td><input type="text" name="isteri-jobname" id="isteri-jobname" required></td>
                                     <th>Alamat Tempat Bekerja : </th>
-                                    <td><input type="text" name="isteri-jobaddress" id="isteri-jobaddress" required></td>
+                                    <td><textarea name="isteri-jobaddress" id="isteri-jobaddress" required></textarea></td>
                                     <th>Pendapatan : </th>
                                     <td><input type="number" name="isteri-salary" id="isteri-salary" required></td>
                                     <th>Jenis Bank : </th>
@@ -141,13 +141,14 @@
                                     <th>Nama : </th>
                                     <td><input type="text" name="cr-name" id="cr-name" required></td>
                                     <th>Nombor IC : </th>
-                                    <td><input type="number" name="cr-icnum" id="cr-icnum" required></td>
+                                    <td><input type="text" name="cr-icnum" id="cr-icnum" required maxlength="12"></td>
                                     <th>Alamat Rumah : </th>
-                                    <td><input type="text" name="cr-address" id="cr-address" required></td>
+                                    <td><textarea name="cr-address" id="cr-address" required></textarea></td>
                                     <th>Hubungan dengan Pemohon : </th>
                                     <td><input type="text" name="cr-relation" id="cr-relation" required></td>
                                     <th>Nombor Telefon : </th>
                                     <td><input type="number" name="cr-phone" id="cr-phone" required></td>
+
                                 </tr>
 
                                 <!-- Gap between form sections -->
@@ -186,6 +187,21 @@
             </div>
         </section>
     </div>
+    <script>
+        document.getElementById("cr-icnum").addEventListener("input", function(event) {
+            // Retrieve the input value
+            var inputValue = this.value;
+
+            // Remove any non-numeric characters
+            var numericInput = inputValue.replace(/\D/g, '');
+
+            // Truncate the input to 12 characters
+            var truncatedInput = numericInput.slice(0, 12);
+
+            // Update the input field value
+            this.value = truncatedInput;
+        });
+    </script>
 
 </body>
 
